@@ -1,0 +1,3397 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Advanced Computer Science Educational Platform">
+      
+      
+      
+        <link rel="canonical" href="https://yourdomain.com/ood/3.3-key-design-principles/">
+      
+      
+        <link rel="prev" href="../3.2-abstract-classes/">
+      
+      
+        <link rel="next" href="../4.1-design-patterns/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Key Design Principles - CS Advanced Topics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-33-key-design-principles-made-simple" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CS Advanced Topics" class="md-header__button md-logo" aria-label="CS Advanced Topics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS Advanced Topics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Key Design Principles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="w3schools" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0.0-index/" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../oop-cpp/" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design in C++
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../oop-python/0.0-index.md" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design in Python
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CS Advanced Topics" class="md-nav__button md-logo" aria-label="CS Advanced Topics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CS Advanced Topics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.0-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thinking in Objects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Thinking in Objects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1-the-world-is-made-of-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The World is Made of Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-the-four-superpowers-of-ood/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Four Superpowers of OOD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Building Blocks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Building Blocks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-attributes-and-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attributes and States
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2-methods-and-behavior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods & Behavior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-constructors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-relationships-between-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships Between Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Designing Robust Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Designing Robust Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Design Principles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-building-software-that-doesnt-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Building Software That Doesn't Break
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-dry-dont-repeat-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. DRY: Don't Repeat Yourself
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. DRY: Don&#39;t Repeat Yourself">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-wet-code-write-everything-twice-or-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: WET Code (Write Everything Twice or more!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-dry-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: DRY Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-school-bell-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: School Bell Schedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-apply-dry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Apply DRY:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-in-action-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DRY in Action: Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-single-responsibility-principle-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Single Responsibility Principle (SRP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Single Responsibility Principle (SRP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-the-god-class-that-does-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: The "God Class" That Does Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-single-responsibility-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Single Responsibility Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-restaurant-staff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: Restaurant Staff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#srp-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRP Benefits:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-apply-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Apply SRP:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#srp-in-action-file-processing-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRP in Action: File Processing Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-loose-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Loose Coupling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Loose Coupling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-tightly-coupled-spaghetti-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: Tightly Coupled "Spaghetti Code"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-loose-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Loose Coupling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-power-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: Power Adapters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-coupling-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loose Coupling Benefits:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-injection-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Injection Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-coupling-in-action-notification-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loose Coupling in Action: Notification System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It All Together: A Complete Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-anti-patterns-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Anti-Patterns to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Anti-Patterns to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-swiss-army-knife-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The "Swiss Army Knife" Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-copy-paste-programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The "Copy-Paste Programmer"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-concrete-prison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The "Concrete Prison"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise-e-commerce-system-refactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercise: E-commerce System Refactor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Design to Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    From Design to Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Special Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-beyond-the-basics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beyond the Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/01-classes-and-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/02-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/03-polymorphism.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/04-encapsulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/05-abstraction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/06-design-patterns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design in Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design in Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/0.0-index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/01-classes-and-objects.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/02-inheritance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/03-polymorphism.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/04-encapsulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/05-abstraction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/06-design-patterns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-building-software-that-doesnt-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Building Software That Doesn't Break
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-dry-dont-repeat-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. DRY: Don't Repeat Yourself
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. DRY: Don&#39;t Repeat Yourself">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-wet-code-write-everything-twice-or-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: WET Code (Write Everything Twice or more!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-dry-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: DRY Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-school-bell-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: School Bell Schedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-apply-dry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Apply DRY:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-in-action-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DRY in Action: Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-single-responsibility-principle-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Single Responsibility Principle (SRP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Single Responsibility Principle (SRP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-the-god-class-that-does-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: The "God Class" That Does Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-single-responsibility-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Single Responsibility Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-restaurant-staff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: Restaurant Staff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#srp-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRP Benefits:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-apply-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Apply SRP:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#srp-in-action-file-processing-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRP in Action: File Processing Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-loose-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Loose Coupling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Loose Coupling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-tightly-coupled-spaghetti-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: Tightly Coupled "Spaghetti Code"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-loose-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Loose Coupling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-power-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: Power Adapters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-coupling-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loose Coupling Benefits:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-injection-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Injection Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-coupling-in-action-notification-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loose Coupling in Action: Notification System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It All Together: A Complete Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-anti-patterns-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Anti-Patterns to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Anti-Patterns to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-swiss-army-knife-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The "Swiss Army Knife" Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-copy-paste-programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The "Copy-Paste Programmer"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-concrete-prison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The "Concrete Prison"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise-e-commerce-system-refactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercise: E-commerce System Refactor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-33-key-design-principles-made-simple">Chapter 3.3: Key Design Principles (Made Simple)</h1>
+<h2 id="introduction-building-software-that-doesnt-break">Introduction: Building Software That Doesn't Break</h2>
+<p>Imagine you're building a house. You wouldn't:</p>
+<ol>
+<li>Make all the electrical wiring pass through one single wire (that would burn!)</li>
+<li>Build the kitchen inside the bathroom (that's messy!)</li>
+<li>Use different blueprints for every room (that's confusing!)</li>
+</ol>
+<p>Software design has similar principles. Today, we'll learn three essential principles that will make your code cleaner, more maintainable, and less prone to errors.</p>
+<h2 id="1-dry-dont-repeat-yourself">1. DRY: Don't Repeat Yourself</h2>
+<h3 id="the-problem-wet-code-write-everything-twice-or-more">The Problem: WET Code (Write Everything Twice or more!)</h3>
+<p><strong>WET Code Example:</strong></p>
+<div class="highlight"><pre><span></span><code># Student grade calculator - repeating the same logic
+CLASS MathStudent:
+    METHOD calculate_average(math_grades):
+        total = 0
+        FOR grade IN math_grades:
+            total = total + grade
+        average = total / LENGTH(math_grades)
+        RETURN average
+
+    METHOD print_report(math_grades):
+        average = calculate_average(math_grades)
+        PRINT &quot;Math Average: &quot; + average
+
+CLASS ScienceStudent:
+    METHOD calculate_average(science_grades):
+        total = 0
+        FOR grade IN science_grades:
+            total = total + grade  # Same logic!
+        average = total / LENGTH(science_grades)  # Same logic!
+        RETURN average
+
+    METHOD print_report(science_grades):
+        average = calculate_average(science_grades)
+        PRINT &quot;Science Average: &quot; + average
+
+CLASS EnglishStudent:
+    METHOD calculate_average(english_grades):
+        total = 0
+        FOR grade IN english_grades:
+            total = total + grade  # Same logic AGAIN!
+        average = total / LENGTH(english_grades)  # Same logic AGAIN!
+        RETURN average
+
+    METHOD print_report(english_grades):
+        average = calculate_average(english_grades)
+        PRINT &quot;English Average: &quot; + average
+
+# Problem: If we need to change the calculation
+# (e.g., handle empty lists), we have to change it in 3 places!
+</code></pre></div>
+<h3 id="the-solution-dry-principle">The Solution: DRY Principle</h3>
+<p><strong>DRY Code Example:</strong></p>
+<div class="highlight"><pre><span></span><code># Create a reusable utility class
+CLASS GradeCalculator:
+    # One place for the calculation logic
+    STATIC METHOD calculate_average(grades):
+        IF LENGTH(grades) == 0:
+            RETURN 0
+        total = 0
+        FOR grade IN grades:
+            total = total + grade
+        RETURN total / LENGTH(grades)
+
+    STATIC METHOD get_letter_grade(average):
+        IF average &gt;= 90: RETURN &quot;A&quot;
+        IF average &gt;= 80: RETURN &quot;B&quot;
+        IF average &gt;= 70: RETURN &quot;C&quot;
+        IF average &gt;= 60: RETURN &quot;D&quot;
+        RETURN &quot;F&quot;
+
+# Now students just use the utility
+CLASS MathStudent:
+    METHOD print_report(math_grades):
+        average = GradeCalculator.calculate_average(math_grades)
+        letter = GradeCalculator.get_letter_grade(average)
+        PRINT &quot;Math: &quot; + average + &quot; (&quot; + letter + &quot;)&quot;
+
+CLASS ScienceStudent:
+    METHOD print_report(science_grades):
+        average = GradeCalculator.calculate_average(science_grades)
+        letter = GradeCalculator.get_letter_grade(average)
+        PRINT &quot;Science: &quot; + average + &quot; (&quot; + letter + &quot;)&quot;
+
+CLASS EnglishStudent:
+    METHOD print_report(english_grades):
+        average = GradeCalculator.calculate_average(english_grades)
+        letter = GradeCalculator.get_letter_grade(average)
+        PRINT &quot;English: &quot; + average + &quot; (&quot; + letter + &quot;)&quot;
+
+# Now if we need to change the calculation,
+# we change it in ONE place only!
+</code></pre></div>
+<h3 id="real-world-analogy-school-bell-schedule">Real-World Analogy: School Bell Schedule</h3>
+<p><strong>WET School (Bad):</strong></p>
+<ul>
+<li>Each classroom has its own clock</li>
+<li>Each teacher decides when class starts/ends</li>
+<li>No coordination - chaos!</li>
+</ul>
+<p><strong>DRY School (Good):</strong></p>
+<ul>
+<li>One central bell system</li>
+<li>All classrooms follow the same schedule</li>
+<li>One place to change if schedule needs adjustment</li>
+</ul>
+<h3 id="when-to-apply-dry">When to Apply DRY:</h3>
+<ol>
+<li><strong>Same logic appears in multiple places</strong></li>
+<li><strong>Constants or configuration values are duplicated</strong></li>
+<li><strong>Similar validation rules exist in different classes</strong></li>
+<li><strong>Database queries are copy-pasted</strong></li>
+</ol>
+<h3 id="dry-in-action-configuration-example">DRY in Action: Configuration Example</h3>
+<div class="highlight"><pre><span></span><code># BAD: Hardcoded values everywhere
+CLASS EmailService:
+    METHOD send_welcome_email():
+        smtp_server = &quot;smtp.gmail.com&quot;
+        port = 587
+        timeout = 30
+        # Use these values...
+
+    METHOD send_password_reset():
+        smtp_server = &quot;smtp.gmail.com&quot;  # Duplicated!
+        port = 587  # Duplicated!
+        timeout = 30  # Duplicated!
+        # Use these values...
+
+# GOOD: Single source of truth
+CLASS EmailConfig:
+    SMTP_SERVER = &quot;smtp.gmail.com&quot;
+    PORT = 587
+    TIMEOUT = 30
+    FROM_EMAIL = &quot;noreply@school.edu&quot;
+
+CLASS EmailService:
+    METHOD send_welcome_email():
+        server = EmailConfig.SMTP_SERVER
+        port = EmailConfig.PORT
+        # Use config values...
+
+    METHOD send_password_reset():
+        server = EmailConfig.SMTP_SERVER  # From config
+        port = EmailConfig.PORT  # From config
+        # Use config values...
+
+# Now changing server is ONE change
+</code></pre></div>
+<h2 id="2-single-responsibility-principle-srp">2. Single Responsibility Principle (SRP)</h2>
+<h3 id="the-problem-the-god-class-that-does-everything">The Problem: The "God Class" That Does Everything</h3>
+<p><strong>"God Class" Example (Bad):</strong></p>
+<div class="highlight"><pre><span></span><code># The StudentManager class does TOO MUCH
+CLASS StudentManager:
+    # Responsibility 1: Student data management
+    METHOD add_student(name, age)
+    METHOD remove_student(id)
+    METHOD update_student_info(id, new_info)
+
+    # Responsibility 2: Grade management
+    METHOD add_grade(student_id, subject, grade)
+    METHOD calculate_gpa(student_id)
+    METHOD generate_report_card(student_id)
+
+    # Responsibility 3: Attendance tracking
+    METHOD mark_attendance(student_id, date, present)
+    METHOD calculate_attendance_rate(student_id)
+    METHOD send_absence_notification(student_id)
+
+    # Responsibility 4: Payment processing
+    METHOD process_tuition_payment(student_id, amount)
+    METHOD generate_invoice(student_id)
+    METHOD send_payment_reminder(student_id)
+
+    # Responsibility 5: Communication
+    METHOD send_email(student_id, message)
+    METHOD send_sms(student_id, message)
+    METHOD send_push_notification(student_id, message)
+
+    # This class has 5 reasons to change!
+    # If email service changes → need to modify
+    # If payment system changes → need to modify
+    # If attendance rules change → need to modify
+    # Very fragile and hard to maintain!
+</code></pre></div>
+<h3 id="the-solution-single-responsibility-principle">The Solution: Single Responsibility Principle</h3>
+<p><strong>SRP Principle:</strong> <strong>A class should have only one reason to change.</strong></p>
+<p>Each class should do <strong>one thing</strong> and do it well.</p>
+<p><strong>SRP Code Example:</strong></p>
+<div class="highlight"><pre><span></span><code># Split into focused, single-purpose classes
+
+# Responsibility 1: Student data only
+CLASS StudentRepository:
+    METHOD add_student(student)
+    METHOD remove_student(id)
+    METHOD update_student(id, new_info)
+    METHOD find_student(id)
+
+# Responsibility 2: Grade management only
+CLASS GradeManager:
+    METHOD add_grade(student_id, subject, grade)
+    METHOD calculate_gpa(student_id)
+    METHOD generate_report_card(student_id)
+
+# Responsibility 3: Attendance only
+CLASS AttendanceTracker:
+    METHOD mark_attendance(student_id, date, present)
+    METHOD calculate_attendance_rate(student_id)
+    METHOD get_absent_students(date)
+
+# Responsibility 4: Payments only
+CLASS PaymentProcessor:
+    METHOD process_payment(student_id, amount, method)
+    METHOD generate_invoice(student_id)
+    METHOD get_payment_history(student_id)
+
+# Responsibility 5: Notifications only
+CLASS NotificationService:
+    METHOD send_email(recipient, subject, body)
+    METHOD send_sms(phone, message)
+    METHOD send_push_notification(device_token, message)
+
+# Responsibility 6: Coordinate between services
+CLASS StudentService:
+    PRIVATE student_repo: StudentRepository
+    PRIVATE grade_manager: GradeManager
+    PRIVATE attendance_tracker: AttendanceTracker
+    PRIVATE payment_processor: PaymentProcessor
+    PRIVATE notifier: NotificationService
+
+    METHOD enroll_new_student(name, age, email):
+        # Use specialized classes
+        student = student_repo.add_student(name, age, email)
+        notifier.send_welcome_email(student.email)
+        RETURN student
+
+    METHOD process_student_graduation(student_id):
+        student = student_repo.find_student(student_id)
+        gpa = grade_manager.calculate_gpa(student_id)
+        attendance = attendance_tracker.calculate_attendance_rate(student_id)
+
+        IF gpa &gt;= 2.0 AND attendance &gt;= 0.9:
+            # Student can graduate
+            payment_processor.generate_final_invoice(student_id)
+            notifier.send_graduation_notice(student.email)
+            RETURN true
+
+        RETURN false
+</code></pre></div>
+<h3 id="real-world-analogy-restaurant-staff">Real-World Analogy: Restaurant Staff</h3>
+<p><strong>"God Employee" Restaurant (Bad):</strong></p>
+<ul>
+<li>One employee who:</li>
+<li>Takes orders</li>
+<li>Cooks food</li>
+<li>Cleans tables</li>
+<li>Handles payments</li>
+<li>Manages inventory</li>
+<li>(Everything breaks if they get sick!)</li>
+</ul>
+<p><strong>SRP Restaurant (Good):</strong></p>
+<ul>
+<li><strong>Host:</strong> Greets and seats customers</li>
+<li><strong>Waiter:</strong> Takes orders and serves food</li>
+<li><strong>Chef:</strong> Cooks food</li>
+<li><strong>Cashier:</strong> Handles payments</li>
+<li><strong>Cleaner:</strong> Cleans tables</li>
+<li><strong>Manager:</strong> Coordinates everything</li>
+<li>(System works even if one person is absent)</li>
+</ul>
+<h3 id="srp-benefits">SRP Benefits:</h3>
+<ol>
+<li><strong>Easier to understand</strong> - Each class does one clear thing</li>
+<li><strong>Easier to test</strong> - Can test each responsibility separately</li>
+<li><strong>Easier to maintain</strong> - Changes affect only one area</li>
+<li><strong>Easier to reuse</strong> - Can use GradeManager in different systems</li>
+</ol>
+<h3 id="how-to-apply-srp">How to Apply SRP:</h3>
+<p>Ask: <strong>"What is this class's responsibility?"</strong></p>
+<ul>
+<li>If you use "and" in the answer → probably violating SRP</li>
+<li>"This class manages students <strong>and</strong> grades <strong>and</strong> attendance <strong>and</strong>..." → BAD</li>
+<li>"This class manages student data" → GOOD</li>
+</ul>
+<h3 id="srp-in-action-file-processing-example">SRP in Action: File Processing Example</h3>
+<div class="highlight"><pre><span></span><code># BAD: One class does everything
+CLASS FileProcessor:
+    METHOD read_file(path):
+        # Read file
+        content = READ_FILE(path)
+        RETURN content
+
+    METHOD parse_content(content):
+        # Parse content
+        data = PARSE_JSON(content)
+        RETURN data
+
+    METHOD validate_data(data):
+        # Validate data
+        IF data IS VALID:
+            RETURN true
+        RETURN false
+
+    METHOD save_to_database(data):
+        # Save to database
+        DATABASE.insert(data)
+
+    METHOD send_notification():
+        # Send notification
+        SEND_EMAIL(&quot;admin@example.com&quot;, &quot;File processed&quot;)
+
+    # This class has 5 responsibilities!
+
+# GOOD: Separate classes for each responsibility
+CLASS FileReader:
+    METHOD read_file(path):
+        RETURN READ_FILE(path)
+
+CLASS DataParser:
+    METHOD parse_json(content):
+        RETURN PARSE_JSON(content)
+
+    METHOD parse_csv(content):
+        RETURN PARSE_CSV(content)
+
+CLASS DataValidator:
+    METHOD validate(data, schema):
+        RETURN VALIDATE_AGAINST_SCHEMA(data, schema)
+
+CLASS DatabaseWriter:
+    METHOD insert(data, table):
+        DATABASE.insert(table, data)
+
+CLASS Notifier:
+    METHOD send_email(to, subject, body):
+        EMAIL_SERVICE.send(to, subject, body)
+
+# Coordinator class
+CLASS FileProcessingService:
+    PRIVATE reader: FileReader
+    PRIVATE parser: DataParser
+    PRIVATE validator: DataValidator
+    PRIVATE writer: DatabaseWriter
+    PRIVATE notifier: Notifier
+
+    METHOD process_file(path):
+        # Step 1: Read
+        content = reader.read_file(path)
+
+        # Step 2: Parse
+        data = parser.parse_json(content)
+
+        # Step 3: Validate
+        IF NOT validator.validate(data):
+            notifier.send_email(&quot;admin@example.com&quot;, &quot;Validation Failed&quot;, &quot;File invalid&quot;)
+            RETURN false
+
+        # Step 4: Save
+        writer.insert(data, &quot;files&quot;)
+
+        # Step 5: Notify
+        notifier.send_email(&quot;admin@example.com&quot;, &quot;File Processed&quot;, &quot;Success!&quot;)
+
+        RETURN true
+</code></pre></div>
+<h2 id="3-loose-coupling">3. Loose Coupling</h2>
+<h3 id="the-problem-tightly-coupled-spaghetti-code">The Problem: Tightly Coupled "Spaghetti Code"</h3>
+<p><strong>Tight Coupling Example:</strong></p>
+<div class="highlight"><pre><span></span><code># Classes are tightly bound together
+CLASS MySQLDatabase:
+    METHOD connect():
+        PRINT &quot;Connecting to MySQL...&quot;
+
+    METHOD query(sql):
+        PRINT &quot;Executing MySQL query: &quot; + sql
+
+CLASS ReportGenerator:
+    PRIVATE database: MySQLDatabase  # Direct dependency on MySQL
+
+    METHOD generate_report():
+        # Can ONLY work with MySQL
+        database.connect()
+        data = database.query(&quot;SELECT * FROM sales&quot;)
+        # Generate report...
+        PRINT &quot;Report generated using MySQL&quot;
+
+# Problem: What if we want to use PostgreSQL instead?
+# We have to CHANGE ReportGenerator class!
+# What if we want to test without a real database?
+# We CAN&#39;T - it&#39;s tightly coupled to MySQL!
+</code></pre></div>
+<h3 id="the-solution-loose-coupling">The Solution: Loose Coupling</h3>
+<p><strong>Loose Coupling Principle:</strong> <strong>Classes should depend on abstractions (interfaces) not concrete implementations.</strong></p>
+<p><strong>Loose Coupling Example:</strong></p>
+<div class="highlight"><pre><span></span><code># Step 1: Define an interface
+INTERFACE Database:
+    METHOD connect()
+    METHOD query(sql)
+
+# Step 2: Implement the interface for different databases
+CLASS MySQLDatabase IMPLEMENTS Database:
+    METHOD connect():
+        PRINT &quot;Connecting to MySQL...&quot;
+
+    METHOD query(sql):
+        PRINT &quot;Executing MySQL query: &quot; + sql
+        # Actual MySQL implementation
+
+CLASS PostgreSQLDatabase IMPLEMENTS Database:
+    METHOD connect():
+        PRINT &quot;Connecting to PostgreSQL...&quot;
+
+    METHOD query(sql):
+        PRINT &quot;Executing PostgreSQL query: &quot; + sql
+        # Actual PostgreSQL implementation
+
+# Step 3: For testing
+CLASS MockDatabase IMPLEMENTS Database:
+    METHOD connect():
+        PRINT &quot;Mock: Connected&quot;
+
+    METHOD query(sql):
+        PRINT &quot;Mock: Executed &quot; + sql
+        RETURN [{&quot;test&quot;: &quot;data&quot;}]  # Return test data
+
+# Step 4: ReportGenerator depends on INTERFACE, not implementation
+CLASS ReportGenerator:
+    PRIVATE database: Database  # Depends on interface!
+
+    METHOD INITIALIZE(db: Database):  # Accepts ANY Database
+        database = db
+
+    METHOD generate_report():
+        database.connect()
+        data = database.query(&quot;SELECT * FROM sales&quot;)
+        # Generate report...
+        PRINT &quot;Report generated&quot;
+
+# Usage - we can easily swap databases!
+mysql_db = NEW MySQLDatabase()
+postgres_db = NEW PostgreSQLDatabase()
+mock_db = NEW MockDatabase()
+
+# Same ReportGenerator works with ANY database
+report1 = NEW ReportGenerator(mysql_db)
+report1.generate_report()  # Uses MySQL
+
+report2 = NEW ReportGenerator(postgres_db)
+report2.generate_report()  # Uses PostgreSQL
+
+# For testing
+test_report = NEW ReportGenerator(mock_db)
+test_report.generate_report()  # Uses mock - no real database needed!
+</code></pre></div>
+<h3 id="real-world-analogy-power-adapters">Real-World Analogy: Power Adapters</h3>
+<p><strong>Tightly Coupled (Bad):</strong></p>
+<ul>
+<li>Your laptop charger is hardwired to one specific outlet type</li>
+<li>Travel to another country? Can't charge your laptop!</li>
+</ul>
+<p><strong>Loosely Coupled (Good):</strong></p>
+<ul>
+<li>Your laptop charger has a detachable cable</li>
+<li>Travel to another country? Just swap the plug adapter!</li>
+<li>The laptop doesn't care about the outlet type</li>
+</ul>
+<h3 id="loose-coupling-benefits">Loose Coupling Benefits:</h3>
+<ol>
+<li><strong>Flexibility</strong> - Easy to swap implementations</li>
+<li><strong>Testability</strong> - Can use mocks for testing</li>
+<li><strong>Maintainability</strong> - Changes in one class don't break others</li>
+<li><strong>Reusability</strong> - Components can be used in different contexts</li>
+</ol>
+<h3 id="dependency-injection-pattern">Dependency Injection Pattern</h3>
+<p>The most common way to achieve loose coupling is <strong>Dependency Injection</strong> - passing dependencies into a class rather than creating them inside.</p>
+<div class="highlight"><pre><span></span><code># BAD: Tight coupling - creates dependency inside
+CLASS OrderService:
+    PRIVATE payment_processor
+
+    METHOD INITIALIZE():
+        payment_processor = NEW PayPalProcessor()  # Hardcoded!
+        # Can&#39;t use Stripe without changing code!
+
+    METHOD process_order(amount):
+        payment_processor.charge(amount)
+
+# GOOD: Loose coupling - dependency injected
+CLASS OrderService:
+    PRIVATE payment_processor
+
+    METHOD INITIALIZE(processor: PaymentProcessor):  # Accepts interface
+        payment_processor = processor  # Injected from outside!
+
+    METHOD process_order(amount):
+        payment_processor.charge(amount)
+
+# Now we can inject ANY PaymentProcessor
+paypal_service = NEW OrderService(NEW PayPalProcessor())
+stripe_service = NEW OrderService(NEW StripeProcessor())
+test_service = NEW OrderService(NEW MockProcessor())  # For testing
+</code></pre></div>
+<h3 id="loose-coupling-in-action-notification-system">Loose Coupling in Action: Notification System</h3>
+<div class="highlight"><pre><span></span><code># Define interfaces
+INTERFACE MessageSender:
+    METHOD send(message, recipient)
+
+INTERFACE Logger:
+    METHOD log(message, level)
+
+# Concrete implementations
+CLASS EmailSender IMPLEMENTS MessageSender:
+    METHOD send(message, recipient):
+        PRINT &quot;Sending email to &quot; + recipient + &quot;: &quot; + message
+
+CLASS SMSSender IMPLEMENTS MessageSender:
+    METHOD send(message, recipient):
+        PRINT &quot;Sending SMS to &quot; + recipient + &quot;: &quot; + message
+
+CLASS FileLogger IMPLEMENTS Logger:
+    METHOD log(message, level):
+        PRINT &quot;[&quot; + level + &quot;] &quot; + message + &quot; (logged to file)&quot;
+
+CLASS ConsoleLogger IMPLEMENTS Logger:
+    METHOD log(message, level):
+        PRINT &quot;[&quot; + level + &quot;] &quot; + message
+
+# Service class with loose coupling
+CLASS NotificationService:
+    PRIVATE sender: MessageSender  # Depends on interface
+    PRIVATE logger: Logger         # Depends on interface
+
+    METHOD INITIALIZE(msg_sender: MessageSender, log: Logger):
+        sender = msg_sender
+        logger = log
+
+    METHOD notify_user(user, message):
+        logger.log(&quot;Notifying user: &quot; + user.name, &quot;INFO&quot;)
+
+        TRY:
+            sender.send(message, user.contact)
+            logger.log(&quot;Notification sent successfully&quot;, &quot;INFO&quot;)
+        CATCH error:
+            logger.log(&quot;Failed to send notification: &quot; + error, &quot;ERROR&quot;)
+
+# Usage - we can mix and match implementations!
+users = [NEW User(&quot;Alice&quot;, &quot;alice@email.com&quot;), NEW User(&quot;Bob&quot;, &quot;+1234567890&quot;)]
+
+# Scenario 1: Email notifications with file logging
+email_service = NEW NotificationService(
+    NEW EmailSender(),
+    NEW FileLogger()
+)
+
+# Scenario 2: SMS notifications with console logging
+sms_service = NEW NotificationService(
+    NEW SMSSender(),
+    NEW ConsoleLogger()
+)
+
+# Scenario 3: For testing - mock implementations
+mock_service = NEW NotificationService(
+    NEW MockSender(),
+    NEW MockLogger()
+)
+
+# All work with the same NotificationService class!
+</code></pre></div>
+<h2 id="putting-it-all-together-a-complete-example">Putting It All Together: A Complete Example</h2>
+<p>Let's build a simple library system using all three principles:</p>
+<div class="highlight"><pre><span></span><code># ========== DRY: Reusable Components ==========
+
+# Reusable validation (DRY)
+CLASS ValidationUtils:
+    STATIC METHOD is_valid_isbn(isbn):
+        # ISBN validation logic in ONE place
+        RETURN LENGTH(isbn) == 10 OR LENGTH(isbn) == 13
+
+    STATIC METHOD is_valid_email(email):
+        # Email validation logic in ONE place
+        RETURN email CONTAINS &quot;@&quot; AND email CONTAINS &quot;.&quot;
+
+    STATIC METHOD is_within_range(value, min, max):
+        # Range check logic in ONE place
+        RETURN value &gt;= min AND value &lt;= max
+
+# Reusable date utilities (DRY)
+CLASS DateUtils:
+    STATIC METHOD get_due_date(days_from_now):
+        today = CURRENT_DATE()
+        RETURN ADD_DAYS(today, days_from_now)
+
+    STATIC METHOD is_overdue(due_date):
+        RETURN CURRENT_DATE() &gt; due_date
+
+# ========== SRP: Single Responsibility Classes ==========
+
+# Book entity - only manages book data
+CLASS Book:
+    PRIVATE isbn
+    PRIVATE title
+    PRIVATE author
+    PRIVATE is_available
+
+    METHOD INITIALIZE(book_isbn, book_title, book_author):
+        IF NOT ValidationUtils.is_valid_isbn(book_isbn):
+            ERROR &quot;Invalid ISBN&quot;
+        isbn = book_isbn
+        title = book_title
+        author = book_author
+        is_available = true
+
+# Member entity - only manages member data
+CLASS Member:
+    PRIVATE member_id
+    PRIVATE name
+    PRIVATE email
+    PRIVATE join_date
+
+    METHOD INITIALIZE(id, member_name, member_email):
+        IF NOT ValidationUtils.is_valid_email(member_email):
+            ERROR &quot;Invalid email&quot;
+        member_id = id
+        name = member_name
+        email = member_email
+        join_date = CURRENT_DATE()
+
+# Loan entity - only manages loan data
+CLASS Loan:
+    PRIVATE loan_id
+    PRIVATE book
+    PRIVATE member
+    PRIVATE borrow_date
+    PRIVATE due_date
+    PRIVATE returned_date
+
+    METHOD INITIALIZE(loan_id, loan_book, loan_member, loan_duration_days):
+        loan_id = loan_id
+        book = loan_book
+        member = loan_member
+        borrow_date = CURRENT_DATE()
+        due_date = DateUtils.get_due_date(loan_duration_days)
+        returned_date = null
+
+# ========== LOOSE COUPLING: Interfaces and Dependency Injection ==========
+
+# Repository interfaces
+INTERFACE BookRepository:
+    METHOD save(book)
+    METHOD find_by_isbn(isbn)
+    METHOD find_all_available()
+
+INTERFACE MemberRepository:
+    METHOD save(member)
+    METHOD find_by_id(member_id)
+    METHOD find_by_email(email)
+
+INTERFACE LoanRepository:
+    METHOD save(loan)
+    METHOD find_active_loans_by_member(member_id)
+    METHOD find_overdue_loans()
+
+# Notification interface
+INTERFACE Notifier:
+    METHOD send_overdue_notification(loan)
+    METHOD send_reminder(loan, days_before_due)
+
+# Concrete implementations (could be swapped)
+CLASS InMemoryBookRepository IMPLEMENTS BookRepository:
+    # Implementation using memory...
+
+CLASS DatabaseBookRepository IMPLEMENTS BookRepository:
+    # Implementation using database...
+
+CLASS EmailNotifier IMPLEMENTS Notifier:
+    METHOD send_overdue_notification(loan):
+        PRINT &quot;Email sent to &quot; + loan.member.email + &quot;: Book overdue!&quot;
+
+    METHOD send_reminder(loan, days_before_due):
+        PRINT &quot;Reminder email sent for book due in &quot; + days_before_due + &quot; days&quot;
+
+# ========== MAIN SERVICE: Coordinating with loose coupling ==========
+
+CLASS LibraryService:
+    PRIVATE book_repo: BookRepository
+    PRIVATE member_repo: MemberRepository
+    PRIVATE loan_repo: LoanRepository
+    PRIVATE notifier: Notifier
+
+    # Dependency Injection: All dependencies provided from outside
+    METHOD INITIALIZE(books: BookRepository, members: MemberRepository,
+                     loans: LoanRepository, notification: Notifier):
+        book_repo = books
+        member_repo = members
+        loan_repo = loans
+        notifier = notification
+
+    # SRP: This service coordinates, doesn&#39;t do everything itself
+    METHOD borrow_book(member_id, isbn, duration_days = 14):
+        # Step 1: Find book
+        book = book_repo.find_by_isbn(isbn)
+        IF book == null OR NOT book.is_available:
+            RETURN &quot;Book not available&quot;
+
+        # Step 2: Find member
+        member = member_repo.find_by_id(member_id)
+        IF member == null:
+            RETURN &quot;Member not found&quot;
+
+        # Step 3: Check if member has too many loans (DRY: using utility)
+        active_loans = loan_repo.find_active_loans_by_member(member_id)
+        IF LENGTH(active_loans) &gt;= 5:  # Max 5 books
+            RETURN &quot;Maximum loans reached&quot;
+
+        # Step 4: Create loan
+        loan = NEW Loan(GENERATE_ID(), book, member, duration_days)
+        loan_repo.save(loan)
+
+        # Step 5: Update book status
+        book.is_available = false
+        book_repo.save(book)
+
+        # Step 6: Send reminder (loose coupling via interface)
+        notifier.send_reminder(loan, 3)  # Remind 3 days before due
+
+        RETURN &quot;Book borrowed successfully. Due: &quot; + loan.due_date
+
+    METHOD return_book(loan_id):
+        # Similar coordinated process...
+        # Returns book, updates status, checks for overdue fees
+
+    METHOD check_overdue_books():
+        overdue_loans = loan_repo.find_overdue_loans()
+        FOR loan IN overdue_loans:
+            # Loose coupling: notifier could be email, SMS, etc.
+            notifier.send_overdue_notification(loan)
+        RETURN LENGTH(overdue_loans)
+
+# ========== USAGE ==========
+
+# For production: Use real implementations
+production_service = NEW LibraryService(
+    NEW DatabaseBookRepository(),
+    NEW DatabaseMemberRepository(),
+    NEW DatabaseLoanRepository(),
+    NEW EmailNotifier()
+)
+
+# For testing: Use mock implementations
+test_service = NEW LibraryService(
+    NEW MockBookRepository(),
+    NEW MockMemberRepository(),
+    NEW MockLoanRepository(),
+    NEW MockNotifier()
+)
+
+# For in-memory demo (e.g., web demo)
+demo_service = NEW LibraryService(
+    NEW InMemoryBookRepository(),
+    NEW InMemoryMemberRepository(),
+    NEW InMemoryLoanRepository(),
+    NEW ConsoleNotifier()  # Just prints to console
+)
+</code></pre></div>
+<h2 id="quick-reference-guide">Quick Reference Guide</h2>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Bad Smell (What to Avoid)</th>
+<th>Good Practice (What to Do)</th>
+<th>Simple Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DRY</strong></td>
+<td>Same code in multiple places</td>
+<td>Extract to reusable method/class</td>
+<td>"Would I need to change this in more than one place?"</td>
+</tr>
+<tr>
+<td><strong>SRP</strong></td>
+<td>Class doing many unrelated things</td>
+<td>One responsibility per class</td>
+<td>"Can I describe the class's purpose without using 'and'?"</td>
+</tr>
+<tr>
+<td><strong>Loose Coupling</strong></td>
+<td>Direct instantiation of dependencies</td>
+<td>Depend on interfaces, inject dependencies</td>
+<td>"Can I swap implementations without changing this class?"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-anti-patterns-to-avoid">Common Anti-Patterns to Avoid</h2>
+<h3 id="1-the-swiss-army-knife-class">1. The "Swiss Army Knife" Class</h3>
+<div class="highlight"><pre><span></span><code># ANTI-PATTERN: One class that does everything
+CLASS Utility:
+    METHOD calculate_tax(amount)
+    METHOD format_date(date)
+    METHOD validate_email(email)
+    METHOD encrypt_password(password)
+    METHOD generate_report(data)
+    METHOD send_email(to, message)
+    # ... and 50 more methods!
+
+# SOLUTION: Separate specialized classes
+CLASS TaxCalculator
+CLASS DateFormatter
+CLASS EmailValidator
+CLASS PasswordEncryptor
+CLASS ReportGenerator
+CLASS EmailSender
+</code></pre></div>
+<h3 id="2-the-copy-paste-programmer">2. The "Copy-Paste Programmer"</h3>
+<div class="highlight"><pre><span></span><code># ANTI-PATTERN: Copying code instead of reusing
+# File: StudentService.pseudo
+METHOD calculate_gpa(student_id):
+    # 20 lines of GPA calculation
+
+# File: ReportService.pseudo
+METHOD calculate_gpa(student_id):
+    # Same 20 lines copied!
+
+# File: AnalyticsService.pseudo
+METHOD calculate_gpa(student_id):
+    # Same 20 lines copied again!
+
+# SOLUTION: Extract to common service
+CLASS GradeService:
+    METHOD calculate_gpa(student_id):
+        # One implementation used by all
+</code></pre></div>
+<h3 id="3-the-concrete-prison">3. The "Concrete Prison"</h3>
+<div class="highlight"><pre><span></span><code># ANTI-PATTERN: Hardcoded dependencies
+CLASS PaymentService:
+    METHOD process_payment():
+        # Can ONLY use Stripe
+        processor = NEW StripeProcessor()
+        processor.charge()
+
+# SOLUTION: Use interfaces and dependency injection
+INTERFACE PaymentProcessor:
+    METHOD charge(amount)
+
+CLASS PaymentService:
+    METHOD INITIALIZE(processor: PaymentProcessor):
+        # Can use ANY processor
+        self.processor = processor
+</code></pre></div>
+<h2 id="practice-exercise-e-commerce-system-refactor">Practice Exercise: E-commerce System Refactor</h2>
+<p>Refactor this poorly designed e-commerce code using DRY, SRP, and Loose Coupling principles:</p>
+<div class="highlight"><pre><span></span><code># POORLY DESIGNED CODE - REFACTOR THIS!
+
+CLASS ECommerceSystem:
+    # Violates SRP: Does everything!
+    # Violates DRY: Duplicate validation/logic
+    # Violates Loose Coupling: Hardcoded dependencies
+
+    METHOD process_order(order_data):
+        # Validate order
+        IF order_data.customer_email DOES NOT CONTAIN &quot;@&quot;:
+            PRINT &quot;Invalid email&quot;
+            RETURN
+
+        # Calculate tax (duplicated elsewhere)
+        tax = order_data.subtotal * 0.08
+
+        # Process payment (hardcoded to PayPal)
+        PRINT &quot;Processing PayPal payment...&quot;
+        # PayPal specific code...
+
+        # Update inventory (duplicated logic)
+        FOR item IN order_data.items:
+            # Inventory update logic...
+            PRINT &quot;Updating inventory for &quot; + item.name
+
+        # Send confirmation email
+        PRINT &quot;Sending email to &quot; + order_data.customer_email
+        # Email sending code...
+
+        # Generate invoice
+        invoice_number = &quot;INV-&quot; + GENERATE_RANDOM_NUMBER()
+        PRINT &quot;Invoice generated: &quot; + invoice_number
+
+        # Log transaction
+        PRINT &quot;Logging transaction...&quot;
+        # Logging code...
+
+        RETURN &quot;Order processed&quot;
+
+    # More methods that do even more things...
+    METHOD generate_sales_report():
+        # Also calculates tax, sends emails, etc.
+        pass
+
+    METHOD handle_refund():
+        # Also validates, sends emails, etc.
+        pass
+</code></pre></div>
+<p><strong>Your Task:</strong> Refactor this into a well-designed system with:</p>
+<ol>
+<li><strong>DRY:</strong> Extract duplicate calculations and validations</li>
+<li><strong>SRP:</strong> Separate into focused classes</li>
+<li><strong>Loose Coupling:</strong> Use interfaces for payment, email, logging</li>
+</ol>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Create separate classes: <code>OrderValidator</code>, <code>TaxCalculator</code>, <code>PaymentProcessor</code>, <code>InventoryManager</code>, <code>EmailService</code>, <code>InvoiceGenerator</code>, <code>Logger</code></li>
+<li>Define interfaces: <code>PaymentGateway</code>, <code>NotificationService</code></li>
+<li>Create a coordinating <code>OrderService</code> that uses these components</li>
+</ul>
+<h2 id="quick-check">Quick Check</h2>
+<ol>
+<li>
+<p><strong>What does DRY stand for and why is it important?</strong></p>
+</li>
+<li>
+<p>Don't Repeat Yourself. Important because changes need to be made in only one place.</p>
+</li>
+<li>
+<p><strong>What's the "one reason to change" in SRP?</strong></p>
+</li>
+<li>
+<p>A class should have only one responsibility, so it only changes when that responsibility's requirements change.</p>
+</li>
+<li>
+<p><strong>How does loose coupling make testing easier?</strong></p>
+</li>
+<li>
+<p>You can replace real dependencies with mock objects for testing.</p>
+</li>
+<li>
+<p><strong>What's the difference between tight and loose coupling?</strong></p>
+</li>
+<li>
+<p>Tight coupling: Classes directly depend on concrete implementations</p>
+</li>
+<li>
+<p>Loose coupling: Classes depend on abstractions/interfaces</p>
+</li>
+<li>
+<p><strong>Which principle is violated when you copy-paste code?</strong></p>
+</li>
+<li>
+<p>DRY (Don't Repeat Yourself)</p>
+</li>
+<li>
+<p><strong>What question helps identify SRP violations?</strong></p>
+</li>
+<li>
+<p>"Can I describe what this class does without using the word 'and'?"</p>
+</li>
+<li>
+<p><strong>How does dependency injection help with loose coupling?</strong></p>
+</li>
+<li>
+<p>Dependencies are provided from outside, so implementations can be easily swapped.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Next Chapter:</strong> <a href="./part4/chapter4-1.md">Part 4: From Design to Patterns</a> where we'll explore design patterns like Singleton, Observer, and Factory!</p>
+<blockquote>
+<p><strong>Key Insight:</strong> These three principles work together like a well-oiled machine. DRY keeps your code concise, SRP keeps it organized, and Loose Coupling keeps it flexible. Mastering these principles will transform you from a coder who writes working software to a designer who creates maintainable, scalable systems. Remember: good design isn't about making code work—it's about making code easy to change.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reject</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

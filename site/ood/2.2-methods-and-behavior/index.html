@@ -1,0 +1,3344 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Advanced Computer Science Educational Platform">
+      
+      
+      
+        <link rel="canonical" href="https://yourdomain.com/ood/2.2-methods-and-behavior/">
+      
+      
+        <link rel="prev" href="../2.1-attributes-and-states/">
+      
+      
+        <link rel="next" href="../2.3-constructors/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Methods & Behavior - CS Advanced Topics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-22-methods-behavior-what-objects-can-do" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CS Advanced Topics" class="md-header__button md-logo" aria-label="CS Advanced Topics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS Advanced Topics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Methods & Behavior
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="w3schools" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0.0-index/" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../oop-cpp/" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design in C++
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../oop-python/0.0-index.md" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design in Python
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CS Advanced Topics" class="md-nav__button md-logo" aria-label="CS Advanced Topics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CS Advanced Topics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.0-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thinking in Objects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Thinking in Objects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1-the-world-is-made-of-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The World is Made of Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-the-four-superpowers-of-ood/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Four Superpowers of OOD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Building Blocks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Building Blocks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-attributes-and-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attributes and States
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods & Behavior
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods & Behavior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-objects-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Objects in Action
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction: Objects in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-a-smartphone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: A Smartphone
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Methods?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-method-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Method Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-accessor-methods-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Accessor Methods (Getters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mutator-methods-setters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mutator Methods (Setters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-query-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Query Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-action-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Action Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-factory-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Factory Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-parameters-and-return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Parameters and Return Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method Parameters and Return Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters-input-to-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters: Input to Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-values-output-from-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return Values: Output from Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-this-or-self-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The this or self Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-visibility-public-vs-private" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Visibility: Public vs Private
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-social-media-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Social Media Post
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-game-character-with-combat-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Game Character with Combat Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-online-shopping-cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Online Shopping Cart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-overloading-and-overriding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Overloading and Overriding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method Overloading and Overriding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-overloading-same-class-different-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Overloading (Same class, different parameters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-overriding-different-classes-same-method-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Overriding (Different classes, same method signature)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices for Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-single-responsibility-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Single Responsibility Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-meaningful-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Meaningful Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-appropriate-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Appropriate Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-consistent-return-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Consistent Return Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-builder-pattern-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Builder Pattern Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fluent Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise-library-management-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercise: Library Management System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-constructors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-relationships-between-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships Between Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Designing Robust Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Designing Robust Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3-key-design-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Design to Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    From Design to Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Special Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-beyond-the-basics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beyond the Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/01-classes-and-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/02-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/03-polymorphism.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/04-encapsulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/05-abstraction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/06-design-patterns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design in Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design in Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/0.0-index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/01-classes-and-objects.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/02-inheritance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/03-polymorphism.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/04-encapsulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/05-abstraction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/06-design-patterns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-objects-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Objects in Action
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction: Objects in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-world-analogy-a-smartphone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Analogy: A Smartphone
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Methods?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-method-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Method Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-accessor-methods-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Accessor Methods (Getters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mutator-methods-setters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mutator Methods (Setters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-query-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Query Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-action-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Action Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-factory-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Factory Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-parameters-and-return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Parameters and Return Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method Parameters and Return Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters-input-to-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters: Input to Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-values-output-from-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return Values: Output from Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-this-or-self-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The this or self Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-visibility-public-vs-private" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Visibility: Public vs Private
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-social-media-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Social Media Post
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-game-character-with-combat-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Game Character with Combat Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-online-shopping-cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Online Shopping Cart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-overloading-and-overriding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Overloading and Overriding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method Overloading and Overriding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-overloading-same-class-different-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Overloading (Same class, different parameters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-overriding-different-classes-same-method-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method Overriding (Different classes, same method signature)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices for Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-single-responsibility-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Single Responsibility Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-meaningful-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Meaningful Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-appropriate-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Appropriate Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-consistent-return-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Consistent Return Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-builder-pattern-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Builder Pattern Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fluent Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise-library-management-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercise: Library Management System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-22-methods-behavior-what-objects-can-do">Chapter 2.2: Methods &amp; Behavior - What Objects Can Do</h1>
+<h2 id="introduction-objects-in-action">Introduction: Objects in Action</h2>
+<p>If attributes are <strong>what an object is</strong>, then methods are <strong>what an object does</strong>. Methods define the behaviors and capabilities of objects. They're the actions objects can perform, often using or modifying their internal state.</p>
+<h3 id="real-world-analogy-a-smartphone">Real-World Analogy: A Smartphone</h3>
+<p>Your smartphone has:</p>
+<ul>
+<li><strong>Attributes (State):</strong> Battery percentage, storage used, brightness level</li>
+<li><strong>Methods (Behavior):</strong> <code>make_call()</code>, <code>take_photo()</code>, <code>play_music()</code>, <code>send_message()</code></li>
+</ul>
+<p>Methods make objects useful. A car with only attributes (color, model, fuel level) isn't very useful until it can <code>accelerate()</code>, <code>brake()</code>, and <code>turn()</code>.</p>
+<h2 id="what-are-methods">What Are Methods?</h2>
+<p><strong>Methods</strong> are functions defined inside a class that describe the behaviors of objects created from that class. They can:</p>
+<ol>
+<li>Use the object's attributes</li>
+<li>Modify the object's state</li>
+<li>Return values</li>
+<li>Interact with other objects</li>
+<li>Perform calculations or operations</li>
+</ol>
+<h2 id="basic-method-structure">Basic Method Structure</h2>
+<div class="highlight"><pre><span></span><code>CLASS ClassName:
+    # Attributes here...
+
+    # Method definition
+    METHOD method_name(parameter1, parameter2, ...):
+        # Method body - what the method does
+        # Can use object&#39;s attributes
+        # Can use parameters
+        # Optionally return a value
+</code></pre></div>
+<h2 id="types-of-methods">Types of Methods</h2>
+<h3 id="1-accessor-methods-getters">1. Accessor Methods (Getters)</h3>
+<p>Methods that <strong>read</strong> or <strong>return</strong> attribute values without modifying them.</p>
+<div class="highlight"><pre><span></span><code>CLASS BankAccount:
+    PRIVATE balance
+    PRIVATE account_holder
+
+    # Getter methods - return attribute values
+    METHOD get_balance():
+        RETURN balance
+
+    METHOD get_account_holder():
+        RETURN account_holder
+
+    METHOD get_account_summary():
+        # Returns formatted information
+        RETURN &quot;Account Holder: &quot; + account_holder + &quot;\n&quot; +
+               &quot;Balance: $&quot; + balance
+</code></pre></div>
+<h3 id="2-mutator-methods-setters">2. Mutator Methods (Setters)</h3>
+<p>Methods that <strong>modify</strong> or <strong>update</strong> attribute values.</p>
+<div class="highlight"><pre><span></span><code>CLASS Student:
+    PRIVATE name
+    PRIVATE grade
+    PRIVATE attendance
+
+    # Setter methods - modify attributes
+    METHOD set_name(new_name):
+        IF LENGTH(new_name) &gt; 0:
+            name = new_name
+
+    METHOD update_grade(new_grade):
+        IF new_grade IN [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;F&quot;]:
+            grade = new_grade
+
+    METHOD mark_attendance(present):
+        IF present == true:
+            attendance = attendance + 1
+</code></pre></div>
+<h3 id="3-query-methods">3. Query Methods</h3>
+<p>Methods that ask questions about the object's state and return boolean answers.</p>
+<div class="highlight"><pre><span></span><code>CLASS Email:
+    PRIVATE is_read
+    PRIVATE is_important
+    PRIVATE has_attachment
+
+    # Query methods - return true/false
+    METHOD is_unread():
+        RETURN NOT is_read
+
+    METHOD requires_action():
+        RETURN is_important OR has_attachment
+
+    METHOD can_be_deleted():
+        RETURN NOT is_important AND is_read
+</code></pre></div>
+<h3 id="4-action-methods">4. Action Methods</h3>
+<p>Methods that perform significant operations, often involving multiple steps.</p>
+<div class="highlight"><pre><span></span><code>CLASS CoffeeMachine:
+    PRIVATE water_level
+    PRIVATE coffee_beans
+    PRIVATE is_on
+
+    # Action method - complex operation
+    METHOD make_coffee(coffee_type):
+        IF NOT is_on:
+            PRINT &quot;Please turn on the machine first&quot;
+            RETURN
+
+        IF water_level &lt; 1:
+            PRINT &quot;Add water&quot;
+            RETURN
+
+        IF coffee_beans &lt; 10:
+            PRINT &quot;Add coffee beans&quot;
+            RETURN
+
+        # Complex coffee-making process
+        heat_water()
+        grind_beans()
+        brew_coffee(coffee_type)
+        serve_coffee()
+
+        # Update state
+        water_level = water_level - 1
+        coffee_beans = coffee_beans - 10
+
+        PRINT coffee_type + &quot; is ready!&quot;
+</code></pre></div>
+<h3 id="5-factory-methods">5. Factory Methods</h3>
+<p>Methods that create and return new objects.</p>
+<div class="highlight"><pre><span></span><code>CLASS ShoppingCart:
+    PRIVATE items
+
+    # Factory method - creates related objects
+    METHOD create_order():
+        order = NEW Order()
+        order.items = COPY(items)
+        order.total = calculate_total()
+        order.status = &quot;pending&quot;
+        RETURN order
+
+    METHOD add_product(product_name, price):
+        product = NEW Product()
+        product.name = product_name
+        product.price = price
+        ADD product TO items
+</code></pre></div>
+<h2 id="method-parameters-and-return-values">Method Parameters and Return Values</h2>
+<h3 id="parameters-input-to-methods">Parameters: Input to Methods</h3>
+<div class="highlight"><pre><span></span><code>CLASS Calculator:
+    METHOD add(a, b):
+        RETURN a + b
+
+    METHOD multiply(a, b):
+        RETURN a * b
+
+    # Multiple parameters
+    METHOD calculate_discount(price, discount_percentage, is_member):
+        discount = price * (discount_percentage / 100)
+        IF is_member:
+            discount = discount * 1.1  # Extra 10% for members
+        RETURN price - discount
+</code></pre></div>
+<h3 id="return-values-output-from-methods">Return Values: Output from Methods</h3>
+<div class="highlight"><pre><span></span><code>CLASS WeatherStation:
+    PRIVATE temperature
+    PRIVATE humidity
+
+    METHOD get_temperature_in_celsius():
+        RETURN temperature
+
+    METHOD get_temperature_in_fahrenheit():
+        RETURN (temperature * 9/5) + 32
+
+    METHOD get_weather_summary():
+        IF temperature &gt; 30:
+            feeling = &quot;hot&quot;
+        ELSE IF temperature &lt; 10:
+            feeling = &quot;cold&quot;
+        ELSE:
+            feeling = &quot;pleasant&quot;
+
+        RETURN &quot;It&#39;s &quot; + feeling + &quot; with &quot; + humidity + &quot;% humidity&quot;
+
+    # Can return different types
+    METHOD get_all_metrics():
+        RETURN {
+            &quot;temp_c&quot;: temperature,
+            &quot;temp_f&quot;: get_temperature_in_fahrenheit(),
+            &quot;humidity&quot;: humidity,
+            &quot;summary&quot;: get_weather_summary()
+        }
+</code></pre></div>
+<h2 id="the-this-or-self-reference">The <code>this</code> or <code>self</code> Reference</h2>
+<p>Inside methods, we often need to refer to the current object's attributes. Different languages use <code>this</code>, <code>self</code>, or implicit references.</p>
+<div class="highlight"><pre><span></span><code># Explicit reference (like Java&#39;s &#39;this&#39;)
+CLASS Student:
+    PRIVATE name
+
+    METHOD set_name(name):
+        this.name = name  # &#39;this&#39; refers to the current object
+        # Distinguishes attribute &#39;name&#39; from parameter &#39;name&#39;
+
+# Implicit reference (like Python&#39;s &#39;self&#39;)
+CLASS Student:
+    PRIVATE name
+
+    METHOD set_name(name):
+        self.name = name  # &#39;self&#39; refers to the current object
+
+# In our pseudo-code, we&#39;ll use implicit attribute access
+CLASS Student:
+    PRIVATE name
+
+    METHOD set_name(new_name):
+        name = new_name  # &#39;name&#39; refers to the attribute
+        # Since we&#39;re inside the class, it&#39;s clear
+</code></pre></div>
+<h2 id="method-visibility-public-vs-private">Method Visibility: Public vs Private</h2>
+<p>Just like attributes, methods can be public (accessible from anywhere) or private (only accessible within the class).</p>
+<div class="highlight"><pre><span></span><code>CLASS UserAccount:
+    PRIVATE password_hash
+    PRIVATE failed_login_attempts
+
+    # Public methods - interface to the world
+    PUBLIC METHOD login(username, password):
+        IF verify_password(password):
+            failed_login_attempts = 0
+            RETURN true
+        ELSE:
+            failed_login_attempts = failed_login_attempts + 1
+            IF failed_login_attempts &gt;= 3:
+                lock_account()
+            RETURN false
+
+    PUBLIC METHOD change_password(old_password, new_password):
+        IF verify_password(old_password):
+            set_password(new_password)
+            RETURN true
+        RETURN false
+
+    # Private methods - internal implementation details
+    PRIVATE METHOD verify_password(input_password):
+        RETURN hash(input_password) == password_hash
+
+    PRIVATE METHOD set_password(new_password):
+        password_hash = hash(new_password)
+
+    PRIVATE METHOD lock_account():
+        # Implementation details hidden
+        # Send email, log event, etc.
+</code></pre></div>
+<h2 id="practical-examples">Practical Examples</h2>
+<h3 id="example-1-social-media-post">Example 1: Social Media Post</h3>
+<div class="highlight"><pre><span></span><code>CLASS SocialMediaPost:
+    PRIVATE content
+    PRIVATE author
+    PRIVATE likes_count
+    PRIVATE comments: List
+    PRIVATE timestamp
+
+    # Constructor
+    METHOD INITIALIZE(post_content, post_author):
+        content = post_content
+        author = post_author
+        likes_count = 0
+        comments = []
+        timestamp = CURRENT_TIME()
+
+    # Action methods
+    METHOD like():
+        likes_count = likes_count + 1
+        PRINT author + &quot;&#39;s post got a like! Total: &quot; + likes_count
+
+    METHOD add_comment(comment_text, commenter):
+        comment = {
+            &quot;text&quot;: comment_text,
+            &quot;author&quot;: commenter,
+            &quot;time&quot;: CURRENT_TIME()
+        }
+        ADD comment TO comments
+        PRINT commenter + &quot; commented: &quot; + comment_text
+
+    METHOD edit_content(new_content):
+        old_content = content
+        content = new_content
+        PRINT &quot;Post updated from: &quot; + old_content + &quot; to: &quot; + new_content
+
+    # Query methods
+    METHOD get_likes_count():
+        RETURN likes_count
+
+    METHOD has_comments():
+        RETURN LENGTH(comments) &gt; 0
+
+    METHOD is_popular():
+        RETURN likes_count &gt; 100 OR LENGTH(comments) &gt; 20
+
+    # Utility methods
+    METHOD display_post():
+        PRINT &quot;Author: &quot; + author
+        PRINT &quot;Time: &quot; + timestamp
+        PRINT &quot;Content: &quot; + content
+        PRINT &quot;Likes: &quot; + likes_count
+        PRINT &quot;Comments: &quot; + LENGTH(comments)
+        PRINT &quot;---&quot;
+
+    METHOD get_engagement_ratio():
+        total_engagement = likes_count + LENGTH(comments)
+        # Assuming content length as proxy for &quot;effort&quot;
+        RETURN total_engagement / LENGTH(content)
+</code></pre></div>
+<h3 id="example-2-game-character-with-combat-methods">Example 2: Game Character with Combat Methods</h3>
+<div class="highlight"><pre><span></span><code>CLASS GameCharacter:
+    PRIVATE name
+    PRIVATE health
+    PRIVATE mana
+    PRIVATE level
+    PRIVATE inventory: Map  # item -&gt; count
+    PRIVATE equipped_weapon
+
+    # Combat methods
+    METHOD attack(target):
+        IF health &lt;= 0:
+            PRINT name + &quot; is defeated and cannot attack!&quot;
+            RETURN 0
+
+        base_damage = 10 + (level * 2)
+
+        # Weapon bonus
+        IF equipped_weapon != null:
+            base_damage = base_damage + equipped_weapon.damage
+
+        # Critical hit chance
+        IF RANDOM(1, 100) &lt;= (level * 2):  # Higher level = more crit chance
+            base_damage = base_damage * 1.5
+            PRINT &quot;Critical hit!&quot;
+
+        target.take_damage(base_damage)
+        PRINT name + &quot; attacks &quot; + target.name + &quot; for &quot; + base_damage + &quot; damage!&quot;
+
+        RETURN base_damage
+
+    METHOD take_damage(amount):
+        health = health - amount
+        IF health &lt;= 0:
+            health = 0
+            PRINT name + &quot; has been defeated!&quot;
+        ELSE:
+            PRINT name + &quot; has &quot; + health + &quot; health remaining&quot;
+
+    METHOD heal(amount):
+        max_health = 100 + (level * 20)
+        old_health = health
+        health = MIN(health + amount, max_health)
+        healed = health - old_health
+        PRINT name + &quot; healed for &quot; + healed + &quot; health&quot;
+        RETURN healed
+
+    # Inventory management methods
+    METHOD use_item(item_name):
+        IF inventory.CONTAINS_KEY(item_name) AND inventory[item_name] &gt; 0:
+            inventory[item_name] = inventory[item_name] - 1
+
+            IF item_name == &quot;health_potion&quot;:
+                heal(50)
+            ELSE IF item_name == &quot;mana_potion&quot;:
+                mana = MIN(mana + 30, 100 + (level * 10))
+            ELSE IF item_name == &quot;strength_potion&quot;:
+                # Temporary buff - would need buff system
+                PRINT name + &quot; feels stronger!&quot;
+
+            PRINT &quot;Used &quot; + item_name
+        ELSE:
+            PRINT &quot;Don&#39;t have &quot; + item_name
+
+    METHOD equip_weapon(weapon_name):
+        IF inventory.CONTAINS_KEY(weapon_name) AND inventory[weapon_name] &gt; 0:
+            IF equipped_weapon != null:
+                # Put old weapon back in inventory
+                inventory[equipped_weapon.name] = inventory[equipped_weapon.name] + 1
+
+            equipped_weapon = GET_WEapon_OBJECT(weapon_name)
+            inventory[weapon_name] = inventory[weapon_name] - 1
+            PRINT name + &quot; equipped &quot; + weapon_name
+        ELSE:
+            PRINT &quot;Cannot find &quot; + weapon_name
+
+    # Utility methods
+    METHOD get_status():
+        RETURN {
+            &quot;name&quot;: name,
+            &quot;health&quot;: health + &quot;/&quot; + (100 + (level * 20)),
+            &quot;mana&quot;: mana + &quot;/&quot; + (50 + (level * 10)),
+            &quot;level&quot;: level,
+            &quot;weapon&quot;: IF equipped_weapon != null THEN equipped_weapon.name ELSE &quot;None&quot;
+        }
+
+    METHOD is_alive():
+        RETURN health &gt; 0
+</code></pre></div>
+<h3 id="example-3-online-shopping-cart">Example 3: Online Shopping Cart</h3>
+<div class="highlight"><pre><span></span><code>CLASS ShoppingCart:
+    PRIVATE items: List  # List of {product, quantity, price}
+    PRIVATE discount_code
+    PRIVATE tax_rate
+    PRIVATE is_checked_out
+
+    # Constructor
+    METHOD INITIALIZE():
+        items = []
+        discount_code = &quot;&quot;
+        tax_rate = 0.08  # 8% tax
+        is_checked_out = false
+
+    # Core shopping methods
+    METHOD add_item(product, quantity = 1):
+        IF is_checked_out:
+            PRINT &quot;Cannot add items after checkout&quot;
+            RETURN
+
+        # Check if product already in cart
+        FOR item IN items:
+            IF item.product.id == product.id:
+                item.quantity = item.quantity + quantity
+                PRINT &quot;Updated &quot; + product.name + &quot; to &quot; + item.quantity + &quot; units&quot;
+                RETURN
+
+        # Add new item
+        new_item = {
+            &quot;product&quot;: product,
+            &quot;quantity&quot;: quantity,
+            &quot;price&quot;: product.price
+        }
+        ADD new_item TO items
+        PRINT &quot;Added &quot; + quantity + &quot; × &quot; + product.name + &quot; to cart&quot;
+
+    METHOD remove_item(product_id, quantity = 1):
+        IF is_checked_out:
+            PRINT &quot;Cannot remove items after checkout&quot;
+            RETURN
+
+        FOR item IN items:
+            IF item.product.id == product_id:
+                IF quantity &gt;= item.quantity:
+                    REMOVE item FROM items
+                    PRINT &quot;Removed &quot; + item.product.name + &quot; from cart&quot;
+                ELSE:
+                    item.quantity = item.quantity - quantity
+                    PRINT &quot;Reduced &quot; + item.product.name + &quot; to &quot; + item.quantity + &quot; units&quot;
+                RETURN
+
+        PRINT &quot;Product not found in cart&quot;
+
+    METHOD update_quantity(product_id, new_quantity):
+        IF new_quantity &lt;= 0:
+            remove_item(product_id)
+        ELSE:
+            FOR item IN items:
+                IF item.product.id == product_id:
+                    item.quantity = new_quantity
+                    PRINT &quot;Updated &quot; + item.product.name + &quot; to &quot; + new_quantity + &quot; units&quot;
+                    RETURN
+            PRINT &quot;Product not found in cart&quot;
+
+    # Calculation methods
+    METHOD calculate_subtotal():
+        subtotal = 0
+        FOR item IN items:
+            subtotal = subtotal + (item.price * item.quantity)
+        RETURN subtotal
+
+    METHOD calculate_tax():
+        RETURN calculate_subtotal() * tax_rate
+
+    METHOD calculate_discount():
+        subtotal = calculate_subtotal()
+        IF discount_code == &quot;SAVE10&quot;:
+            RETURN subtotal * 0.10
+        ELSE IF discount_code == &quot;SAVE20&quot;:
+            RETURN subtotal * 0.20
+        ELSE:
+            RETURN 0
+
+    METHOD calculate_total():
+        subtotal = calculate_subtotal()
+        tax = calculate_tax()
+        discount = calculate_discount()
+        RETURN subtotal + tax - discount
+
+    # Checkout process methods
+    METHOD apply_discount(code):
+        VALID_CODES = [&quot;SAVE10&quot;, &quot;SAVE20&quot;, &quot;WELCOME5&quot;]
+        IF code IN VALID_CODES:
+            discount_code = code
+            PRINT &quot;Discount applied: &quot; + code
+        ELSE:
+            PRINT &quot;Invalid discount code&quot;
+
+    METHOD checkout(payment_method):
+        IF is_checked_out:
+            PRINT &quot;Order already checked out&quot;
+            RETURN false
+
+        IF LENGTH(items) == 0:
+            PRINT &quot;Cart is empty&quot;
+            RETURN false
+
+        total = calculate_total()
+        PRINT &quot;=== CHECKOUT ===&quot;
+        PRINT &quot;Items: &quot; + LENGTH(items)
+        PRINT &quot;Subtotal: $&quot; + calculate_subtotal()
+        PRINT &quot;Tax: $&quot; + calculate_tax()
+        PRINT &quot;Discount: $&quot; + calculate_discount()
+        PRINT &quot;Total: $&quot; + total
+        PRINT &quot;Payment method: &quot; + payment_method
+
+        # Simulate payment processing
+        IF process_payment(payment_method, total):
+            is_checked_out = true
+            PRINT &quot;Payment successful! Order confirmed.&quot;
+            generate_receipt()
+            clear_cart_after_delay()  # Would clear after some time
+            RETURN true
+        ELSE:
+            PRINT &quot;Payment failed&quot;
+            RETURN false
+
+    # Private helper methods
+    PRIVATE METHOD process_payment(method, amount):
+        # Simulate payment processing
+        PRINT &quot;Processing &quot; + method + &quot; payment of $&quot; + amount
+        # In real system, would contact payment gateway
+        RETURN true  # Simulate success
+
+    PRIVATE METHOD generate_receipt():
+        receipt = &quot;=== RECEIPT ===\n&quot;
+        receipt = receipt + &quot;Date: &quot; + CURRENT_DATE() + &quot;\n&quot;
+        receipt = receipt + &quot;Items:\n&quot;
+
+        FOR item IN items:
+            receipt = receipt + &quot;  &quot; + item.product.name + &quot; × &quot; + item.quantity
+            receipt = receipt + &quot; @ $&quot; + item.price + &quot; = $&quot; + (item.price * item.quantity) + &quot;\n&quot;
+
+        receipt = receipt + &quot;----------------\n&quot;
+        receipt = receipt + &quot;Subtotal: $&quot; + calculate_subtotal() + &quot;\n&quot;
+        receipt = receipt + &quot;Tax: $&quot; + calculate_tax() + &quot;\n&quot;
+        receipt = receipt + &quot;Discount: $&quot; + calculate_discount() + &quot;\n&quot;
+        receipt = receipt + &quot;TOTAL: $&quot; + calculate_total() + &quot;\n&quot;
+
+        PRINT receipt
+        # In real system, would save to database and/or email to customer
+
+    # Query methods
+    METHOD get_item_count():
+        total = 0
+        FOR item IN items:
+            total = total + item.quantity
+        RETURN total
+
+    METHOD is_empty():
+        RETURN LENGTH(items) == 0
+
+    METHOD contains_product(product_id):
+        FOR item IN items:
+            IF item.product.id == product_id:
+                RETURN true
+        RETURN false
+
+    METHOD get_cart_summary():
+        RETURN {
+            &quot;item_count&quot;: get_item_count(),
+            &quot;unique_items&quot;: LENGTH(items),
+            &quot;subtotal&quot;: calculate_subtotal(),
+            &quot;total&quot;: calculate_total(),
+            &quot;is_checked_out&quot;: is_checked_out
+        }
+</code></pre></div>
+<h2 id="method-overloading-and-overriding">Method Overloading and Overriding</h2>
+<h3 id="method-overloading-same-class-different-parameters">Method Overloading (Same class, different parameters)</h3>
+<div class="highlight"><pre><span></span><code>CLASS MathUtils:
+    # Different versions of &#39;add&#39; method
+    METHOD add(a, b):
+        RETURN a + b
+
+    METHOD add(a, b, c):
+        RETURN a + b + c
+
+    METHOD add(numbers: List):
+        total = 0
+        FOR num IN numbers:
+            total = total + num
+        RETURN total
+</code></pre></div>
+<h3 id="method-overriding-different-classes-same-method-signature">Method Overriding (Different classes, same method signature)</h3>
+<div class="highlight"><pre><span></span><code>CLASS Animal:
+    METHOD make_sound():
+        PRINT &quot;Some generic animal sound&quot;
+
+CLASS Dog EXTENDS Animal:
+    # Override parent method
+    METHOD make_sound():
+        PRINT &quot;Woof! Woof!&quot;
+
+CLASS Cat EXTENDS Animal:
+    # Override parent method
+    METHOD make_sound():
+        PRINT &quot;Meow!&quot;
+</code></pre></div>
+<h2 id="best-practices-for-methods">Best Practices for Methods</h2>
+<h3 id="1-single-responsibility-principle">1. Single Responsibility Principle</h3>
+<p>Each method should do one thing well.</p>
+<div class="highlight"><pre><span></span><code># BAD: Method does too much
+METHOD process_user_data(data):
+    validate(data)
+    save_to_database(data)
+    send_email(data)
+    update_cache(data)
+    log_activity(data)
+
+# GOOD: Separate methods
+METHOD validate_user_data(data)
+METHOD save_user_data(data)
+METHOD notify_user(data)
+# etc.
+</code></pre></div>
+<h3 id="2-meaningful-names">2. Meaningful Names</h3>
+<div class="highlight"><pre><span></span><code># BAD
+METHOD p()  # What does this do?
+METHOD proc()  # Process what?
+METHOD xyz()  # Cryptic!
+
+# GOOD
+METHOD calculate_tax()
+METHOD validate_email()
+METHOD send_notification()
+</code></pre></div>
+<h3 id="3-appropriate-length">3. Appropriate Length</h3>
+<p>Methods should generally be short (under 20-30 lines).</p>
+<div class="highlight"><pre><span></span><code># BAD: Too long and complex
+METHOD handle_customer_order():
+    # 100 lines of code...
+
+# GOOD: Break into smaller methods
+METHOD create_order():
+    validate_items()
+    calculate_pricing()
+    apply_discounts()
+    generate_order_number()
+</code></pre></div>
+<h3 id="4-consistent-return-types">4. Consistent Return Types</h3>
+<div class="highlight"><pre><span></span><code># BAD: Inconsistent returns
+METHOD find_user(id):
+    IF user_exists(id):
+        RETURN user_object
+    ELSE:
+        RETURN false  # Mixed type return
+
+# GOOD: Consistent returns
+METHOD find_user(id):
+    IF user_exists(id):
+        RETURN user_object
+    ELSE:
+        RETURN null  # Always returns object or null
+</code></pre></div>
+<h2 id="common-patterns">Common Patterns</h2>
+<h3 id="1-builder-pattern-methods">1. Builder Pattern Methods</h3>
+<div class="highlight"><pre><span></span><code>CLASS EmailBuilder:
+    PRIVATE to_address
+    PRIVATE subject
+    PRIVATE body
+    PRIVATE attachments
+
+    METHOD set_to(address):
+        to_address = address
+        RETURN self  # Allows method chaining
+
+    METHOD set_subject(text):
+        subject = text
+        RETURN self
+
+    METHOD set_body(text):
+        body = text
+        RETURN self
+
+    METHOD add_attachment(file):
+        ADD file TO attachments
+        RETURN self
+
+    METHOD build():
+        RETURN NEW Email(to_address, subject, body, attachments)
+
+# Usage with method chaining
+email = NEW EmailBuilder()
+    .set_to(&quot;friend@example.com&quot;)
+    .set_subject(&quot;Hello!&quot;)
+    .set_body(&quot;How are you?&quot;)
+    .add_attachment(&quot;photo.jpg&quot;)
+    .build()
+</code></pre></div>
+<h3 id="2-fluent-interface">2. Fluent Interface</h3>
+<div class="highlight"><pre><span></span><code>CLASS QueryBuilder:
+    METHOD select(columns):
+        # ...
+        RETURN self
+
+    METHOD from_table(table):
+        # ...
+        RETURN self
+
+    METHOD where(condition):
+        # ...
+        RETURN self
+
+    METHOD execute():
+        # ...
+        RETURN results
+</code></pre></div>
+<h2 id="practice-exercise-library-management-system">Practice Exercise: Library Management System</h2>
+<p>Create a <code>Library</code> class with methods for managing books and members:</p>
+<ol>
+<li>
+<p><strong>Required Methods:</strong></p>
+</li>
+<li>
+<p><code>add_book(title, author, isbn)</code>: Adds a new book to library</p>
+</li>
+<li><code>register_member(name, member_id)</code>: Registers a new library member</li>
+<li><code>borrow_book(member_id, isbn)</code>: Allows member to borrow a book</li>
+<li><code>return_book(isbn)</code>: Processes book return</li>
+<li><code>search_books(keyword)</code>: Searches books by title or author</li>
+<li>
+<p><code>get_overdue_books()</code>: Lists all overdue books</p>
+</li>
+<li>
+<p><strong>Add Validation Methods:</strong></p>
+</li>
+<li>
+<p><code>can_borrow(member_id)</code>: Checks if member can borrow (no overdue, under limit)</p>
+</li>
+<li>
+<p><code>is_book_available(isbn)</code>: Checks if book is available</p>
+</li>
+<li>
+<p><strong>Add Report Methods:</strong></p>
+</li>
+<li>
+<p><code>generate_library_report()</code>: Shows statistics</p>
+</li>
+<li>
+<p><code>get_member_activity(member_id)</code>: Shows member's borrowing history</p>
+</li>
+<li>
+<p><strong>Bonus:</strong> Implement <code>reserve_book(member_id, isbn)</code> method for reserving unavailable books.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>CLASS Library:
+    PRIVATE books: List
+    PRIVATE members: List
+    PRIVATE transactions: List
+
+    METHOD INITIALIZE():
+        books = []
+        members = []
+        transactions = []
+
+    # Implement methods here...
+
+    METHOD get_statistics():
+        total_books = LENGTH(books)
+        available_books = COUNT books WHERE book.is_available == true
+        total_members = LENGTH(members)
+        borrowed_books = total_books - available_books
+
+        RETURN {
+            &quot;total_books&quot;: total_books,
+            &quot;available_books&quot;: available_books,
+            &quot;borrowed_books&quot;: borrowed_books,
+            &quot;total_members&quot;: total_members
+        }
+</code></pre></div>
+<h2 id="quick-check">Quick Check</h2>
+<ol>
+<li>
+<p><strong>What's the difference between a getter and a setter method?</strong></p>
+</li>
+<li>
+<p>Getter: Returns attribute value (read)</p>
+</li>
+<li>
+<p>Setter: Modifies attribute value (write)</p>
+</li>
+<li>
+<p><strong>Why should methods be relatively short?</strong></p>
+</li>
+<li>
+<p>Easier to understand, test, and maintain</p>
+</li>
+<li>
+<p>Follows Single Responsibility Principle</p>
+</li>
+<li>
+<p><strong>What is method overloading?</strong></p>
+</li>
+<li>
+<p>Having multiple methods with the same name but different parameters in the same class</p>
+</li>
+<li>
+<p><strong>What is method overriding?</strong></p>
+</li>
+<li>
+<p>Redefining a method in a child class that already exists in the parent class</p>
+</li>
+</ol>
+<hr />
+<p><strong>Next Chapter:</strong> <a href="./chapter2-3.md">Chapter 2.3: Constructors - The Birth of an Object</a> where we'll learn how objects are created and initialized!</p>
+<blockquote>
+<p><strong>Key Insight:</strong> Methods bring objects to life. They transform passive data containers (attributes) into active, useful entities that can interact, change state, and solve problems. A well-designed set of methods makes an object intuitive and powerful to use.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reject</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
