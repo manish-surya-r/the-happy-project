@@ -1,0 +1,94 @@
+site_name: CS Advanced Topics
+site_url: https://yourdomain.com
+site_description: Advanced Computer Science Educational Platform
+
+theme:
+  name: material
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  palette:
+    # Light mode – TutorialsPoint style
+    - media: "(prefers-color-scheme: light)"
+      scheme: tutorialspoint
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Dark mode – W3Schools style
+    - media: "(prefers-color-scheme: dark)"
+      scheme: w3schools
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      - manage
+      - reject
+nav:
+  - Home: index.md
+
+  - Object-Oriented Design:
+    - Overview: ood/0.0-index.md
+    - Thinking in Objects:
+      - The World is Made of Objects: ood/1.1-the-world-is-made-of-objects.md
+      - The Four Superpowers of OOD: ood/1.2-the-four-superpowers-of-ood.md
+    - Core Building Blocks:
+      - Attributes and States: ood/2.1-attributes-and-states.md
+      - Methods & Behavior: ood/2.2-methods-and-behavior.md
+      - Constructors: ood/2.3-constructors.md
+      - Relationships Between Objects: ood/2.4-relationships-between-objects.md
+    - Designing Robust Systems:
+      - Interfaces: ood/3.1-interfaces.md
+      - Abstract Classes: ood/3.2-abstract-classes.md
+      - Key Design Principles: ood/3.3-key-design-principles.md
+
+    - From Design to Patterns:
+      - Design Patterns: ood/4.1-design-patterns.md
+
+    - Special Topics:
+      - Beyond the Basics: ood/5.1-beyond-the-basics.md
+
+  
+
+  - Object-Oriented Design in C++:
+      - Overview: oop-cpp/index.md
+      - Classes & Objects: oop-cpp/01-classes-and-objects.md
+      - Inheritance: oop-cpp/02-inheritance.md
+      - Polymorphism: oop-cpp/03-polymorphism.md
+      - Encapsulation: oop-cpp/04-encapsulation.md
+      - Abstraction: oop-cpp/05-abstraction.md
+      - Design Patterns: oop-cpp/06-design-patterns.md
+  
+  - Object-Oriented Design in Python:
+      - Overview: oop-python/0.0-index.md
+      - Thinking: oop-python/01-classes-and-objects.md
+      - Inheritance: oop-python/02-inheritance.md
+      - Polymorphism: oop-python/03-polymorphism.md
+      - Encapsulation: oop-python/04-encapsulation.md
+      - Abstraction: oop-python/05-abstraction.md
+      - Design Patterns: oop-python/06-design-patterns.md
