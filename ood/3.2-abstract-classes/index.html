@@ -1,0 +1,3396 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Advanced Computer Science Educational Platform">
+      
+      
+      
+        <link rel="canonical" href="https://yourdomain.com/ood/3.2-abstract-classes/">
+      
+      
+        <link rel="prev" href="../3.1-interfaces/">
+      
+      
+        <link rel="next" href="../3.3-key-design-principles/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Abstract Classes - CS Advanced Topics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-32-abstract-classes-the-incomplete-blueprint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CS Advanced Topics" class="md-header__button md-logo" aria-label="CS Advanced Topics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS Advanced Topics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Abstract Classes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="w3schools" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0.0-index/" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../oop-cpp/" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design in C++
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../oop-python/0.0-index.md" class="md-tabs__link">
+          
+  
+  
+  Object-Oriented Design in Python
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CS Advanced Topics" class="md-nav__button md-logo" aria-label="CS Advanced Topics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CS Advanced Topics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.0-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thinking in Objects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Thinking in Objects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1-the-world-is-made-of-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The World is Made of Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-the-four-superpowers-of-ood/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Four Superpowers of OOD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Building Blocks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Building Blocks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-attributes-and-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attributes and States
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2-methods-and-behavior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods & Behavior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-constructors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-relationships-between-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships Between Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Designing Robust Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Designing Robust Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-building-on-common-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Building on Common Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Abstract Classes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Abstract Classes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-analogy-restaurant-menu-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Analogy: Restaurant Menu Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Use Abstract Classes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Use Abstract Classes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-without-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Without Abstract Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-with-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution With Abstract Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-characteristics-of-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of Abstract Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Characteristics of Abstract Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cannot-be-instantiated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cannot Be Instantiated
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mix-of-abstract-and-concrete-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mix of Abstract and Concrete Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-can-have-constructors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Can Have Constructors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-classes-vs-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract Classes vs Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstract Classes vs Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combined-example-using-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Example: Using Both
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-document-processing-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Document Processing System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-game-character-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Game Character System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-template-method-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Template Method Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Abstract Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Abstract Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-abstract-classes-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Abstract Classes When:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-use-abstract-classes-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Don't Use Abstract Classes When:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-with-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Patterns with Abstract Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns with Abstract Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-factory-method-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Factory Method Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-chain-of-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Chain of Responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise-notification-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercise: Notification System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3-key-design-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Design to Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    From Design to Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Special Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-beyond-the-basics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beyond the Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/01-classes-and-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/02-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/03-polymorphism.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/04-encapsulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/05-abstraction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-cpp/06-design-patterns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented Design in Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object-Oriented Design in Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/0.0-index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/01-classes-and-objects.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/02-inheritance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/03-polymorphism.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/04-encapsulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/05-abstraction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop-python/06-design-patterns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-building-on-common-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Building on Common Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Abstract Classes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Abstract Classes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-analogy-restaurant-menu-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Analogy: Restaurant Menu Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Use Abstract Classes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Use Abstract Classes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-without-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Without Abstract Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-with-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution With Abstract Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-characteristics-of-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of Abstract Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Characteristics of Abstract Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cannot-be-instantiated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cannot Be Instantiated
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mix-of-abstract-and-concrete-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mix of Abstract and Concrete Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-can-have-constructors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Can Have Constructors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-classes-vs-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract Classes vs Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstract Classes vs Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combined-example-using-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Example: Using Both
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-document-processing-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Document Processing System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-game-character-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Game Character System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-template-method-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Template Method Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Abstract Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Abstract Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-abstract-classes-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Abstract Classes When:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-use-abstract-classes-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Don't Use Abstract Classes When:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-with-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Patterns with Abstract Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns with Abstract Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-factory-method-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Factory Method Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-chain-of-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Chain of Responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise-notification-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercise: Notification System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-32-abstract-classes-the-incomplete-blueprint">Chapter 3.2: Abstract Classes - The Incomplete Blueprint</h1>
+<h2 id="introduction-building-on-common-foundations">Introduction: Building on Common Foundations</h2>
+<p>Imagine you're designing different types of vehicles: cars, motorcycles, trucks, and bicycles. They all share some common characteristics (they have wheels, they can move, they need maintenance) but each has unique features too. An <strong>abstract class</strong> is like a blueprint for a vehicle that defines what all vehicles must have, but leaves the specific details to be filled in by each actual vehicle type.</p>
+<h2 id="what-are-abstract-classes">What Are Abstract Classes?</h2>
+<p>An <strong>abstract class</strong> is a class that cannot be instantiated (you can't create objects from it directly). It serves as a base class for other classes and can contain:</p>
+<ol>
+<li><strong>Abstract methods</strong> (without implementation) - must be implemented by child classes</li>
+<li><strong>Concrete methods</strong> (with implementation) - inherited by child classes</li>
+<li><strong>Attributes</strong> (fields) - inherited by child classes</li>
+<li><strong>Constructors</strong> - to initialize the base class</li>
+</ol>
+<h3 id="the-analogy-restaurant-menu-template">The Analogy: Restaurant Menu Template</h3>
+<p>Think of a restaurant chain like McDonald's. The corporate office provides:</p>
+<ul>
+<li><strong>Abstract methods:</strong> "You must have a burger" (but not how to make it)</li>
+<li><strong>Concrete methods:</strong> "Here's how to clean the kitchen" (same for all locations)</li>
+<li><strong>Common attributes:</strong> Brand logo, color scheme, uniforms</li>
+</ul>
+<p>Each location implements the burger differently (local tastes) but follows the corporate standards.</p>
+<h2 id="why-use-abstract-classes">Why Use Abstract Classes?</h2>
+<h3 id="problem-without-abstract-classes">Problem Without Abstract Classes</h3>
+<div class="highlight"><pre><span></span><code># Different shape classes with duplicated code
+CLASS Circle:
+    PRIVATE radius
+
+    METHOD calculate_area():
+        RETURN 3.14159 * radius * radius
+
+    METHOD calculate_perimeter():
+        RETURN 2 * 3.14159 * radius
+
+    METHOD draw():
+        PRINT &quot;Drawing circle with radius &quot; + radius
+
+CLASS Rectangle:
+    PRIVATE width
+    PRIVATE height
+
+    METHOD calculate_area():
+        RETURN width * height
+
+    METHOD calculate_perimeter():
+        RETURN 2 * (width + height)
+
+    METHOD draw():
+        PRINT &quot;Drawing rectangle &quot; + width + &quot;×&quot; + height
+
+CLASS Triangle:
+    PRIVATE base
+    PRIVATE height
+    PRIVATE side1
+    PRIVATE side2
+    PRIVATE side3
+
+    METHOD calculate_area():
+        RETURN 0.5 * base * height
+
+    METHOD calculate_perimeter():
+        RETURN side1 + side2 + side3
+
+    METHOD draw():
+        PRINT &quot;Drawing triangle with base &quot; + base
+
+# Problems:
+# 1. Duplicated method names (calculate_area, calculate_perimeter, draw)
+# 2. No common type - can&#39;t store different shapes in one list
+# 3. No enforced consistency
+</code></pre></div>
+<h3 id="solution-with-abstract-classes">Solution With Abstract Classes</h3>
+<div class="highlight"><pre><span></span><code># Abstract base class
+ABSTRACT CLASS Shape:
+    # Abstract methods - MUST be implemented by child classes
+    ABSTRACT METHOD calculate_area()
+    ABSTRACT METHOD calculate_perimeter()
+    ABSTRACT METHOD draw()
+
+    # Concrete method - provided to ALL child classes
+    METHOD get_description():
+        RETURN &quot;This is a shape with area: &quot; + calculate_area() +
+               &quot; and perimeter: &quot; + calculate_perimeter()
+
+    # Can have attributes
+    PRIVATE color
+    PRIVATE is_filled
+
+    # Can have constructor
+    METHOD INITIALIZE(shape_color, filled):
+        color = shape_color
+        is_filled = filled
+
+# Concrete child classes
+CLASS Circle EXTENDS Shape:
+    PRIVATE radius
+
+    METHOD INITIALIZE(circle_color, filled, circle_radius):
+        SUPER.INITIALIZE(circle_color, filled)  # Call parent constructor
+        radius = circle_radius
+
+    # MUST implement all abstract methods
+    METHOD calculate_area():
+        RETURN 3.14159 * radius * radius
+
+    METHOD calculate_perimeter():
+        RETURN 2 * 3.14159 * radius
+
+    METHOD draw():
+        PRINT &quot;Drawing &quot; + color + &quot; circle with radius &quot; + radius
+        IF is_filled:
+            PRINT &quot;Circle is filled&quot;
+
+CLASS Rectangle EXTENDS Shape:
+    PRIVATE width
+    PRIVATE height
+
+    METHOD INITIALIZE(rect_color, filled, rect_width, rect_height):
+        SUPER.INITIALIZE(rect_color, filled)
+        width = rect_width
+        height = rect_height
+
+    METHOD calculate_area():
+        RETURN width * height
+
+    METHOD calculate_perimeter():
+        RETURN 2 * (width + height)
+
+    METHOD draw():
+        PRINT &quot;Drawing &quot; + color + &quot; rectangle &quot; + width + &quot;×&quot; + height
+        IF is_filled:
+            PRINT &quot;Rectangle is filled&quot;
+
+# Now we can use polymorphism
+shapes = []
+shapes.ADD(NEW Circle(&quot;red&quot;, true, 5))
+shapes.ADD(NEW Rectangle(&quot;blue&quot;, false, 4, 6))
+shapes.ADD(NEW Circle(&quot;green&quot;, true, 3))
+
+FOR shape IN shapes:
+    shape.draw()
+    PRINT shape.get_description()  # Uses parent&#39;s concrete method
+    PRINT &quot;Area: &quot; + shape.calculate_area()  # Uses child&#39;s implementation
+</code></pre></div>
+<h2 id="key-characteristics-of-abstract-classes">Key Characteristics of Abstract Classes</h2>
+<h3 id="1-cannot-be-instantiated">1. Cannot Be Instantiated</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Animal:
+    ABSTRACT METHOD make_sound()
+
+# This will cause an error:
+animal = NEW Animal()  # ERROR: Cannot instantiate abstract class
+
+# But child classes can be instantiated
+CLASS Dog EXTENDS Animal:
+    METHOD make_sound():
+        PRINT &quot;Woof!&quot;
+
+dog = NEW Dog()  # OK
+</code></pre></div>
+<h3 id="2-mix-of-abstract-and-concrete-methods">2. Mix of Abstract and Concrete Methods</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS DatabaseConnection:
+    # Abstract method - must be implemented
+    ABSTRACT METHOD connect()
+    ABSTRACT METHOD disconnect()
+
+    # Concrete method - provided to all children
+    METHOD execute_query(sql):
+        connect()  # Calls child&#39;s implementation
+        PRINT &quot;Executing: &quot; + sql
+        # Execute query logic...
+        disconnect()  # Calls child&#39;s implementation
+
+    # Another concrete method
+    METHOD get_connection_info():
+        RETURN &quot;Database connection details&quot;
+
+CLASS MySQLConnection EXTENDS DatabaseConnection:
+    METHOD connect():
+        PRINT &quot;Connecting to MySQL database...&quot;
+
+    METHOD disconnect():
+        PRINT &quot;Disconnecting from MySQL&quot;
+
+# Usage
+mysql = NEW MySQLConnection()
+mysql.execute_query(&quot;SELECT * FROM users&quot;)
+# Output:
+# &quot;Connecting to MySQL database...&quot;
+# &quot;Executing: SELECT * FROM users&quot;
+# &quot;Disconnecting from MySQL&quot;
+</code></pre></div>
+<h3 id="3-can-have-constructors">3. Can Have Constructors</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Employee:
+    PRIVATE name
+    PRIVATE id
+    PRIVATE base_salary
+
+    METHOD INITIALIZE(emp_name, emp_id, salary):
+        name = emp_name
+        id = emp_id
+        base_salary = salary
+
+    # Abstract method
+    ABSTRACT METHOD calculate_bonus()
+
+    # Concrete method using abstract method
+    METHOD get_total_compensation():
+        RETURN base_salary + calculate_bonus()
+
+CLASS Manager EXTENDS Employee:
+    PRIVATE team_size
+
+    METHOD INITIALIZE(mgr_name, mgr_id, salary, team):
+        SUPER.INITIALIZE(mgr_name, mgr_id, salary)
+        team_size = team
+
+    METHOD calculate_bonus():
+        RETURN base_salary * 0.20 + (team_size * 1000)
+
+CLASS Developer EXTENDS Employee:
+    PRIVATE programming_languages
+
+    METHOD INITIALIZE(dev_name, dev_id, salary, languages):
+        SUPER.INITIALIZE(dev_name, dev_id, salary)
+        programming_languages = languages
+
+    METHOD calculate_bonus():
+        RETURN base_salary * 0.15 + (LENGTH(programming_languages) * 500)
+
+# Usage
+manager = NEW Manager(&quot;Alice&quot;, &quot;M001&quot;, 80000, 5)
+developer = NEW Developer(&quot;Bob&quot;, &quot;D001&quot;, 70000, [&quot;Java&quot;, &quot;Python&quot;, &quot;JavaScript&quot;])
+
+PRINT manager.get_total_compensation()  # Uses parent&#39;s concrete method + child&#39;s abstract
+PRINT developer.get_total_compensation()  # Same parent method, different child implementation
+</code></pre></div>
+<h2 id="abstract-classes-vs-interfaces">Abstract Classes vs Interfaces</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Abstract Class</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instantiation</strong></td>
+<td>Cannot be instantiated</td>
+<td>Cannot be instantiated</td>
+</tr>
+<tr>
+<td><strong>Methods</strong></td>
+<td>Can have both abstract and concrete</td>
+<td>Traditionally only abstract (some allow default)</td>
+</tr>
+<tr>
+<td><strong>Variables</strong></td>
+<td>Can have any variables</td>
+<td>Usually only constants</td>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>Single inheritance (extends one class)</td>
+<td>Multiple implementation (implements many)</td>
+</tr>
+<tr>
+<td><strong>Constructors</strong></td>
+<td>Can have constructors</td>
+<td>Cannot have constructors</td>
+</tr>
+<tr>
+<td><strong>When to Use</strong></td>
+<td>When classes share common code/state</td>
+<td>When classes need common behavior contract</td>
+</tr>
+</tbody>
+</table>
+<h3 id="combined-example-using-both">Combined Example: Using Both</h3>
+<div class="highlight"><pre><span></span><code># Interface for specific capability
+INTERFACE Flyable:
+    METHOD fly()
+
+# Abstract base class with common mammal functionality
+ABSTRACT CLASS Mammal:
+    PRIVATE name
+    PRIVATE age
+
+    METHOD INITIALIZE(mammal_name, mammal_age):
+        name = mammal_name
+        age = mammal_age
+
+    # Concrete methods for all mammals
+    METHOD breathe():
+        PRINT name + &quot; is breathing air&quot;
+
+    METHOD eat(food):
+        PRINT name + &quot; is eating &quot; + food
+
+    # Abstract method - mammals make sounds differently
+    ABSTRACT METHOD make_sound()
+
+# Concrete classes
+CLASS Dog EXTENDS Mammal:
+    METHOD make_sound():
+        PRINT name + &quot; says: Woof!&quot;
+
+    METHOD fetch():
+        PRINT name + &quot; is fetching the ball&quot;
+
+CLASS Bat EXTENDS Mammal IMPLEMENTS Flyable:
+    METHOD make_sound():
+        PRINT name + &quot; makes ultrasonic sounds&quot;
+
+    METHOD fly():
+        PRINT name + &quot; is flying using wings&quot;
+
+# Usage
+dog = NEW Dog(&quot;Rex&quot;, 3)
+dog.breathe()    # From Mammal
+dog.eat(&quot;bone&quot;)  # From Mammal
+dog.make_sound() # Dog&#39;s implementation
+dog.fetch()      # Dog&#39;s own method
+
+bat = NEW Bat(&quot;Batty&quot;, 1)
+bat.breathe()    # From Mammal
+bat.fly()        # From Flyable interface
+bat.make_sound() # Bat&#39;s implementation
+</code></pre></div>
+<h2 id="real-world-examples">Real-World Examples</h2>
+<h3 id="example-1-document-processing-system">Example 1: Document Processing System</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Document:
+    PRIVATE title
+    PRIVATE author
+    PRIVATE content
+    PRIVATE created_date
+    PRIVATE modified_date
+
+    METHOD INITIALIZE(doc_title, doc_author, doc_content):
+        title = doc_title
+        author = doc_author
+        content = doc_content
+        created_date = CURRENT_DATE()
+        modified_date = created_date
+
+    # Concrete methods for all documents
+    METHOD get_metadata():
+        RETURN {
+            &quot;title&quot;: title,
+            &quot;author&quot;: author,
+            &quot;created&quot;: created_date,
+            &quot;modified&quot;: modified_date,
+            &quot;word_count&quot;: count_words(),
+            &quot;type&quot;: get_document_type()
+        }
+
+    METHOD count_words():
+        words = SPLIT(content, &quot; &quot;)
+        RETURN LENGTH(words)
+
+    METHOD update_content(new_content):
+        content = new_content
+        modified_date = CURRENT_DATE()
+        PRINT &quot;Document updated&quot;
+
+    # Abstract methods - different for each document type
+    ABSTRACT METHOD save()          # How to save differs
+    ABSTRACT METHOD print_format()  # Print format differs
+    ABSTRACT METHOD get_document_type()  # Returns type name
+
+    # Template method pattern - uses abstract methods
+    METHOD process_and_save():
+        PRINT &quot;Processing &quot; + get_document_type() + &quot; document...&quot;
+        validate_content()
+        format_for_save()
+        save()
+        PRINT &quot;Document saved successfully&quot;
+
+    # More abstract methods used in template
+    ABSTRACT METHOD validate_content()
+    ABSTRACT METHOD format_for_save()
+
+# Concrete document types
+CLASS PDFDocument EXTENDS Document:
+    METHOD save():
+        PRINT &quot;Saving as PDF file with compression&quot;
+        # PDF-specific saving logic
+
+    METHOD print_format():
+        PRINT &quot;Formatting for PDF printing (A4 size, margins)&quot;
+        # PDF printing logic
+
+    METHOD get_document_type():
+        RETURN &quot;PDF&quot;
+
+    METHOD validate_content():
+        PRINT &quot;Validating PDF content structure...&quot;
+        # PDF-specific validation
+
+    METHOD format_for_save():
+        PRINT &quot;Formatting for PDF export...&quot;
+        # PDF-specific formatting
+
+CLASS WordDocument EXTENDS Document:
+    PRIVATE template
+
+    METHOD save():
+        PRINT &quot;Saving as .docx file with Office Open XML format&quot;
+        # Word-specific saving logic
+
+    METHOD print_format():
+        PRINT &quot;Formatting for Word printing (letter size, headers/footers)&quot;
+        # Word printing logic
+
+    METHOD get_document_type():
+        RETURN &quot;Microsoft Word&quot;
+
+    METHOD validate_content():
+        PRINT &quot;Validating Word document compatibility...&quot;
+        # Word-specific validation
+
+    METHOD format_for_save():
+        PRINT &quot;Applying Word template: &quot; + template
+        # Word-specific formatting
+
+CLASS PlainTextDocument EXTENDS Document:
+    METHOD save():
+        PRINT &quot;Saving as plain text (.txt) file with UTF-8 encoding&quot;
+        # Text file saving logic
+
+    METHOD print_format():
+        PRINT &quot;Formatting for text printing (monospace font, 80 columns)&quot;
+        # Text printing logic
+
+    METHOD get_document_type():
+        RETURN &quot;Plain Text&quot;
+
+    METHOD validate_content():
+        PRINT &quot;Validating text encoding...&quot;
+        # Text-specific validation
+
+    METHOD format_for_save():
+        PRINT &quot;Formatting text with line breaks...&quot;
+        # Text-specific formatting
+
+# Usage
+documents = []
+documents.ADD(NEW PDFDocument(&quot;Report&quot;, &quot;Alice&quot;, &quot;This is a PDF report...&quot;))
+documents.ADD(NEW WordDocument(&quot;Essay&quot;, &quot;Bob&quot;, &quot;This is a Word essay...&quot;))
+documents.ADD(NEW PlainTextDocument(&quot;Notes&quot;, &quot;Charlie&quot;, &quot;These are plain text notes...&quot;))
+
+FOR doc IN documents:
+    PRINT &quot;=== Processing Document ===&quot;
+    PRINT doc.get_metadata()
+    doc.process_and_save()  # Template method uses child implementations
+    PRINT &quot;&quot;
+</code></pre></div>
+<h3 id="example-2-game-character-system">Example 2: Game Character System</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS GameCharacter:
+    PRIVATE name
+    PRIVATE level
+    PRIVATE health
+    PRIVATE mana
+    PRIVATE experience
+
+    METHOD INITIALIZE(char_name, start_level = 1):
+        name = char_name
+        level = start_level
+        health = calculate_max_health()
+        mana = calculate_max_mana()
+        experience = 0
+
+    # Concrete methods for all characters
+    METHOD is_alive():
+        RETURN health &gt; 0
+
+    METHOD take_damage(amount):
+        health = health - amount
+        IF health &lt;= 0:
+            health = 0
+            PRINT name + &quot; has been defeated!&quot;
+
+    METHOD heal(amount):
+        max_hp = calculate_max_health()
+        health = MIN(health + amount, max_hp)
+        PRINT name + &quot; healed &quot; + amount + &quot; HP&quot;
+
+    METHOD gain_experience(xp):
+        experience = experience + xp
+        WHILE experience &gt;= get_experience_for_next_level():
+            level_up()
+
+    METHOD level_up():
+        level = level + 1
+        experience = experience - get_experience_for_next_level()
+        health = calculate_max_health()  # Full heal on level up
+        mana = calculate_max_mana()
+        PRINT name + &quot; leveled up to level &quot; + level + &quot;!&quot;
+        # Call abstract method for class-specific level up logic
+        on_level_up()
+
+    # Abstract methods - different for each character class
+    ABSTRACT METHOD calculate_max_health()
+    ABSTRACT METHOD calculate_max_mana()
+    ABSTRACT METHOD get_experience_for_next_level()
+    ABSTRACT METHOD attack(target)
+    ABSTRACT METHOD defend()
+    ABSTRACT METHOD use_special_ability()
+    ABSTRACT METHOD on_level_up()  # Called when leveling up
+
+    # Template method for combat turn
+    METHOD take_turn(target):
+        IF NOT is_alive():
+            PRINT name + &quot; is defeated and cannot act&quot;
+            RETURN
+
+        PRINT name + &quot;&#39;s turn (Level &quot; + level + &quot;)&quot;
+        PRINT &quot;HP: &quot; + health + &quot;/&quot; + calculate_max_health()
+        PRINT &quot;Mana: &quot; + mana + &quot;/&quot; + calculate_max_mana()
+
+        # Decision logic (simplified)
+        IF health &lt; calculate_max_health() * 0.3:
+            defend()  # Abstract method
+        ELSE IF mana &gt;= 20:
+            use_special_ability()  # Abstract method
+        ELSE:
+            attack(target)  # Abstract method
+
+# Concrete character classes
+CLASS Warrior EXTENDS GameCharacter:
+    PRIVATE strength
+    PRIVATE defense
+
+    METHOD INITIALIZE(warrior_name, start_level):
+        SUPER.INITIALIZE(warrior_name, start_level)
+        strength = 10 + (level * 2)
+        defense = 8 + (level * 1.5)
+
+    METHOD calculate_max_health():
+        RETURN 100 + (level * 20) + (strength * 5)
+
+    METHOD calculate_max_mana():
+        RETURN 30 + (level * 5)  # Warriors have low mana
+
+    METHOD get_experience_for_next_level():
+        RETURN level * 100
+
+    METHOD attack(target):
+        damage = strength * 2
+        PRINT name + &quot; swings sword for &quot; + damage + &quot; damage!&quot;
+        target.take_damage(damage)
+
+    METHOD defend():
+        defense = defense * 1.5  # Temporary boost
+        PRINT name + &quot; raises shield! Defense increased&quot;
+
+    METHOD use_special_ability():
+        IF mana &gt;= 20:
+            mana = mana - 20
+            damage = strength * 4
+            PRINT name + &quot; uses WHIRLWIND ATTACK for &quot; + damage + &quot; damage!&quot;
+            # Would hit multiple targets in real game
+        ELSE:
+            PRINT &quot;Not enough mana!&quot;
+
+    METHOD on_level_up():
+        strength = strength + 3
+        defense = defense + 2
+        PRINT name + &quot; gained strength and defense!&quot;
+
+CLASS Mage EXTENDS GameCharacter:
+    PRIVATE intelligence
+    PRIVATE spellbook: List
+
+    METHOD INITIALIZE(mage_name, start_level):
+        SUPER.INITIALIZE(mage_name, start_level)
+        intelligence = 15 + (level * 3)
+        spellbook = [&quot;Fireball&quot;, &quot;Ice Shard&quot;, &quot;Lightning Bolt&quot;]
+
+    METHOD calculate_max_health():
+        RETURN 60 + (level * 10)  # Mages have low health
+
+    METHOD calculate_max_mana():
+        RETURN 100 + (level * 20) + (intelligence * 3)
+
+    METHOD get_experience_for_next_level():
+        RETURN level * 120  # Mages need more XP
+
+    METHOD attack(target):
+        damage = intelligence
+        PRINT name + &quot; casts a basic spell for &quot; + damage + &quot; damage!&quot;
+        target.take_damage(damage)
+
+    METHOD defend():
+        PRINT name + &quot; casts a magical barrier!&quot;
+        # Would add damage reduction in real game
+
+    METHOD use_special_ability():
+        IF mana &gt;= 30:
+            mana = mana - 30
+            damage = intelligence * 3
+            PRINT name + &quot; casts FIREBALL for &quot; + damage + &quot; damage!&quot;
+            # Would be area damage in real game
+        ELSE:
+            PRINT &quot;Not enough mana!&quot;
+
+    METHOD on_level_up():
+        intelligence = intelligence + 5
+        IF level % 3 == 0:  # Every 3 levels
+            new_spell = &quot;Spell Level &quot; + level
+            ADD new_spell TO spellbook
+            PRINT name + &quot; learned new spell: &quot; + new_spell
+
+CLASS Archer EXTENDS GameCharacter:
+    PRIVATE agility
+    PRIVATE arrows
+
+    METHOD INITIALIZE(archer_name, start_level):
+        SUPER.INITIALIZE(archer_name, start_level)
+        agility = 12 + (level * 2)
+        arrows = 20 + (level * 5)
+
+    METHOD calculate_max_health():
+        RETURN 80 + (level * 15)
+
+    METHOD calculate_max_mana():
+        RETURN 50 + (level * 10)
+
+    METHOD get_experience_for_next_level():
+        RETURN level * 90
+
+    METHOD attack(target):
+        IF arrows &gt; 0:
+            arrows = arrows - 1
+            damage = agility * 1.5
+            PRINT name + &quot; shoots arrow for &quot; + damage + &quot; damage!&quot;
+            PRINT &quot;Arrows remaining: &quot; + arrows
+            target.take_damage(damage)
+        ELSE:
+            PRINT name + &quot; is out of arrows!&quot;
+
+    METHOD defend():
+        PRINT name + &quot; dodges nimbly!&quot;
+        # Would increase dodge chance in real game
+
+    METHOD use_special_ability():
+        IF mana &gt;= 25:
+            mana = mana - 25
+            IF arrows &gt;= 3:
+                arrows = arrows - 3
+                damage = agility * 2 * 3
+                PRINT name + &quot; uses MULTISHOT for &quot; + damage + &quot; damage!&quot;
+                PRINT &quot;Used 3 arrows&quot;
+            ELSE:
+                PRINT &quot;Not enough arrows for multishot!&quot;
+        ELSE:
+            PRINT &quot;Not enough mana!&quot;
+
+    METHOD on_level_up():
+        agility = agility + 4
+        arrows = arrows + 10
+        PRINT name + &quot; became more agile and got more arrows!&quot;
+
+# Game simulation
+warrior = NEW Warrior(&quot;Aragorn&quot;, 5)
+mage = NEW Mage(&quot;Gandalf&quot;, 5)
+archer = NEW Archer(&quot;Legolas&quot;, 5)
+
+monster = NEW Warrior(&quot;Orc&quot;, 3)
+monster.health = 50  # Weaken monster for demo
+
+PRINT &quot;=== BATTLE BEGINS ===&quot;
+
+# Characters take turns (template method pattern)
+characters = [warrior, mage, archer]
+turn = 1
+
+WHILE monster.is_alive() AND ANY character.is_alive() FOR character IN characters:
+    PRINT &quot;\n=== Turn &quot; + turn + &quot; ===&quot;
+
+    FOR character IN characters:
+        IF character.is_alive():
+            character.take_turn(monster)  # Template method calls abstract methods
+
+    IF monster.is_alive():
+        # Monster attacks random character
+        alive_characters = FILTER characters WHERE character.is_alive()
+        IF LENGTH(alive_characters) &gt; 0:
+            target = RANDOM_FROM(alive_characters)
+            monster.attack(target)
+
+    turn = turn + 1
+
+PRINT &quot;\n=== BATTLE ENDED ===&quot;
+IF monster.is_alive():
+    PRINT &quot;Monster won!&quot;
+ELSE:
+    PRINT &quot;Heroes won!&quot;
+    # Award experience
+    FOR character IN characters:
+        IF character.is_alive():
+            character.gain_experience(100)
+</code></pre></div>
+<h2 id="the-template-method-pattern">The Template Method Pattern</h2>
+<p>Abstract classes are perfect for implementing the <strong>Template Method Pattern</strong>, where you define the skeleton of an algorithm in the base class and let subclasses override specific steps.</p>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS DataProcessor:
+    # Template method - defines algorithm skeleton
+    METHOD process_data(raw_data):
+        PRINT &quot;Starting data processing...&quot;
+
+        validated_data = validate(raw_data)  # Abstract step
+        cleaned_data = clean(validated_data)  # Abstract step
+        transformed_data = transform(cleaned_data)  # Abstract step
+
+        result = save(transformed_data)  # Concrete step
+        log_processing(result)  # Concrete step
+
+        RETURN result
+
+    # Abstract steps - to be implemented by subclasses
+    ABSTRACT METHOD validate(data)
+    ABSTRACT METHOD clean(data)
+    ABSTRACT METHOD transform(data)
+
+    # Concrete steps - common to all processors
+    METHOD save(data):
+        PRINT &quot;Saving processed data...&quot;
+        # Common saving logic
+        RETURN {&quot;success&quot;: true, &quot;records&quot;: LENGTH(data)}
+
+    METHOD log_processing(result):
+        PRINT &quot;Processing completed: &quot; + result.success
+        PRINT &quot;Records processed: &quot; + result.records
+
+CLASS CSVProcessor EXTENDS DataProcessor:
+    METHOD validate(data):
+        PRINT &quot;Validating CSV format...&quot;
+        # CSV-specific validation
+        RETURN data
+
+    METHOD clean(data):
+        PRINT &quot;Cleaning CSV data (removing nulls, trimming)...&quot;
+        # CSV-specific cleaning
+        RETURN data
+
+    METHOD transform(data):
+        PRINT &quot;Transforming CSV (converting dates, formatting)...&quot;
+        # CSV-specific transformation
+        RETURN data
+
+CLASS JSONProcessor EXTENDS DataProcessor:
+    METHOD validate(data):
+        PRINT &quot;Validating JSON structure...&quot;
+        # JSON-specific validation
+        RETURN data
+
+    METHOD clean(data):
+        PRINT &quot;Cleaning JSON (escaping characters, validating types)...&quot;
+        # JSON-specific cleaning
+        RETURN data
+
+    METHOD transform(data):
+        PRINT &quot;Transforming JSON (flattening nested objects)...&quot;
+        # JSON-specific transformation
+        RETURN data
+
+# Usage
+csv_data = &quot;name,age\nAlice,30\nBob,25&quot;
+json_data = &#39;{&quot;users&quot;: [{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}]}&#39;
+
+csv_processor = NEW CSVProcessor()
+csv_result = csv_processor.process_data(csv_data)
+# Output shows CSV-specific steps within the template
+
+json_processor = NEW JSONProcessor()
+json_result = json_processor.process_data(json_data)
+# Output shows JSON-specific steps within the same template
+</code></pre></div>
+<h2 id="when-to-use-abstract-classes">When to Use Abstract Classes</h2>
+<h3 id="use-abstract-classes-when">Use Abstract Classes When:</h3>
+<ol>
+<li><strong>You have related classes that share common code</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Vehicle:
+    PRIVATE speed
+    METHOD accelerate(amount)  # Common to all vehicles
+
+CLASS Car EXTENDS Vehicle
+CLASS Bike EXTENDS Vehicle
+</code></pre></div>
+<ol>
+<li><strong>You need to provide default implementations</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Animal:
+    METHOD breathe()  # Default implementation for all animals
+        PRINT &quot;Breathing...&quot;
+
+    ABSTRACT METHOD make_sound()  # Each animal sounds different
+</code></pre></div>
+<ol>
+<li><strong>You want to control the inheritance hierarchy</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Employee:
+    # Force all employees to have ID and calculate pay
+    ABSTRACT METHOD get_employee_id()
+    ABSTRACT METHOD calculate_pay()
+</code></pre></div>
+<ol>
+<li><strong>You're implementing the Template Method Pattern</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Game:
+    METHOD play():  # Template method
+        initialize()
+        WHILE NOT game_over():
+            take_turn()
+        display_winner()
+
+    ABSTRACT METHOD initialize()
+    ABSTRACT METHOD take_turn()
+    ABSTRACT METHOD game_over()
+    ABSTRACT METHOD display_winner()
+</code></pre></div>
+<h3 id="dont-use-abstract-classes-when">Don't Use Abstract Classes When:</h3>
+<ol>
+<li><strong>You need multiple inheritance</strong> (use interfaces instead)</li>
+<li><strong>The classes are unrelated</strong> (use interfaces for common behavior)</li>
+<li><strong>You might need to instantiate the base class later</strong> (make it concrete)</li>
+</ol>
+<h2 id="common-patterns-with-abstract-classes">Common Patterns with Abstract Classes</h2>
+<h3 id="pattern-1-factory-method-pattern">Pattern 1: Factory Method Pattern</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Dialog:
+    # Factory method - creates product, implementation varies
+    ABSTRACT METHOD create_button(): Button
+
+    # Template method using factory method
+    METHOD render():
+        PRINT &quot;Rendering dialog...&quot;
+        button = create_button()  # Calls child&#39;s factory method
+        button.render()
+        PRINT &quot;Dialog rendered&quot;
+
+CLASS WindowsDialog EXTENDS Dialog:
+    METHOD create_button():
+        RETURN NEW WindowsButton()
+
+CLASS WebDialog EXTENDS Dialog:
+    METHOD create_button():
+        RETURN NEW HTMLButton()
+
+# Usage
+dialog1 = NEW WindowsDialog()
+dialog1.render()  # Creates WindowsButton
+
+dialog2 = NEW WebDialog()
+dialog2.render()  # Creates HTMLButton
+</code></pre></div>
+<h3 id="pattern-2-chain-of-responsibility">Pattern 2: Chain of Responsibility</h3>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Handler:
+    PRIVATE next_handler
+
+    METHOD set_next(handler):
+        next_handler = handler
+        RETURN handler  # For fluent chaining
+
+    METHOD handle(request):
+        IF can_handle(request):
+            process(request)
+        ELSE IF next_handler != null:
+            next_handler.handle(request)
+        ELSE:
+            PRINT &quot;No handler available for: &quot; + request
+
+    ABSTRACT METHOD can_handle(request)
+    ABSTRACT METHOD process(request)
+
+CLASS SpamHandler EXTENDS Handler:
+    METHOD can_handle(request):
+        RETURN request CONTAINS &quot;buy now&quot; OR request CONTAINS &quot;cheap&quot;
+
+    METHOD process(request):
+        PRINT &quot;SpamHandler: Marked as spam&quot;
+
+CLASS ComplaintHandler EXTENDS Handler:
+    METHOD can_handle(request):
+        RETURN request CONTAINS &quot;complaint&quot; OR request CONTAINS &quot;refund&quot;
+
+    METHOD process(request):
+        PRINT &quot;ComplaintHandler: Forwarded to customer service&quot;
+</code></pre></div>
+<h2 id="practice-exercise-notification-system">Practice Exercise: Notification System</h2>
+<p>Create an abstract class for a notification system:</p>
+<ol>
+<li>
+<p><strong>Create an abstract class <code>Notification</code></strong> with:</p>
+</li>
+<li>
+<p>Attributes: <code>recipient</code>, <code>message</code>, <code>timestamp</code></p>
+</li>
+<li>Concrete methods: <code>get_info()</code>, <code>mark_as_sent()</code>, <code>is_expired()</code></li>
+<li>
+<p>Abstract methods: <code>send()</code>, <code>format_message()</code>, <code>validate_recipient()</code></p>
+</li>
+<li>
+<p><strong>Create concrete classes</strong> that extend <code>Notification</code>:</p>
+</li>
+<li>
+<p><code>EmailNotification</code>: Sends via email</p>
+</li>
+<li><code>SMSNotification</code>: Sends via SMS</li>
+<li>
+<p><code>PushNotification</code>: Sends push notification</p>
+</li>
+<li>
+<p><strong>Implement a template method</strong> <code>process_notification()</code> in the abstract class that:</p>
+</li>
+<li>
+<p>Validates recipient</p>
+</li>
+<li>Formats message</li>
+<li>Sends notification</li>
+<li>Marks as sent</li>
+<li>
+<p>Returns success status</p>
+</li>
+<li>
+<p><strong>Add a method to calculate priority</strong> (abstract) that each notification type implements differently.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>ABSTRACT CLASS Notification:
+    PRIVATE recipient
+    PRIVATE message
+    PRIVATE timestamp
+    PRIVATE is_sent
+    PRIVATE sent_time
+
+    METHOD INITIALIZE(notif_recipient, notif_message):
+        recipient = notif_recipient
+        message = notif_message
+        timestamp = CURRENT_TIME()
+        is_sent = false
+        sent_time = null
+
+    # Template method
+    METHOD process_notification():
+        PRINT &quot;Processing notification...&quot;
+
+        IF NOT validate_recipient():
+            PRINT &quot;Invalid recipient&quot;
+            RETURN false
+
+        formatted_message = format_message()
+        IF formatted_message == &quot;&quot;:
+            PRINT &quot;Failed to format message&quot;
+            RETURN false
+
+        success = send(formatted_message)
+        IF success:
+            mark_as_sent()
+            PRINT &quot;Notification sent successfully&quot;
+        ELSE:
+            PRINT &quot;Failed to send notification&quot;
+
+        RETURN success
+
+    # Concrete methods
+    METHOD get_info():
+        RETURN {
+            &quot;recipient&quot;: recipient,
+            &quot;message&quot;: SUBSTRING(message, 0, 50) + &quot;...&quot;,
+            &quot;timestamp&quot;: timestamp,
+            &quot;is_sent&quot;: is_sent,
+            &quot;sent_time&quot;: sent_time,
+            &quot;priority&quot;: calculate_priority()  # Uses abstract method
+        }
+
+    METHOD mark_as_sent():
+        is_sent = true
+        sent_time = CURRENT_TIME()
+
+    METHOD is_expired():
+        hours_since_creation = HOURS_DIFFERENCE(CURRENT_TIME(), timestamp)
+        RETURN hours_since_creation &gt; 24  # Expires after 24 hours
+
+    # Abstract methods - implement in child classes
+    ABSTRACT METHOD send(formatted_message)
+    ABSTRACT METHOD format_message()
+    ABSTRACT METHOD validate_recipient()
+    ABSTRACT METHOD calculate_priority()  # Returns priority level 1-10
+
+# Your implementations here...
+</code></pre></div>
+<h2 id="quick-check">Quick Check</h2>
+<ol>
+<li>
+<p><strong>Can you create an object from an abstract class?</strong></p>
+</li>
+<li>
+<p>No, abstract classes cannot be instantiated</p>
+</li>
+<li>
+<p><strong>What happens if a child class doesn't implement all abstract methods?</strong></p>
+</li>
+<li>
+<p>The child class must also be declared abstract</p>
+</li>
+<li>
+<p><strong>Can abstract classes have constructors?</strong></p>
+</li>
+<li>
+<p>Yes, abstract classes can have constructors</p>
+</li>
+<li>
+<p><strong>What's the main difference between abstract classes and interfaces?</strong></p>
+</li>
+<li>
+<p>Abstract classes can have implementation (concrete methods), interfaces traditionally cannot</p>
+</li>
+<li>
+<p><strong>When should you use an abstract class instead of an interface?</strong></p>
+</li>
+<li>
+<p>When you have related classes that share common code and state</p>
+</li>
+<li>
+<p><strong>What design pattern commonly uses abstract classes?</strong></p>
+</li>
+<li>
+<p>Template Method Pattern</p>
+</li>
+<li>
+<p><strong>Can a class extend an abstract class and implement an interface?</strong></p>
+</li>
+<li>
+<p>Yes, e.g., <code>CLASS MyClass EXTENDS AbstractClass IMPLEMENTS SomeInterface</code></p>
+</li>
+</ol>
+<hr />
+<p><strong>Next Chapter:</strong> <a href="./chapter3-3.md">Chapter 3.3: Key Design Principles (Made Simple)</a> where we'll learn about DRY, Single Responsibility, and other essential design principles!</p>
+<blockquote>
+<p><strong>Key Insight:</strong> Abstract classes are the perfect tool when you need to define a common structure and behavior for a family of related classes while allowing customization. They're like a recipe where some steps are fixed ("preheat oven to 350°F") and others are left to the chef ("add your choice of vegetables"). This balance between standardization and flexibility is what makes abstract classes so powerful in object-oriented design.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reject</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
