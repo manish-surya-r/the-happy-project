@@ -6,11 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Computer Science Educational Platform">
+        <meta name="description" content="Precision-crafted courses on software engineering, system design, and computer science fundamentals.">
       
       
+        <meta name="author" content="Manish Sri Sai Surya Routhu">
       
-        <link rel="canonical" href="https://yourdomain.com/ood/2.2-methods-and-behavior/">
+      
+        <link rel="canonical" href="https://manish-surya-r.github.io/zeal-core/ood/2.2-methods-and-behavior/">
       
       
         <link rel="prev" href="../2.1-attributes-and-states/">
@@ -22,12 +24,12 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/zeal-core-logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Methods & Behavior - The Entanglement Project (In development Phase)</title>
+        <title>Methods & Behavior - Zeal Core</title>
       
     
     
@@ -48,16 +50,26 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/zeal.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
 
     
     
@@ -71,7 +83,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -96,10 +108,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="The Entanglement Project (In development Phase)" class="md-header__button md-logo" aria-label="The Entanglement Project (In development Phase)" data-md-component="logo">
+    <a href="../.." title="Zeal Core" class="md-header__button md-logo" aria-label="Zeal Core" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/zeal-core-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -110,7 +121,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            The Entanglement Project (In development Phase)
+            Zeal Core
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -129,20 +140,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="tutorialspoint" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="w3schools" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
       </label>
     
   
@@ -173,6 +184,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -196,6 +212,18 @@
 </div>
       
     
+    
+      <div class="md-header__source">
+        <a href="https://github.com/manish-surya-r/zeal-core" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zeal-core
+  </div>
+</a>
+      </div>
     
   </nav>
   
@@ -238,6 +266,8 @@
           
   
   
+    
+  
   Object-Oriented Design
 
         </a>
@@ -258,7 +288,9 @@
           
   
   
-  Object-Oriented Design in C++
+    
+  
+  OOP in C++
 
         </a>
       </li>
@@ -278,7 +310,31 @@
           
   
   
-  Object-Oriented Design in Python
+    
+  
+  OOP in Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../coming-soon/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Coming Soon
 
         </a>
       </li>
@@ -298,7 +354,9 @@
           
   
   
-  My Works
+    
+  
+  Essays
 
         </a>
       </li>
@@ -332,16 +390,29 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="The Entanglement Project (In development Phase)" class="md-nav__button md-logo" aria-label="The Entanglement Project (In development Phase)" data-md-component="logo">
-      
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Zeal Core" class="md-nav__button md-logo" aria-label="Zeal Core" data-md-component="logo">
+      
+  <img src="../../assets/zeal-core-logo.svg" alt="logo">
 
     </a>
-    The Entanglement Project (In development Phase)
+    Zeal Core
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/manish-surya-r/zeal-core" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zeal-core
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -382,12 +453,28 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
         
         
       
+      
+        
       
     
     
@@ -463,20 +550,31 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
       
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   
@@ -579,20 +677,35 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
       
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   
@@ -1190,20 +1303,33 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
       
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
             
   
   
@@ -1332,20 +1458,29 @@
   
     
     
+      
+        
+      
+    
     
     
       
       
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
             
   
   
@@ -1418,20 +1553,29 @@
   
     
     
+      
+        
+      
+    
     
     
       
       
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
             
   
   
@@ -1511,9 +1655,29 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
+      
+        
       
     
     
@@ -1524,14 +1688,15 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../oop-cpp/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Object-Oriented Design in C++
+    OOP in C++
   
 
     
@@ -1539,46 +1704,26 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Object-Oriented Design in C++
+    OOP in C++
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../oop-cpp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1764,9 +1909,27 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
+      
+        
       
     
     
@@ -1784,7 +1947,7 @@
   <span class="md-ellipsis">
     
   
-    Object-Oriented Design in Python
+    OOP in Python
   
 
     
@@ -1800,7 +1963,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Object-Oriented Design in Python
+    OOP in Python
   
 
           </label>
@@ -1848,7 +2011,7 @@
   <span class="md-ellipsis">
     
   
-    Thinking
+    Thinking in Classes
   
 
     
@@ -2017,9 +2180,15 @@
   
     
     
+      
+        
+      
+    
     
     
       
+      
+        
       
     
     
@@ -2037,7 +2206,7 @@
   <span class="md-ellipsis">
     
   
-    My Works
+    Coming Soon
   
 
     
@@ -2053,7 +2222,98 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    My Works
+    Coming Soon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coming-soon/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
   
 
           </label>
@@ -2101,426 +2361,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-objects-in-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introduction: Objects in Action
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction: Objects in Action">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#real-world-analogy-a-smartphone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Real-World Analogy: A Smartphone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-are-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Are Methods?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-method-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Basic Method Structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types-of-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Types of Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types of Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-accessor-methods-getters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Accessor Methods (Getters)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-mutator-methods-setters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Mutator Methods (Setters)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-query-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Query Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-action-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Action Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-factory-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Factory Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method-parameters-and-return-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Method Parameters and Return Values
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Method Parameters and Return Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters-input-to-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters: Input to Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#return-values-output-from-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Return Values: Output from Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-this-or-self-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The this or self Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method-visibility-public-vs-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Method Visibility: Public vs Private
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practical Examples
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Practical Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-1-social-media-post" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 1: Social Media Post
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2-game-character-with-combat-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 2: Game Character with Combat Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-3-online-shopping-cart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 3: Online Shopping Cart
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method-overloading-and-overriding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Method Overloading and Overriding
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Method Overloading and Overriding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#method-overloading-same-class-different-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Method Overloading (Same class, different parameters)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#method-overriding-different-classes-same-method-signature" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Method Overriding (Different classes, same method signature)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices-for-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices for Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Best Practices for Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-single-responsibility-principle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Single Responsibility Principle
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-meaningful-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Meaningful Names
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-appropriate-length" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Appropriate Length
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-consistent-return-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Consistent Return Types
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Patterns
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-builder-pattern-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Builder Pattern Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-fluent-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Fluent Interface
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practice-exercise-library-management-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practice Exercise: Library Management System
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Check
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2530,18 +2370,21 @@
                   
 
 
+  
+  
 
-<h1 id="chapter-22-methods-behavior-what-objects-can-do">Chapter 2.2: Methods &amp; Behavior - What Objects Can Do</h1>
-<h2 id="introduction-objects-in-action">Introduction: Objects in Action</h2>
+
+<h1 id="chapter-22-methods-behavior-what-objects-can-do">Chapter 2.2: Methods &amp; Behavior - What Objects Can Do<a class="headerlink" href="#chapter-22-methods-behavior-what-objects-can-do" title="Anchor link to this section">&para;</a></h1>
+<h2 id="introduction-objects-in-action">Introduction: Objects in Action<a class="headerlink" href="#introduction-objects-in-action" title="Anchor link to this section">&para;</a></h2>
 <p>If attributes are <strong>what an object is</strong>, then methods are <strong>what an object does</strong>. Methods define the behaviors and capabilities of objects. They're the actions objects can perform, often using or modifying their internal state.</p>
-<h3 id="real-world-analogy-a-smartphone">Real-World Analogy: A Smartphone</h3>
+<h3 id="real-world-analogy-a-smartphone">Real-World Analogy: A Smartphone<a class="headerlink" href="#real-world-analogy-a-smartphone" title="Anchor link to this section">&para;</a></h3>
 <p>Your smartphone has:</p>
 <ul>
 <li><strong>Attributes (State):</strong> Battery percentage, storage used, brightness level</li>
 <li><strong>Methods (Behavior):</strong> <code>make_call()</code>, <code>take_photo()</code>, <code>play_music()</code>, <code>send_message()</code></li>
 </ul>
 <p>Methods make objects useful. A car with only attributes (color, model, fuel level) isn't very useful until it can <code>accelerate()</code>, <code>brake()</code>, and <code>turn()</code>.</p>
-<h2 id="what-are-methods">What Are Methods?</h2>
+<h2 id="what-are-methods">What Are Methods?<a class="headerlink" href="#what-are-methods" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Methods</strong> are functions defined inside a class that describe the behaviors of objects created from that class. They can:</p>
 <ol>
 <li>Use the object's attributes</li>
@@ -2550,697 +2393,697 @@
 <li>Interact with other objects</li>
 <li>Perform calculations or operations</li>
 </ol>
-<h2 id="basic-method-structure">Basic Method Structure</h2>
-<div class="highlight"><pre><span></span><code>CLASS ClassName:
-    # Attributes here...
-
-    # Method definition
-    METHOD method_name(parameter1, parameter2, ...):
-        # Method body - what the method does
-        # Can use object&#39;s attributes
-        # Can use parameters
-        # Optionally return a value
-</code></pre></div>
-<h2 id="types-of-methods">Types of Methods</h2>
-<h3 id="1-accessor-methods-getters">1. Accessor Methods (Getters)</h3>
+<h2 id="basic-method-structure">Basic Method Structure<a class="headerlink" href="#basic-method-structure" title="Anchor link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CLASS ClassName:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    # Attributes here...
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    # Method definition
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    METHOD method_name(parameter1, parameter2, ...):
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        # Method body - what the method does
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        # Can use object&#39;s attributes
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        # Can use parameters
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        # Optionally return a value
+</span></code></pre></div>
+<h2 id="types-of-methods">Types of Methods<a class="headerlink" href="#types-of-methods" title="Anchor link to this section">&para;</a></h2>
+<h3 id="1-accessor-methods-getters">1. Accessor Methods (Getters)<a class="headerlink" href="#1-accessor-methods-getters" title="Anchor link to this section">&para;</a></h3>
 <p>Methods that <strong>read</strong> or <strong>return</strong> attribute values without modifying them.</p>
-<div class="highlight"><pre><span></span><code>CLASS BankAccount:
-    PRIVATE balance
-    PRIVATE account_holder
-
-    # Getter methods - return attribute values
-    METHOD get_balance():
-        RETURN balance
-
-    METHOD get_account_holder():
-        RETURN account_holder
-
-    METHOD get_account_summary():
-        # Returns formatted information
-        RETURN &quot;Account Holder: &quot; + account_holder + &quot;\n&quot; +
-               &quot;Balance: $&quot; + balance
-</code></pre></div>
-<h3 id="2-mutator-methods-setters">2. Mutator Methods (Setters)</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CLASS BankAccount:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    PRIVATE balance
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    PRIVATE account_holder
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    # Getter methods - return attribute values
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    METHOD get_balance():
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        RETURN balance
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    METHOD get_account_holder():
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        RETURN account_holder
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    METHOD get_account_summary():
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        # Returns formatted information
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        RETURN &quot;Account Holder: &quot; + account_holder + &quot;\n&quot; +
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>               &quot;Balance: $&quot; + balance
+</span></code></pre></div>
+<h3 id="2-mutator-methods-setters">2. Mutator Methods (Setters)<a class="headerlink" href="#2-mutator-methods-setters" title="Anchor link to this section">&para;</a></h3>
 <p>Methods that <strong>modify</strong> or <strong>update</strong> attribute values.</p>
-<div class="highlight"><pre><span></span><code>CLASS Student:
-    PRIVATE name
-    PRIVATE grade
-    PRIVATE attendance
-
-    # Setter methods - modify attributes
-    METHOD set_name(new_name):
-        IF LENGTH(new_name) &gt; 0:
-            name = new_name
-
-    METHOD update_grade(new_grade):
-        IF new_grade IN [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;F&quot;]:
-            grade = new_grade
-
-    METHOD mark_attendance(present):
-        IF present == true:
-            attendance = attendance + 1
-</code></pre></div>
-<h3 id="3-query-methods">3. Query Methods</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CLASS Student:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    PRIVATE name
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    PRIVATE grade
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    PRIVATE attendance
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    # Setter methods - modify attributes
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    METHOD set_name(new_name):
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        IF LENGTH(new_name) &gt; 0:
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            name = new_name
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    METHOD update_grade(new_grade):
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        IF new_grade IN [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;F&quot;]:
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            grade = new_grade
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    METHOD mark_attendance(present):
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        IF present == true:
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            attendance = attendance + 1
+</span></code></pre></div>
+<h3 id="3-query-methods">3. Query Methods<a class="headerlink" href="#3-query-methods" title="Anchor link to this section">&para;</a></h3>
 <p>Methods that ask questions about the object's state and return boolean answers.</p>
-<div class="highlight"><pre><span></span><code>CLASS Email:
-    PRIVATE is_read
-    PRIVATE is_important
-    PRIVATE has_attachment
-
-    # Query methods - return true/false
-    METHOD is_unread():
-        RETURN NOT is_read
-
-    METHOD requires_action():
-        RETURN is_important OR has_attachment
-
-    METHOD can_be_deleted():
-        RETURN NOT is_important AND is_read
-</code></pre></div>
-<h3 id="4-action-methods">4. Action Methods</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>CLASS Email:
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    PRIVATE is_read
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    PRIVATE is_important
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    PRIVATE has_attachment
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    # Query methods - return true/false
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    METHOD is_unread():
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        RETURN NOT is_read
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    METHOD requires_action():
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        RETURN is_important OR has_attachment
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    METHOD can_be_deleted():
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        RETURN NOT is_important AND is_read
+</span></code></pre></div>
+<h3 id="4-action-methods">4. Action Methods<a class="headerlink" href="#4-action-methods" title="Anchor link to this section">&para;</a></h3>
 <p>Methods that perform significant operations, often involving multiple steps.</p>
-<div class="highlight"><pre><span></span><code>CLASS CoffeeMachine:
-    PRIVATE water_level
-    PRIVATE coffee_beans
-    PRIVATE is_on
-
-    # Action method - complex operation
-    METHOD make_coffee(coffee_type):
-        IF NOT is_on:
-            PRINT &quot;Please turn on the machine first&quot;
-            RETURN
-
-        IF water_level &lt; 1:
-            PRINT &quot;Add water&quot;
-            RETURN
-
-        IF coffee_beans &lt; 10:
-            PRINT &quot;Add coffee beans&quot;
-            RETURN
-
-        # Complex coffee-making process
-        heat_water()
-        grind_beans()
-        brew_coffee(coffee_type)
-        serve_coffee()
-
-        # Update state
-        water_level = water_level - 1
-        coffee_beans = coffee_beans - 10
-
-        PRINT coffee_type + &quot; is ready!&quot;
-</code></pre></div>
-<h3 id="5-factory-methods">5. Factory Methods</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CLASS CoffeeMachine:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    PRIVATE water_level
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    PRIVATE coffee_beans
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    PRIVATE is_on
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    # Action method - complex operation
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    METHOD make_coffee(coffee_type):
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        IF NOT is_on:
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            PRINT &quot;Please turn on the machine first&quot;
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            RETURN
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        IF water_level &lt; 1:
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            PRINT &quot;Add water&quot;
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>            RETURN
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        IF coffee_beans &lt; 10:
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            PRINT &quot;Add coffee beans&quot;
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            RETURN
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        # Complex coffee-making process
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        heat_water()
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        grind_beans()
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        brew_coffee(coffee_type)
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        serve_coffee()
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        # Update state
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        water_level = water_level - 1
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        coffee_beans = coffee_beans - 10
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>        PRINT coffee_type + &quot; is ready!&quot;
+</span></code></pre></div>
+<h3 id="5-factory-methods">5. Factory Methods<a class="headerlink" href="#5-factory-methods" title="Anchor link to this section">&para;</a></h3>
 <p>Methods that create and return new objects.</p>
-<div class="highlight"><pre><span></span><code>CLASS ShoppingCart:
-    PRIVATE items
-
-    # Factory method - creates related objects
-    METHOD create_order():
-        order = NEW Order()
-        order.items = COPY(items)
-        order.total = calculate_total()
-        order.status = &quot;pending&quot;
-        RETURN order
-
-    METHOD add_product(product_name, price):
-        product = NEW Product()
-        product.name = product_name
-        product.price = price
-        ADD product TO items
-</code></pre></div>
-<h2 id="method-parameters-and-return-values">Method Parameters and Return Values</h2>
-<h3 id="parameters-input-to-methods">Parameters: Input to Methods</h3>
-<div class="highlight"><pre><span></span><code>CLASS Calculator:
-    METHOD add(a, b):
-        RETURN a + b
-
-    METHOD multiply(a, b):
-        RETURN a * b
-
-    # Multiple parameters
-    METHOD calculate_discount(price, discount_percentage, is_member):
-        discount = price * (discount_percentage / 100)
-        IF is_member:
-            discount = discount * 1.1  # Extra 10% for members
-        RETURN price - discount
-</code></pre></div>
-<h3 id="return-values-output-from-methods">Return Values: Output from Methods</h3>
-<div class="highlight"><pre><span></span><code>CLASS WeatherStation:
-    PRIVATE temperature
-    PRIVATE humidity
-
-    METHOD get_temperature_in_celsius():
-        RETURN temperature
-
-    METHOD get_temperature_in_fahrenheit():
-        RETURN (temperature * 9/5) + 32
-
-    METHOD get_weather_summary():
-        IF temperature &gt; 30:
-            feeling = &quot;hot&quot;
-        ELSE IF temperature &lt; 10:
-            feeling = &quot;cold&quot;
-        ELSE:
-            feeling = &quot;pleasant&quot;
-
-        RETURN &quot;It&#39;s &quot; + feeling + &quot; with &quot; + humidity + &quot;% humidity&quot;
-
-    # Can return different types
-    METHOD get_all_metrics():
-        RETURN {
-            &quot;temp_c&quot;: temperature,
-            &quot;temp_f&quot;: get_temperature_in_fahrenheit(),
-            &quot;humidity&quot;: humidity,
-            &quot;summary&quot;: get_weather_summary()
-        }
-</code></pre></div>
-<h2 id="the-this-or-self-reference">The <code>this</code> or <code>self</code> Reference</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CLASS ShoppingCart:
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    PRIVATE items
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    # Factory method - creates related objects
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    METHOD create_order():
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        order = NEW Order()
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        order.items = COPY(items)
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        order.total = calculate_total()
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        order.status = &quot;pending&quot;
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        RETURN order
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    METHOD add_product(product_name, price):
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        product = NEW Product()
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        product.name = product_name
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        product.price = price
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        ADD product TO items
+</span></code></pre></div>
+<h2 id="method-parameters-and-return-values">Method Parameters and Return Values<a class="headerlink" href="#method-parameters-and-return-values" title="Anchor link to this section">&para;</a></h2>
+<h3 id="parameters-input-to-methods">Parameters: Input to Methods<a class="headerlink" href="#parameters-input-to-methods" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CLASS Calculator:
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    METHOD add(a, b):
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        RETURN a + b
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    METHOD multiply(a, b):
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        RETURN a * b
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    # Multiple parameters
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    METHOD calculate_discount(price, discount_percentage, is_member):
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        discount = price * (discount_percentage / 100)
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        IF is_member:
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            discount = discount * 1.1  # Extra 10% for members
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        RETURN price - discount
+</span></code></pre></div>
+<h3 id="return-values-output-from-methods">Return Values: Output from Methods<a class="headerlink" href="#return-values-output-from-methods" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CLASS WeatherStation:
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    PRIVATE temperature
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    PRIVATE humidity
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    METHOD get_temperature_in_celsius():
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        RETURN temperature
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    METHOD get_temperature_in_fahrenheit():
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        RETURN (temperature * 9/5) + 32
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    METHOD get_weather_summary():
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        IF temperature &gt; 30:
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>            feeling = &quot;hot&quot;
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        ELSE IF temperature &lt; 10:
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>            feeling = &quot;cold&quot;
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        ELSE:
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>            feeling = &quot;pleasant&quot;
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        RETURN &quot;It&#39;s &quot; + feeling + &quot; with &quot; + humidity + &quot;% humidity&quot;
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    # Can return different types
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    METHOD get_all_metrics():
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        RETURN {
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>            &quot;temp_c&quot;: temperature,
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>            &quot;temp_f&quot;: get_temperature_in_fahrenheit(),
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>            &quot;humidity&quot;: humidity,
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>            &quot;summary&quot;: get_weather_summary()
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        }
+</span></code></pre></div>
+<h2 id="the-this-or-self-reference">The <code>this</code> or <code>self</code> Reference<a class="headerlink" href="#the-this-or-self-reference" title="Anchor link to this section">&para;</a></h2>
 <p>Inside methods, we often need to refer to the current object's attributes. Different languages use <code>this</code>, <code>self</code>, or implicit references.</p>
-<div class="highlight"><pre><span></span><code># Explicit reference (like Java&#39;s &#39;this&#39;)
-CLASS Student:
-    PRIVATE name
-
-    METHOD set_name(name):
-        this.name = name  # &#39;this&#39; refers to the current object
-        # Distinguishes attribute &#39;name&#39; from parameter &#39;name&#39;
-
-# Implicit reference (like Python&#39;s &#39;self&#39;)
-CLASS Student:
-    PRIVATE name
-
-    METHOD set_name(name):
-        self.name = name  # &#39;self&#39; refers to the current object
-
-# In our pseudo-code, we&#39;ll use implicit attribute access
-CLASS Student:
-    PRIVATE name
-
-    METHOD set_name(new_name):
-        name = new_name  # &#39;name&#39; refers to the attribute
-        # Since we&#39;re inside the class, it&#39;s clear
-</code></pre></div>
-<h2 id="method-visibility-public-vs-private">Method Visibility: Public vs Private</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># Explicit reference (like Java&#39;s &#39;this&#39;)
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>CLASS Student:
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    PRIVATE name
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    METHOD set_name(name):
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        this.name = name  # &#39;this&#39; refers to the current object
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        # Distinguishes attribute &#39;name&#39; from parameter &#39;name&#39;
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a># Implicit reference (like Python&#39;s &#39;self&#39;)
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>CLASS Student:
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    PRIVATE name
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    METHOD set_name(name):
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        self.name = name  # &#39;self&#39; refers to the current object
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a># In our pseudo-code, we&#39;ll use implicit attribute access
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>CLASS Student:
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    PRIVATE name
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    METHOD set_name(new_name):
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>        name = new_name  # &#39;name&#39; refers to the attribute
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>        # Since we&#39;re inside the class, it&#39;s clear
+</span></code></pre></div>
+<h2 id="method-visibility-public-vs-private">Method Visibility: Public vs Private<a class="headerlink" href="#method-visibility-public-vs-private" title="Anchor link to this section">&para;</a></h2>
 <p>Just like attributes, methods can be public (accessible from anywhere) or private (only accessible within the class).</p>
-<div class="highlight"><pre><span></span><code>CLASS UserAccount:
-    PRIVATE password_hash
-    PRIVATE failed_login_attempts
-
-    # Public methods - interface to the world
-    PUBLIC METHOD login(username, password):
-        IF verify_password(password):
-            failed_login_attempts = 0
-            RETURN true
-        ELSE:
-            failed_login_attempts = failed_login_attempts + 1
-            IF failed_login_attempts &gt;= 3:
-                lock_account()
-            RETURN false
-
-    PUBLIC METHOD change_password(old_password, new_password):
-        IF verify_password(old_password):
-            set_password(new_password)
-            RETURN true
-        RETURN false
-
-    # Private methods - internal implementation details
-    PRIVATE METHOD verify_password(input_password):
-        RETURN hash(input_password) == password_hash
-
-    PRIVATE METHOD set_password(new_password):
-        password_hash = hash(new_password)
-
-    PRIVATE METHOD lock_account():
-        # Implementation details hidden
-        # Send email, log event, etc.
-</code></pre></div>
-<h2 id="practical-examples">Practical Examples</h2>
-<h3 id="example-1-social-media-post">Example 1: Social Media Post</h3>
-<div class="highlight"><pre><span></span><code>CLASS SocialMediaPost:
-    PRIVATE content
-    PRIVATE author
-    PRIVATE likes_count
-    PRIVATE comments: List
-    PRIVATE timestamp
-
-    # Constructor
-    METHOD INITIALIZE(post_content, post_author):
-        content = post_content
-        author = post_author
-        likes_count = 0
-        comments = []
-        timestamp = CURRENT_TIME()
-
-    # Action methods
-    METHOD like():
-        likes_count = likes_count + 1
-        PRINT author + &quot;&#39;s post got a like! Total: &quot; + likes_count
-
-    METHOD add_comment(comment_text, commenter):
-        comment = {
-            &quot;text&quot;: comment_text,
-            &quot;author&quot;: commenter,
-            &quot;time&quot;: CURRENT_TIME()
-        }
-        ADD comment TO comments
-        PRINT commenter + &quot; commented: &quot; + comment_text
-
-    METHOD edit_content(new_content):
-        old_content = content
-        content = new_content
-        PRINT &quot;Post updated from: &quot; + old_content + &quot; to: &quot; + new_content
-
-    # Query methods
-    METHOD get_likes_count():
-        RETURN likes_count
-
-    METHOD has_comments():
-        RETURN LENGTH(comments) &gt; 0
-
-    METHOD is_popular():
-        RETURN likes_count &gt; 100 OR LENGTH(comments) &gt; 20
-
-    # Utility methods
-    METHOD display_post():
-        PRINT &quot;Author: &quot; + author
-        PRINT &quot;Time: &quot; + timestamp
-        PRINT &quot;Content: &quot; + content
-        PRINT &quot;Likes: &quot; + likes_count
-        PRINT &quot;Comments: &quot; + LENGTH(comments)
-        PRINT &quot;---&quot;
-
-    METHOD get_engagement_ratio():
-        total_engagement = likes_count + LENGTH(comments)
-        # Assuming content length as proxy for &quot;effort&quot;
-        RETURN total_engagement / LENGTH(content)
-</code></pre></div>
-<h3 id="example-2-game-character-with-combat-methods">Example 2: Game Character with Combat Methods</h3>
-<div class="highlight"><pre><span></span><code>CLASS GameCharacter:
-    PRIVATE name
-    PRIVATE health
-    PRIVATE mana
-    PRIVATE level
-    PRIVATE inventory: Map  # item -&gt; count
-    PRIVATE equipped_weapon
-
-    # Combat methods
-    METHOD attack(target):
-        IF health &lt;= 0:
-            PRINT name + &quot; is defeated and cannot attack!&quot;
-            RETURN 0
-
-        base_damage = 10 + (level * 2)
-
-        # Weapon bonus
-        IF equipped_weapon != null:
-            base_damage = base_damage + equipped_weapon.damage
-
-        # Critical hit chance
-        IF RANDOM(1, 100) &lt;= (level * 2):  # Higher level = more crit chance
-            base_damage = base_damage * 1.5
-            PRINT &quot;Critical hit!&quot;
-
-        target.take_damage(base_damage)
-        PRINT name + &quot; attacks &quot; + target.name + &quot; for &quot; + base_damage + &quot; damage!&quot;
-
-        RETURN base_damage
-
-    METHOD take_damage(amount):
-        health = health - amount
-        IF health &lt;= 0:
-            health = 0
-            PRINT name + &quot; has been defeated!&quot;
-        ELSE:
-            PRINT name + &quot; has &quot; + health + &quot; health remaining&quot;
-
-    METHOD heal(amount):
-        max_health = 100 + (level * 20)
-        old_health = health
-        health = MIN(health + amount, max_health)
-        healed = health - old_health
-        PRINT name + &quot; healed for &quot; + healed + &quot; health&quot;
-        RETURN healed
-
-    # Inventory management methods
-    METHOD use_item(item_name):
-        IF inventory.CONTAINS_KEY(item_name) AND inventory[item_name] &gt; 0:
-            inventory[item_name] = inventory[item_name] - 1
-
-            IF item_name == &quot;health_potion&quot;:
-                heal(50)
-            ELSE IF item_name == &quot;mana_potion&quot;:
-                mana = MIN(mana + 30, 100 + (level * 10))
-            ELSE IF item_name == &quot;strength_potion&quot;:
-                # Temporary buff - would need buff system
-                PRINT name + &quot; feels stronger!&quot;
-
-            PRINT &quot;Used &quot; + item_name
-        ELSE:
-            PRINT &quot;Don&#39;t have &quot; + item_name
-
-    METHOD equip_weapon(weapon_name):
-        IF inventory.CONTAINS_KEY(weapon_name) AND inventory[weapon_name] &gt; 0:
-            IF equipped_weapon != null:
-                # Put old weapon back in inventory
-                inventory[equipped_weapon.name] = inventory[equipped_weapon.name] + 1
-
-            equipped_weapon = GET_WEapon_OBJECT(weapon_name)
-            inventory[weapon_name] = inventory[weapon_name] - 1
-            PRINT name + &quot; equipped &quot; + weapon_name
-        ELSE:
-            PRINT &quot;Cannot find &quot; + weapon_name
-
-    # Utility methods
-    METHOD get_status():
-        RETURN {
-            &quot;name&quot;: name,
-            &quot;health&quot;: health + &quot;/&quot; + (100 + (level * 20)),
-            &quot;mana&quot;: mana + &quot;/&quot; + (50 + (level * 10)),
-            &quot;level&quot;: level,
-            &quot;weapon&quot;: IF equipped_weapon != null THEN equipped_weapon.name ELSE &quot;None&quot;
-        }
-
-    METHOD is_alive():
-        RETURN health &gt; 0
-</code></pre></div>
-<h3 id="example-3-online-shopping-cart">Example 3: Online Shopping Cart</h3>
-<div class="highlight"><pre><span></span><code>CLASS ShoppingCart:
-    PRIVATE items: List  # List of {product, quantity, price}
-    PRIVATE discount_code
-    PRIVATE tax_rate
-    PRIVATE is_checked_out
-
-    # Constructor
-    METHOD INITIALIZE():
-        items = []
-        discount_code = &quot;&quot;
-        tax_rate = 0.08  # 8% tax
-        is_checked_out = false
-
-    # Core shopping methods
-    METHOD add_item(product, quantity = 1):
-        IF is_checked_out:
-            PRINT &quot;Cannot add items after checkout&quot;
-            RETURN
-
-        # Check if product already in cart
-        FOR item IN items:
-            IF item.product.id == product.id:
-                item.quantity = item.quantity + quantity
-                PRINT &quot;Updated &quot; + product.name + &quot; to &quot; + item.quantity + &quot; units&quot;
-                RETURN
-
-        # Add new item
-        new_item = {
-            &quot;product&quot;: product,
-            &quot;quantity&quot;: quantity,
-            &quot;price&quot;: product.price
-        }
-        ADD new_item TO items
-        PRINT &quot;Added &quot; + quantity + &quot; × &quot; + product.name + &quot; to cart&quot;
-
-    METHOD remove_item(product_id, quantity = 1):
-        IF is_checked_out:
-            PRINT &quot;Cannot remove items after checkout&quot;
-            RETURN
-
-        FOR item IN items:
-            IF item.product.id == product_id:
-                IF quantity &gt;= item.quantity:
-                    REMOVE item FROM items
-                    PRINT &quot;Removed &quot; + item.product.name + &quot; from cart&quot;
-                ELSE:
-                    item.quantity = item.quantity - quantity
-                    PRINT &quot;Reduced &quot; + item.product.name + &quot; to &quot; + item.quantity + &quot; units&quot;
-                RETURN
-
-        PRINT &quot;Product not found in cart&quot;
-
-    METHOD update_quantity(product_id, new_quantity):
-        IF new_quantity &lt;= 0:
-            remove_item(product_id)
-        ELSE:
-            FOR item IN items:
-                IF item.product.id == product_id:
-                    item.quantity = new_quantity
-                    PRINT &quot;Updated &quot; + item.product.name + &quot; to &quot; + new_quantity + &quot; units&quot;
-                    RETURN
-            PRINT &quot;Product not found in cart&quot;
-
-    # Calculation methods
-    METHOD calculate_subtotal():
-        subtotal = 0
-        FOR item IN items:
-            subtotal = subtotal + (item.price * item.quantity)
-        RETURN subtotal
-
-    METHOD calculate_tax():
-        RETURN calculate_subtotal() * tax_rate
-
-    METHOD calculate_discount():
-        subtotal = calculate_subtotal()
-        IF discount_code == &quot;SAVE10&quot;:
-            RETURN subtotal * 0.10
-        ELSE IF discount_code == &quot;SAVE20&quot;:
-            RETURN subtotal * 0.20
-        ELSE:
-            RETURN 0
-
-    METHOD calculate_total():
-        subtotal = calculate_subtotal()
-        tax = calculate_tax()
-        discount = calculate_discount()
-        RETURN subtotal + tax - discount
-
-    # Checkout process methods
-    METHOD apply_discount(code):
-        VALID_CODES = [&quot;SAVE10&quot;, &quot;SAVE20&quot;, &quot;WELCOME5&quot;]
-        IF code IN VALID_CODES:
-            discount_code = code
-            PRINT &quot;Discount applied: &quot; + code
-        ELSE:
-            PRINT &quot;Invalid discount code&quot;
-
-    METHOD checkout(payment_method):
-        IF is_checked_out:
-            PRINT &quot;Order already checked out&quot;
-            RETURN false
-
-        IF LENGTH(items) == 0:
-            PRINT &quot;Cart is empty&quot;
-            RETURN false
-
-        total = calculate_total()
-        PRINT &quot;=== CHECKOUT ===&quot;
-        PRINT &quot;Items: &quot; + LENGTH(items)
-        PRINT &quot;Subtotal: $&quot; + calculate_subtotal()
-        PRINT &quot;Tax: $&quot; + calculate_tax()
-        PRINT &quot;Discount: $&quot; + calculate_discount()
-        PRINT &quot;Total: $&quot; + total
-        PRINT &quot;Payment method: &quot; + payment_method
-
-        # Simulate payment processing
-        IF process_payment(payment_method, total):
-            is_checked_out = true
-            PRINT &quot;Payment successful! Order confirmed.&quot;
-            generate_receipt()
-            clear_cart_after_delay()  # Would clear after some time
-            RETURN true
-        ELSE:
-            PRINT &quot;Payment failed&quot;
-            RETURN false
-
-    # Private helper methods
-    PRIVATE METHOD process_payment(method, amount):
-        # Simulate payment processing
-        PRINT &quot;Processing &quot; + method + &quot; payment of $&quot; + amount
-        # In real system, would contact payment gateway
-        RETURN true  # Simulate success
-
-    PRIVATE METHOD generate_receipt():
-        receipt = &quot;=== RECEIPT ===\n&quot;
-        receipt = receipt + &quot;Date: &quot; + CURRENT_DATE() + &quot;\n&quot;
-        receipt = receipt + &quot;Items:\n&quot;
-
-        FOR item IN items:
-            receipt = receipt + &quot;  &quot; + item.product.name + &quot; × &quot; + item.quantity
-            receipt = receipt + &quot; @ $&quot; + item.price + &quot; = $&quot; + (item.price * item.quantity) + &quot;\n&quot;
-
-        receipt = receipt + &quot;----------------\n&quot;
-        receipt = receipt + &quot;Subtotal: $&quot; + calculate_subtotal() + &quot;\n&quot;
-        receipt = receipt + &quot;Tax: $&quot; + calculate_tax() + &quot;\n&quot;
-        receipt = receipt + &quot;Discount: $&quot; + calculate_discount() + &quot;\n&quot;
-        receipt = receipt + &quot;TOTAL: $&quot; + calculate_total() + &quot;\n&quot;
-
-        PRINT receipt
-        # In real system, would save to database and/or email to customer
-
-    # Query methods
-    METHOD get_item_count():
-        total = 0
-        FOR item IN items:
-            total = total + item.quantity
-        RETURN total
-
-    METHOD is_empty():
-        RETURN LENGTH(items) == 0
-
-    METHOD contains_product(product_id):
-        FOR item IN items:
-            IF item.product.id == product_id:
-                RETURN true
-        RETURN false
-
-    METHOD get_cart_summary():
-        RETURN {
-            &quot;item_count&quot;: get_item_count(),
-            &quot;unique_items&quot;: LENGTH(items),
-            &quot;subtotal&quot;: calculate_subtotal(),
-            &quot;total&quot;: calculate_total(),
-            &quot;is_checked_out&quot;: is_checked_out
-        }
-</code></pre></div>
-<h2 id="method-overloading-and-overriding">Method Overloading and Overriding</h2>
-<h3 id="method-overloading-same-class-different-parameters">Method Overloading (Same class, different parameters)</h3>
-<div class="highlight"><pre><span></span><code>CLASS MathUtils:
-    # Different versions of &#39;add&#39; method
-    METHOD add(a, b):
-        RETURN a + b
-
-    METHOD add(a, b, c):
-        RETURN a + b + c
-
-    METHOD add(numbers: List):
-        total = 0
-        FOR num IN numbers:
-            total = total + num
-        RETURN total
-</code></pre></div>
-<h3 id="method-overriding-different-classes-same-method-signature">Method Overriding (Different classes, same method signature)</h3>
-<div class="highlight"><pre><span></span><code>CLASS Animal:
-    METHOD make_sound():
-        PRINT &quot;Some generic animal sound&quot;
-
-CLASS Dog EXTENDS Animal:
-    # Override parent method
-    METHOD make_sound():
-        PRINT &quot;Woof! Woof!&quot;
-
-CLASS Cat EXTENDS Animal:
-    # Override parent method
-    METHOD make_sound():
-        PRINT &quot;Meow!&quot;
-</code></pre></div>
-<h2 id="best-practices-for-methods">Best Practices for Methods</h2>
-<h3 id="1-single-responsibility-principle">1. Single Responsibility Principle</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>CLASS UserAccount:
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    PRIVATE password_hash
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    PRIVATE failed_login_attempts
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    # Public methods - interface to the world
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    PUBLIC METHOD login(username, password):
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        IF verify_password(password):
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            failed_login_attempts = 0
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            RETURN true
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        ELSE:
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>            failed_login_attempts = failed_login_attempts + 1
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>            IF failed_login_attempts &gt;= 3:
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>                lock_account()
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            RETURN false
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    PUBLIC METHOD change_password(old_password, new_password):
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>        IF verify_password(old_password):
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>            set_password(new_password)
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>            RETURN true
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        RETURN false
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    # Private methods - internal implementation details
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    PRIVATE METHOD verify_password(input_password):
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        RETURN hash(input_password) == password_hash
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    PRIVATE METHOD set_password(new_password):
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        password_hash = hash(new_password)
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>    PRIVATE METHOD lock_account():
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        # Implementation details hidden
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>        # Send email, log event, etc.
+</span></code></pre></div>
+<h2 id="practical-examples">Practical Examples<a class="headerlink" href="#practical-examples" title="Anchor link to this section">&para;</a></h2>
+<h3 id="example-1-social-media-post">Example 1: Social Media Post<a class="headerlink" href="#example-1-social-media-post" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>CLASS SocialMediaPost:
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    PRIVATE content
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    PRIVATE author
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    PRIVATE likes_count
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    PRIVATE comments: List
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    PRIVATE timestamp
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    # Constructor
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    METHOD INITIALIZE(post_content, post_author):
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        content = post_content
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        author = post_author
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        likes_count = 0
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        comments = []
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>        timestamp = CURRENT_TIME()
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    # Action methods
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    METHOD like():
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>        likes_count = likes_count + 1
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>        PRINT author + &quot;&#39;s post got a like! Total: &quot; + likes_count
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>    METHOD add_comment(comment_text, commenter):
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>        comment = {
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>            &quot;text&quot;: comment_text,
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>            &quot;author&quot;: commenter,
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>            &quot;time&quot;: CURRENT_TIME()
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>        }
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>        ADD comment TO comments
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>        PRINT commenter + &quot; commented: &quot; + comment_text
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>    METHOD edit_content(new_content):
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>        old_content = content
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>        content = new_content
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>        PRINT &quot;Post updated from: &quot; + old_content + &quot; to: &quot; + new_content
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>    # Query methods
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>    METHOD get_likes_count():
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>        RETURN likes_count
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>    METHOD has_comments():
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>        RETURN LENGTH(comments) &gt; 0
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>    METHOD is_popular():
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>        RETURN likes_count &gt; 100 OR LENGTH(comments) &gt; 20
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>    # Utility methods
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>    METHOD display_post():
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>        PRINT &quot;Author: &quot; + author
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>        PRINT &quot;Time: &quot; + timestamp
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>        PRINT &quot;Content: &quot; + content
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>        PRINT &quot;Likes: &quot; + likes_count
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>        PRINT &quot;Comments: &quot; + LENGTH(comments)
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>        PRINT &quot;---&quot;
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>    METHOD get_engagement_ratio():
+</span><span id="__span-10-55"><a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>        total_engagement = likes_count + LENGTH(comments)
+</span><span id="__span-10-56"><a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>        # Assuming content length as proxy for &quot;effort&quot;
+</span><span id="__span-10-57"><a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>        RETURN total_engagement / LENGTH(content)
+</span></code></pre></div>
+<h3 id="example-2-game-character-with-combat-methods">Example 2: Game Character with Combat Methods<a class="headerlink" href="#example-2-game-character-with-combat-methods" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>CLASS GameCharacter:
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    PRIVATE name
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    PRIVATE health
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    PRIVATE mana
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    PRIVATE level
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    PRIVATE inventory: Map  # item -&gt; count
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    PRIVATE equipped_weapon
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    # Combat methods
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    METHOD attack(target):
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        IF health &lt;= 0:
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>            PRINT name + &quot; is defeated and cannot attack!&quot;
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>            RETURN 0
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        base_damage = 10 + (level * 2)
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>        # Weapon bonus
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>        IF equipped_weapon != null:
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>            base_damage = base_damage + equipped_weapon.damage
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>        # Critical hit chance
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>        IF RANDOM(1, 100) &lt;= (level * 2):  # Higher level = more crit chance
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>            base_damage = base_damage * 1.5
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>            PRINT &quot;Critical hit!&quot;
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>        target.take_damage(base_damage)
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>        PRINT name + &quot; attacks &quot; + target.name + &quot; for &quot; + base_damage + &quot; damage!&quot;
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>        RETURN base_damage
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>    METHOD take_damage(amount):
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>        health = health - amount
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>        IF health &lt;= 0:
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>            health = 0
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>            PRINT name + &quot; has been defeated!&quot;
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>        ELSE:
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>            PRINT name + &quot; has &quot; + health + &quot; health remaining&quot;
+</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>
+</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>    METHOD heal(amount):
+</span><span id="__span-11-40"><a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>        max_health = 100 + (level * 20)
+</span><span id="__span-11-41"><a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>        old_health = health
+</span><span id="__span-11-42"><a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>        health = MIN(health + amount, max_health)
+</span><span id="__span-11-43"><a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>        healed = health - old_health
+</span><span id="__span-11-44"><a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>        PRINT name + &quot; healed for &quot; + healed + &quot; health&quot;
+</span><span id="__span-11-45"><a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>        RETURN healed
+</span><span id="__span-11-46"><a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>
+</span><span id="__span-11-47"><a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>    # Inventory management methods
+</span><span id="__span-11-48"><a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>    METHOD use_item(item_name):
+</span><span id="__span-11-49"><a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>        IF inventory.CONTAINS_KEY(item_name) AND inventory[item_name] &gt; 0:
+</span><span id="__span-11-50"><a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>            inventory[item_name] = inventory[item_name] - 1
+</span><span id="__span-11-51"><a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>
+</span><span id="__span-11-52"><a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>            IF item_name == &quot;health_potion&quot;:
+</span><span id="__span-11-53"><a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>                heal(50)
+</span><span id="__span-11-54"><a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>            ELSE IF item_name == &quot;mana_potion&quot;:
+</span><span id="__span-11-55"><a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>                mana = MIN(mana + 30, 100 + (level * 10))
+</span><span id="__span-11-56"><a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>            ELSE IF item_name == &quot;strength_potion&quot;:
+</span><span id="__span-11-57"><a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>                # Temporary buff - would need buff system
+</span><span id="__span-11-58"><a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>                PRINT name + &quot; feels stronger!&quot;
+</span><span id="__span-11-59"><a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>
+</span><span id="__span-11-60"><a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>            PRINT &quot;Used &quot; + item_name
+</span><span id="__span-11-61"><a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>        ELSE:
+</span><span id="__span-11-62"><a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>            PRINT &quot;Don&#39;t have &quot; + item_name
+</span><span id="__span-11-63"><a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>
+</span><span id="__span-11-64"><a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>    METHOD equip_weapon(weapon_name):
+</span><span id="__span-11-65"><a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>        IF inventory.CONTAINS_KEY(weapon_name) AND inventory[weapon_name] &gt; 0:
+</span><span id="__span-11-66"><a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>            IF equipped_weapon != null:
+</span><span id="__span-11-67"><a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>                # Put old weapon back in inventory
+</span><span id="__span-11-68"><a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>                inventory[equipped_weapon.name] = inventory[equipped_weapon.name] + 1
+</span><span id="__span-11-69"><a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>
+</span><span id="__span-11-70"><a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>            equipped_weapon = GET_WEapon_OBJECT(weapon_name)
+</span><span id="__span-11-71"><a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>            inventory[weapon_name] = inventory[weapon_name] - 1
+</span><span id="__span-11-72"><a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>            PRINT name + &quot; equipped &quot; + weapon_name
+</span><span id="__span-11-73"><a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>        ELSE:
+</span><span id="__span-11-74"><a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>            PRINT &quot;Cannot find &quot; + weapon_name
+</span><span id="__span-11-75"><a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>
+</span><span id="__span-11-76"><a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>    # Utility methods
+</span><span id="__span-11-77"><a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>    METHOD get_status():
+</span><span id="__span-11-78"><a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>        RETURN {
+</span><span id="__span-11-79"><a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>            &quot;name&quot;: name,
+</span><span id="__span-11-80"><a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>            &quot;health&quot;: health + &quot;/&quot; + (100 + (level * 20)),
+</span><span id="__span-11-81"><a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>            &quot;mana&quot;: mana + &quot;/&quot; + (50 + (level * 10)),
+</span><span id="__span-11-82"><a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>            &quot;level&quot;: level,
+</span><span id="__span-11-83"><a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>            &quot;weapon&quot;: IF equipped_weapon != null THEN equipped_weapon.name ELSE &quot;None&quot;
+</span><span id="__span-11-84"><a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>        }
+</span><span id="__span-11-85"><a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>
+</span><span id="__span-11-86"><a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>    METHOD is_alive():
+</span><span id="__span-11-87"><a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>        RETURN health &gt; 0
+</span></code></pre></div>
+<h3 id="example-3-online-shopping-cart">Example 3: Online Shopping Cart<a class="headerlink" href="#example-3-online-shopping-cart" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>CLASS ShoppingCart:
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    PRIVATE items: List  # List of {product, quantity, price}
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    PRIVATE discount_code
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    PRIVATE tax_rate
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    PRIVATE is_checked_out
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    # Constructor
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    METHOD INITIALIZE():
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        items = []
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        discount_code = &quot;&quot;
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        tax_rate = 0.08  # 8% tax
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        is_checked_out = false
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    # Core shopping methods
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    METHOD add_item(product, quantity = 1):
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>        IF is_checked_out:
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>            PRINT &quot;Cannot add items after checkout&quot;
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>            RETURN
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        # Check if product already in cart
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>        FOR item IN items:
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>            IF item.product.id == product.id:
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>                item.quantity = item.quantity + quantity
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>                PRINT &quot;Updated &quot; + product.name + &quot; to &quot; + item.quantity + &quot; units&quot;
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>                RETURN
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>        # Add new item
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>        new_item = {
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>            &quot;product&quot;: product,
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>            &quot;quantity&quot;: quantity,
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>            &quot;price&quot;: product.price
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>        }
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>        ADD new_item TO items
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>        PRINT &quot;Added &quot; + quantity + &quot; × &quot; + product.name + &quot; to cart&quot;
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>    METHOD remove_item(product_id, quantity = 1):
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>        IF is_checked_out:
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>            PRINT &quot;Cannot remove items after checkout&quot;
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>            RETURN
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>        FOR item IN items:
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>            IF item.product.id == product_id:
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>                IF quantity &gt;= item.quantity:
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>                    REMOVE item FROM items
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>                    PRINT &quot;Removed &quot; + item.product.name + &quot; from cart&quot;
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>                ELSE:
+</span><span id="__span-12-47"><a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>                    item.quantity = item.quantity - quantity
+</span><span id="__span-12-48"><a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>                    PRINT &quot;Reduced &quot; + item.product.name + &quot; to &quot; + item.quantity + &quot; units&quot;
+</span><span id="__span-12-49"><a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>                RETURN
+</span><span id="__span-12-50"><a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>
+</span><span id="__span-12-51"><a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>        PRINT &quot;Product not found in cart&quot;
+</span><span id="__span-12-52"><a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>
+</span><span id="__span-12-53"><a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>    METHOD update_quantity(product_id, new_quantity):
+</span><span id="__span-12-54"><a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a>        IF new_quantity &lt;= 0:
+</span><span id="__span-12-55"><a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>            remove_item(product_id)
+</span><span id="__span-12-56"><a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a>        ELSE:
+</span><span id="__span-12-57"><a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>            FOR item IN items:
+</span><span id="__span-12-58"><a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a>                IF item.product.id == product_id:
+</span><span id="__span-12-59"><a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>                    item.quantity = new_quantity
+</span><span id="__span-12-60"><a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a>                    PRINT &quot;Updated &quot; + item.product.name + &quot; to &quot; + new_quantity + &quot; units&quot;
+</span><span id="__span-12-61"><a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>                    RETURN
+</span><span id="__span-12-62"><a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>            PRINT &quot;Product not found in cart&quot;
+</span><span id="__span-12-63"><a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a>
+</span><span id="__span-12-64"><a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>    # Calculation methods
+</span><span id="__span-12-65"><a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>    METHOD calculate_subtotal():
+</span><span id="__span-12-66"><a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a>        subtotal = 0
+</span><span id="__span-12-67"><a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>        FOR item IN items:
+</span><span id="__span-12-68"><a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a>            subtotal = subtotal + (item.price * item.quantity)
+</span><span id="__span-12-69"><a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a>        RETURN subtotal
+</span><span id="__span-12-70"><a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a>
+</span><span id="__span-12-71"><a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a>    METHOD calculate_tax():
+</span><span id="__span-12-72"><a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a>        RETURN calculate_subtotal() * tax_rate
+</span><span id="__span-12-73"><a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>
+</span><span id="__span-12-74"><a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a>    METHOD calculate_discount():
+</span><span id="__span-12-75"><a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a>        subtotal = calculate_subtotal()
+</span><span id="__span-12-76"><a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a>        IF discount_code == &quot;SAVE10&quot;:
+</span><span id="__span-12-77"><a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a>            RETURN subtotal * 0.10
+</span><span id="__span-12-78"><a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>        ELSE IF discount_code == &quot;SAVE20&quot;:
+</span><span id="__span-12-79"><a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>            RETURN subtotal * 0.20
+</span><span id="__span-12-80"><a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a>        ELSE:
+</span><span id="__span-12-81"><a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a>            RETURN 0
+</span><span id="__span-12-82"><a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a>
+</span><span id="__span-12-83"><a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a>    METHOD calculate_total():
+</span><span id="__span-12-84"><a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a>        subtotal = calculate_subtotal()
+</span><span id="__span-12-85"><a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a>        tax = calculate_tax()
+</span><span id="__span-12-86"><a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a>        discount = calculate_discount()
+</span><span id="__span-12-87"><a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a>        RETURN subtotal + tax - discount
+</span><span id="__span-12-88"><a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a>
+</span><span id="__span-12-89"><a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a>    # Checkout process methods
+</span><span id="__span-12-90"><a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a>    METHOD apply_discount(code):
+</span><span id="__span-12-91"><a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a>        VALID_CODES = [&quot;SAVE10&quot;, &quot;SAVE20&quot;, &quot;WELCOME5&quot;]
+</span><span id="__span-12-92"><a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a>        IF code IN VALID_CODES:
+</span><span id="__span-12-93"><a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>            discount_code = code
+</span><span id="__span-12-94"><a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a>            PRINT &quot;Discount applied: &quot; + code
+</span><span id="__span-12-95"><a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a>        ELSE:
+</span><span id="__span-12-96"><a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>            PRINT &quot;Invalid discount code&quot;
+</span><span id="__span-12-97"><a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a>
+</span><span id="__span-12-98"><a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a>    METHOD checkout(payment_method):
+</span><span id="__span-12-99"><a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a>        IF is_checked_out:
+</span><span id="__span-12-100"><a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a>            PRINT &quot;Order already checked out&quot;
+</span><span id="__span-12-101"><a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a>            RETURN false
+</span><span id="__span-12-102"><a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a>
+</span><span id="__span-12-103"><a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a>        IF LENGTH(items) == 0:
+</span><span id="__span-12-104"><a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a>            PRINT &quot;Cart is empty&quot;
+</span><span id="__span-12-105"><a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a>            RETURN false
+</span><span id="__span-12-106"><a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a>
+</span><span id="__span-12-107"><a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a>        total = calculate_total()
+</span><span id="__span-12-108"><a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a>        PRINT &quot;=== CHECKOUT ===&quot;
+</span><span id="__span-12-109"><a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a>        PRINT &quot;Items: &quot; + LENGTH(items)
+</span><span id="__span-12-110"><a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a>        PRINT &quot;Subtotal: $&quot; + calculate_subtotal()
+</span><span id="__span-12-111"><a id="__codelineno-12-111" name="__codelineno-12-111" href="#__codelineno-12-111"></a>        PRINT &quot;Tax: $&quot; + calculate_tax()
+</span><span id="__span-12-112"><a id="__codelineno-12-112" name="__codelineno-12-112" href="#__codelineno-12-112"></a>        PRINT &quot;Discount: $&quot; + calculate_discount()
+</span><span id="__span-12-113"><a id="__codelineno-12-113" name="__codelineno-12-113" href="#__codelineno-12-113"></a>        PRINT &quot;Total: $&quot; + total
+</span><span id="__span-12-114"><a id="__codelineno-12-114" name="__codelineno-12-114" href="#__codelineno-12-114"></a>        PRINT &quot;Payment method: &quot; + payment_method
+</span><span id="__span-12-115"><a id="__codelineno-12-115" name="__codelineno-12-115" href="#__codelineno-12-115"></a>
+</span><span id="__span-12-116"><a id="__codelineno-12-116" name="__codelineno-12-116" href="#__codelineno-12-116"></a>        # Simulate payment processing
+</span><span id="__span-12-117"><a id="__codelineno-12-117" name="__codelineno-12-117" href="#__codelineno-12-117"></a>        IF process_payment(payment_method, total):
+</span><span id="__span-12-118"><a id="__codelineno-12-118" name="__codelineno-12-118" href="#__codelineno-12-118"></a>            is_checked_out = true
+</span><span id="__span-12-119"><a id="__codelineno-12-119" name="__codelineno-12-119" href="#__codelineno-12-119"></a>            PRINT &quot;Payment successful! Order confirmed.&quot;
+</span><span id="__span-12-120"><a id="__codelineno-12-120" name="__codelineno-12-120" href="#__codelineno-12-120"></a>            generate_receipt()
+</span><span id="__span-12-121"><a id="__codelineno-12-121" name="__codelineno-12-121" href="#__codelineno-12-121"></a>            clear_cart_after_delay()  # Would clear after some time
+</span><span id="__span-12-122"><a id="__codelineno-12-122" name="__codelineno-12-122" href="#__codelineno-12-122"></a>            RETURN true
+</span><span id="__span-12-123"><a id="__codelineno-12-123" name="__codelineno-12-123" href="#__codelineno-12-123"></a>        ELSE:
+</span><span id="__span-12-124"><a id="__codelineno-12-124" name="__codelineno-12-124" href="#__codelineno-12-124"></a>            PRINT &quot;Payment failed&quot;
+</span><span id="__span-12-125"><a id="__codelineno-12-125" name="__codelineno-12-125" href="#__codelineno-12-125"></a>            RETURN false
+</span><span id="__span-12-126"><a id="__codelineno-12-126" name="__codelineno-12-126" href="#__codelineno-12-126"></a>
+</span><span id="__span-12-127"><a id="__codelineno-12-127" name="__codelineno-12-127" href="#__codelineno-12-127"></a>    # Private helper methods
+</span><span id="__span-12-128"><a id="__codelineno-12-128" name="__codelineno-12-128" href="#__codelineno-12-128"></a>    PRIVATE METHOD process_payment(method, amount):
+</span><span id="__span-12-129"><a id="__codelineno-12-129" name="__codelineno-12-129" href="#__codelineno-12-129"></a>        # Simulate payment processing
+</span><span id="__span-12-130"><a id="__codelineno-12-130" name="__codelineno-12-130" href="#__codelineno-12-130"></a>        PRINT &quot;Processing &quot; + method + &quot; payment of $&quot; + amount
+</span><span id="__span-12-131"><a id="__codelineno-12-131" name="__codelineno-12-131" href="#__codelineno-12-131"></a>        # In real system, would contact payment gateway
+</span><span id="__span-12-132"><a id="__codelineno-12-132" name="__codelineno-12-132" href="#__codelineno-12-132"></a>        RETURN true  # Simulate success
+</span><span id="__span-12-133"><a id="__codelineno-12-133" name="__codelineno-12-133" href="#__codelineno-12-133"></a>
+</span><span id="__span-12-134"><a id="__codelineno-12-134" name="__codelineno-12-134" href="#__codelineno-12-134"></a>    PRIVATE METHOD generate_receipt():
+</span><span id="__span-12-135"><a id="__codelineno-12-135" name="__codelineno-12-135" href="#__codelineno-12-135"></a>        receipt = &quot;=== RECEIPT ===\n&quot;
+</span><span id="__span-12-136"><a id="__codelineno-12-136" name="__codelineno-12-136" href="#__codelineno-12-136"></a>        receipt = receipt + &quot;Date: &quot; + CURRENT_DATE() + &quot;\n&quot;
+</span><span id="__span-12-137"><a id="__codelineno-12-137" name="__codelineno-12-137" href="#__codelineno-12-137"></a>        receipt = receipt + &quot;Items:\n&quot;
+</span><span id="__span-12-138"><a id="__codelineno-12-138" name="__codelineno-12-138" href="#__codelineno-12-138"></a>
+</span><span id="__span-12-139"><a id="__codelineno-12-139" name="__codelineno-12-139" href="#__codelineno-12-139"></a>        FOR item IN items:
+</span><span id="__span-12-140"><a id="__codelineno-12-140" name="__codelineno-12-140" href="#__codelineno-12-140"></a>            receipt = receipt + &quot;  &quot; + item.product.name + &quot; × &quot; + item.quantity
+</span><span id="__span-12-141"><a id="__codelineno-12-141" name="__codelineno-12-141" href="#__codelineno-12-141"></a>            receipt = receipt + &quot; @ $&quot; + item.price + &quot; = $&quot; + (item.price * item.quantity) + &quot;\n&quot;
+</span><span id="__span-12-142"><a id="__codelineno-12-142" name="__codelineno-12-142" href="#__codelineno-12-142"></a>
+</span><span id="__span-12-143"><a id="__codelineno-12-143" name="__codelineno-12-143" href="#__codelineno-12-143"></a>        receipt = receipt + &quot;----------------\n&quot;
+</span><span id="__span-12-144"><a id="__codelineno-12-144" name="__codelineno-12-144" href="#__codelineno-12-144"></a>        receipt = receipt + &quot;Subtotal: $&quot; + calculate_subtotal() + &quot;\n&quot;
+</span><span id="__span-12-145"><a id="__codelineno-12-145" name="__codelineno-12-145" href="#__codelineno-12-145"></a>        receipt = receipt + &quot;Tax: $&quot; + calculate_tax() + &quot;\n&quot;
+</span><span id="__span-12-146"><a id="__codelineno-12-146" name="__codelineno-12-146" href="#__codelineno-12-146"></a>        receipt = receipt + &quot;Discount: $&quot; + calculate_discount() + &quot;\n&quot;
+</span><span id="__span-12-147"><a id="__codelineno-12-147" name="__codelineno-12-147" href="#__codelineno-12-147"></a>        receipt = receipt + &quot;TOTAL: $&quot; + calculate_total() + &quot;\n&quot;
+</span><span id="__span-12-148"><a id="__codelineno-12-148" name="__codelineno-12-148" href="#__codelineno-12-148"></a>
+</span><span id="__span-12-149"><a id="__codelineno-12-149" name="__codelineno-12-149" href="#__codelineno-12-149"></a>        PRINT receipt
+</span><span id="__span-12-150"><a id="__codelineno-12-150" name="__codelineno-12-150" href="#__codelineno-12-150"></a>        # In real system, would save to database and/or email to customer
+</span><span id="__span-12-151"><a id="__codelineno-12-151" name="__codelineno-12-151" href="#__codelineno-12-151"></a>
+</span><span id="__span-12-152"><a id="__codelineno-12-152" name="__codelineno-12-152" href="#__codelineno-12-152"></a>    # Query methods
+</span><span id="__span-12-153"><a id="__codelineno-12-153" name="__codelineno-12-153" href="#__codelineno-12-153"></a>    METHOD get_item_count():
+</span><span id="__span-12-154"><a id="__codelineno-12-154" name="__codelineno-12-154" href="#__codelineno-12-154"></a>        total = 0
+</span><span id="__span-12-155"><a id="__codelineno-12-155" name="__codelineno-12-155" href="#__codelineno-12-155"></a>        FOR item IN items:
+</span><span id="__span-12-156"><a id="__codelineno-12-156" name="__codelineno-12-156" href="#__codelineno-12-156"></a>            total = total + item.quantity
+</span><span id="__span-12-157"><a id="__codelineno-12-157" name="__codelineno-12-157" href="#__codelineno-12-157"></a>        RETURN total
+</span><span id="__span-12-158"><a id="__codelineno-12-158" name="__codelineno-12-158" href="#__codelineno-12-158"></a>
+</span><span id="__span-12-159"><a id="__codelineno-12-159" name="__codelineno-12-159" href="#__codelineno-12-159"></a>    METHOD is_empty():
+</span><span id="__span-12-160"><a id="__codelineno-12-160" name="__codelineno-12-160" href="#__codelineno-12-160"></a>        RETURN LENGTH(items) == 0
+</span><span id="__span-12-161"><a id="__codelineno-12-161" name="__codelineno-12-161" href="#__codelineno-12-161"></a>
+</span><span id="__span-12-162"><a id="__codelineno-12-162" name="__codelineno-12-162" href="#__codelineno-12-162"></a>    METHOD contains_product(product_id):
+</span><span id="__span-12-163"><a id="__codelineno-12-163" name="__codelineno-12-163" href="#__codelineno-12-163"></a>        FOR item IN items:
+</span><span id="__span-12-164"><a id="__codelineno-12-164" name="__codelineno-12-164" href="#__codelineno-12-164"></a>            IF item.product.id == product_id:
+</span><span id="__span-12-165"><a id="__codelineno-12-165" name="__codelineno-12-165" href="#__codelineno-12-165"></a>                RETURN true
+</span><span id="__span-12-166"><a id="__codelineno-12-166" name="__codelineno-12-166" href="#__codelineno-12-166"></a>        RETURN false
+</span><span id="__span-12-167"><a id="__codelineno-12-167" name="__codelineno-12-167" href="#__codelineno-12-167"></a>
+</span><span id="__span-12-168"><a id="__codelineno-12-168" name="__codelineno-12-168" href="#__codelineno-12-168"></a>    METHOD get_cart_summary():
+</span><span id="__span-12-169"><a id="__codelineno-12-169" name="__codelineno-12-169" href="#__codelineno-12-169"></a>        RETURN {
+</span><span id="__span-12-170"><a id="__codelineno-12-170" name="__codelineno-12-170" href="#__codelineno-12-170"></a>            &quot;item_count&quot;: get_item_count(),
+</span><span id="__span-12-171"><a id="__codelineno-12-171" name="__codelineno-12-171" href="#__codelineno-12-171"></a>            &quot;unique_items&quot;: LENGTH(items),
+</span><span id="__span-12-172"><a id="__codelineno-12-172" name="__codelineno-12-172" href="#__codelineno-12-172"></a>            &quot;subtotal&quot;: calculate_subtotal(),
+</span><span id="__span-12-173"><a id="__codelineno-12-173" name="__codelineno-12-173" href="#__codelineno-12-173"></a>            &quot;total&quot;: calculate_total(),
+</span><span id="__span-12-174"><a id="__codelineno-12-174" name="__codelineno-12-174" href="#__codelineno-12-174"></a>            &quot;is_checked_out&quot;: is_checked_out
+</span><span id="__span-12-175"><a id="__codelineno-12-175" name="__codelineno-12-175" href="#__codelineno-12-175"></a>        }
+</span></code></pre></div>
+<h2 id="method-overloading-and-overriding">Method Overloading and Overriding<a class="headerlink" href="#method-overloading-and-overriding" title="Anchor link to this section">&para;</a></h2>
+<h3 id="method-overloading-same-class-different-parameters">Method Overloading (Same class, different parameters)<a class="headerlink" href="#method-overloading-same-class-different-parameters" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>CLASS MathUtils:
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    # Different versions of &#39;add&#39; method
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    METHOD add(a, b):
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>        RETURN a + b
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    METHOD add(a, b, c):
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        RETURN a + b + c
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    METHOD add(numbers: List):
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        total = 0
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        FOR num IN numbers:
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>            total = total + num
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        RETURN total
+</span></code></pre></div>
+<h3 id="method-overriding-different-classes-same-method-signature">Method Overriding (Different classes, same method signature)<a class="headerlink" href="#method-overriding-different-classes-same-method-signature" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>CLASS Animal:
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    METHOD make_sound():
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        PRINT &quot;Some generic animal sound&quot;
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>CLASS Dog EXTENDS Animal:
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    # Override parent method
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    METHOD make_sound():
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>        PRINT &quot;Woof! Woof!&quot;
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>CLASS Cat EXTENDS Animal:
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    # Override parent method
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    METHOD make_sound():
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>        PRINT &quot;Meow!&quot;
+</span></code></pre></div>
+<h2 id="best-practices-for-methods">Best Practices for Methods<a class="headerlink" href="#best-practices-for-methods" title="Anchor link to this section">&para;</a></h2>
+<h3 id="1-single-responsibility-principle">1. Single Responsibility Principle<a class="headerlink" href="#1-single-responsibility-principle" title="Anchor link to this section">&para;</a></h3>
 <p>Each method should do one thing well.</p>
-<div class="highlight"><pre><span></span><code># BAD: Method does too much
-METHOD process_user_data(data):
-    validate(data)
-    save_to_database(data)
-    send_email(data)
-    update_cache(data)
-    log_activity(data)
-
-# GOOD: Separate methods
-METHOD validate_user_data(data)
-METHOD save_user_data(data)
-METHOD notify_user(data)
-# etc.
-</code></pre></div>
-<h3 id="2-meaningful-names">2. Meaningful Names</h3>
-<div class="highlight"><pre><span></span><code># BAD
-METHOD p()  # What does this do?
-METHOD proc()  # Process what?
-METHOD xyz()  # Cryptic!
-
-# GOOD
-METHOD calculate_tax()
-METHOD validate_email()
-METHOD send_notification()
-</code></pre></div>
-<h3 id="3-appropriate-length">3. Appropriate Length</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># BAD: Method does too much
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>METHOD process_user_data(data):
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    validate(data)
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    save_to_database(data)
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    send_email(data)
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    update_cache(data)
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    log_activity(data)
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a># GOOD: Separate methods
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>METHOD validate_user_data(data)
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>METHOD save_user_data(data)
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>METHOD notify_user(data)
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a># etc.
+</span></code></pre></div>
+<h3 id="2-meaningful-names">2. Meaningful Names<a class="headerlink" href="#2-meaningful-names" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a># BAD
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>METHOD p()  # What does this do?
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>METHOD proc()  # Process what?
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>METHOD xyz()  # Cryptic!
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a># GOOD
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>METHOD calculate_tax()
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>METHOD validate_email()
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>METHOD send_notification()
+</span></code></pre></div>
+<h3 id="3-appropriate-length">3. Appropriate Length<a class="headerlink" href="#3-appropriate-length" title="Anchor link to this section">&para;</a></h3>
 <p>Methods should generally be short (under 20-30 lines).</p>
-<div class="highlight"><pre><span></span><code># BAD: Too long and complex
-METHOD handle_customer_order():
-    # 100 lines of code...
-
-# GOOD: Break into smaller methods
-METHOD create_order():
-    validate_items()
-    calculate_pricing()
-    apply_discounts()
-    generate_order_number()
-</code></pre></div>
-<h3 id="4-consistent-return-types">4. Consistent Return Types</h3>
-<div class="highlight"><pre><span></span><code># BAD: Inconsistent returns
-METHOD find_user(id):
-    IF user_exists(id):
-        RETURN user_object
-    ELSE:
-        RETURN false  # Mixed type return
-
-# GOOD: Consistent returns
-METHOD find_user(id):
-    IF user_exists(id):
-        RETURN user_object
-    ELSE:
-        RETURN null  # Always returns object or null
-</code></pre></div>
-<h2 id="common-patterns">Common Patterns</h2>
-<h3 id="1-builder-pattern-methods">1. Builder Pattern Methods</h3>
-<div class="highlight"><pre><span></span><code>CLASS EmailBuilder:
-    PRIVATE to_address
-    PRIVATE subject
-    PRIVATE body
-    PRIVATE attachments
-
-    METHOD set_to(address):
-        to_address = address
-        RETURN self  # Allows method chaining
-
-    METHOD set_subject(text):
-        subject = text
-        RETURN self
-
-    METHOD set_body(text):
-        body = text
-        RETURN self
-
-    METHOD add_attachment(file):
-        ADD file TO attachments
-        RETURN self
-
-    METHOD build():
-        RETURN NEW Email(to_address, subject, body, attachments)
-
-# Usage with method chaining
-email = NEW EmailBuilder()
-    .set_to(&quot;friend@example.com&quot;)
-    .set_subject(&quot;Hello!&quot;)
-    .set_body(&quot;How are you?&quot;)
-    .add_attachment(&quot;photo.jpg&quot;)
-    .build()
-</code></pre></div>
-<h3 id="2-fluent-interface">2. Fluent Interface</h3>
-<div class="highlight"><pre><span></span><code>CLASS QueryBuilder:
-    METHOD select(columns):
-        # ...
-        RETURN self
-
-    METHOD from_table(table):
-        # ...
-        RETURN self
-
-    METHOD where(condition):
-        # ...
-        RETURN self
-
-    METHOD execute():
-        # ...
-        RETURN results
-</code></pre></div>
-<h2 id="practice-exercise-library-management-system">Practice Exercise: Library Management System</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a># BAD: Too long and complex
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>METHOD handle_customer_order():
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    # 100 lines of code...
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a># GOOD: Break into smaller methods
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>METHOD create_order():
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    validate_items()
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    calculate_pricing()
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    apply_discounts()
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    generate_order_number()
+</span></code></pre></div>
+<h3 id="4-consistent-return-types">4. Consistent Return Types<a class="headerlink" href="#4-consistent-return-types" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a># BAD: Inconsistent returns
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>METHOD find_user(id):
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    IF user_exists(id):
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        RETURN user_object
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    ELSE:
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        RETURN false  # Mixed type return
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a># GOOD: Consistent returns
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>METHOD find_user(id):
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    IF user_exists(id):
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        RETURN user_object
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    ELSE:
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>        RETURN null  # Always returns object or null
+</span></code></pre></div>
+<h2 id="common-patterns">Common Patterns<a class="headerlink" href="#common-patterns" title="Anchor link to this section">&para;</a></h2>
+<h3 id="1-builder-pattern-methods">1. Builder Pattern Methods<a class="headerlink" href="#1-builder-pattern-methods" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>CLASS EmailBuilder:
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    PRIVATE to_address
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    PRIVATE subject
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    PRIVATE body
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    PRIVATE attachments
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    METHOD set_to(address):
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>        to_address = address
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>        RETURN self  # Allows method chaining
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>    METHOD set_subject(text):
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>        subject = text
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>        RETURN self
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>    METHOD set_body(text):
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>        body = text
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>        RETURN self
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>    METHOD add_attachment(file):
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>        ADD file TO attachments
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>        RETURN self
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>    METHOD build():
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>        RETURN NEW Email(to_address, subject, body, attachments)
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a># Usage with method chaining
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>email = NEW EmailBuilder()
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>    .set_to(&quot;friend@example.com&quot;)
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>    .set_subject(&quot;Hello!&quot;)
+</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>    .set_body(&quot;How are you?&quot;)
+</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>    .add_attachment(&quot;photo.jpg&quot;)
+</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    .build()
+</span></code></pre></div>
+<h3 id="2-fluent-interface">2. Fluent Interface<a class="headerlink" href="#2-fluent-interface" title="Anchor link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>CLASS QueryBuilder:
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    METHOD select(columns):
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>        # ...
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>        RETURN self
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    METHOD from_table(table):
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>        # ...
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>        RETURN self
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    METHOD where(condition):
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>        # ...
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        RETURN self
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    METHOD execute():
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>        # ...
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>        RETURN results
+</span></code></pre></div>
+<h2 id="practice-exercise-library-management-system">Practice Exercise: Library Management System<a class="headerlink" href="#practice-exercise-library-management-system" title="Anchor link to this section">&para;</a></h2>
 <p>Create a <code>Library</code> class with methods for managing books and members:</p>
 <ol>
 <li>
@@ -3278,32 +3121,32 @@ email = NEW EmailBuilder()
 <p><strong>Bonus:</strong> Implement <code>reserve_book(member_id, isbn)</code> method for reserving unavailable books.</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code>CLASS Library:
-    PRIVATE books: List
-    PRIVATE members: List
-    PRIVATE transactions: List
-
-    METHOD INITIALIZE():
-        books = []
-        members = []
-        transactions = []
-
-    # Implement methods here...
-
-    METHOD get_statistics():
-        total_books = LENGTH(books)
-        available_books = COUNT books WHERE book.is_available == true
-        total_members = LENGTH(members)
-        borrowed_books = total_books - available_books
-
-        RETURN {
-            &quot;total_books&quot;: total_books,
-            &quot;available_books&quot;: available_books,
-            &quot;borrowed_books&quot;: borrowed_books,
-            &quot;total_members&quot;: total_members
-        }
-</code></pre></div>
-<h2 id="quick-check">Quick Check</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>CLASS Library:
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    PRIVATE books: List
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    PRIVATE members: List
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    PRIVATE transactions: List
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    METHOD INITIALIZE():
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        books = []
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>        members = []
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>        transactions = []
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    # Implement methods here...
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>    METHOD get_statistics():
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>        total_books = LENGTH(books)
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>        available_books = COUNT books WHERE book.is_available == true
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>        total_members = LENGTH(members)
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>        borrowed_books = total_books - available_books
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>        RETURN {
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>            &quot;total_books&quot;: total_books,
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>            &quot;available_books&quot;: available_books,
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>            &quot;borrowed_books&quot;: borrowed_books,
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>            &quot;total_members&quot;: total_members
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>        }
+</span></code></pre></div>
+<h2 id="quick-check">Quick Check<a class="headerlink" href="#quick-check" title="Anchor link to this section">&para;</a></h2>
 <ol>
 <li>
 <p><strong>What's the difference between a getter and a setter method?</strong></p>
@@ -3350,7 +3193,59 @@ email = NEW EmailBuilder()
 
 
 
+  
 
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="Yes!" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="Could be better" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for the feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for letting us know. You can <a href="https://github.com/manish-surya-r/zeal-core/issues/new">open an issue</a> to tell us what's missing.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
 
                 
@@ -3358,8 +3253,16 @@ email = NEW EmailBuilder()
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -3369,10 +3272,35 @@ email = NEW EmailBuilder()
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      © 2025 Zeal Core &nbsp;·&nbsp; <a href="#__consent">Manage cookies</a>
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/manish-surya-r" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
     </a>
   
 </div>
@@ -3396,15 +3324,45 @@ email = NEW EmailBuilder()
 
 
 <h4>Cookie consent</h4>
-<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<p>We use cookies to recognise your repeated visits and preferences, and to measure how visitors find content. With your consent you help us improve.</p>
 <input class="md-toggle" type="checkbox" id="__settings" >
 <div class="md-consent__settings">
   <ul class="task-list">
     
     
       
+        
+  
+  
     
     
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
       
     
     
@@ -3439,10 +3397,12 @@ email = NEW EmailBuilder()
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/zeal.js"></script>
       
     
   </body>
