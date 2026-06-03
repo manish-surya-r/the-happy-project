@@ -13,7 +13,7 @@ copyright: >-
 # ─────────────────────────────────────────
 theme:
   name: material
-  custom_dir: docs/overrides          # home.html lives here
+  custom_dir: docs/overrides
 
   logo: assets/zeal-core-logo.svg
   favicon: assets/zeal-core-logo.svg
@@ -32,7 +32,8 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow
-    - toc.integrate
+    # toc.integrate REMOVED — this was pushing TOC into left sidebar.
+    # Without it, TOC appears correctly on the RIGHT side.
     - search.suggest
     - search.highlight
     - search.share
@@ -42,21 +43,23 @@ theme:
     - content.tooltips
 
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: slate               # force dark — matches the hero
+    # Fix 2: Start with dark, toggle goes to light correctly
+    # MkDocs Material reads palettes top-to-bottom.
+    # First entry = default on first visit.
+    # The toggle on palette[0] switches TO palette[1], and vice versa.
+    - scheme: slate           # dark — shown first / default
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to light mode   # clicking this goes to light
 
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: default         # light — toggled into
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-night
-        name: Switch to dark mode
+        name: Switch to dark mode    # clicking this goes back to dark
 
 # ─────────────────────────────────────────
 #  PLUGINS
