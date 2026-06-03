@@ -4,11 +4,10 @@
   {{ super() }}
 
   <!-- ═══════════════════════════════════════════════
-       HERO SECTION — Parallax layers + headline
+       HERO SECTION
        ═══════════════════════════════════════════════ -->
   <section class="zc-hero">
 
-    <!-- Parallax layer stack -->
     <div class="zc-hero__layers" id="zc-layers">
       <div class="zc-layer zc-layer--sky"></div>
       <div class="zc-layer zc-layer--glow"></div>
@@ -22,7 +21,10 @@
 
     <!-- Hero content -->
     <div class="zc-hero__content">
-      <div class="zc-hero__eyebrow">Software Engineering · System Design · CS Fundamentals</div>
+
+      <div class="zc-hero__eyebrow">
+        Software Engineering · System Design · CS Fundamentals
+      </div>
 
       <h1 class="zc-hero__title">
         Build things that<br>
@@ -31,24 +33,30 @@
 
       <p class="zc-hero__subtitle">
         Precision-crafted courses on OOP, system design, design patterns,
-        and clean architecture — built for engineers who want <em>depth</em>, not just syntax.
+        and clean architecture — built for engineers who want
+        <em>depth</em>, not just syntax.
       </p>
 
       <div class="zc-hero__cta">
         <a href="{{ 'ood/0.0-index/' | url }}" class="zc-btn zc-btn--primary">
           Start Learning
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="#courses" class="zc-btn zc-btn--ghost">
-          View Courses
-        </a>
+        <a href="#courses" class="zc-btn zc-btn--ghost">View Courses</a>
       </div>
+
+      <!-- Fix 5: Author byline -->
+      <div class="zc-hero__author">
+        <span class="zc-hero__author-label">A course series by</span>
+        <span class="zc-hero__author-name">Manish Sri Sai Surya Routhu</span>
+      </div>
+
     </div>
 
     <!-- Scroll indicator -->
     <div class="zc-hero__scroll">
       <span>Scroll</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
     </div>
 
   </section>
@@ -169,6 +177,4 @@
 {% endblock %}
 
 {% block content %}{% endblock %}
-{% block footer %}
-  {{ super() }}
-{% endblock %}
+{% block footer %}{{ super() }}{% endblock %}
