@@ -1,0 +1,57 @@
+name: Deploy Zeal Core to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main          # deploy on every push to main
+  workflow_dispatch:  # allow manual trigger from Actions tab
+
+# Allow only one concurrent deployment
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: write   # needed to push to gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0      # full history — needed for git-revision-date plugin
+
+      # ── 2. Python setup ──────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── 3. Install MkDocs + Material + plugins ────────────────
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install \
+            mkdocs-material==9.5.* \
+            mkdocs-minify-plugin \
+            mkdocs-git-revision-date-localized-plugin \
+            mkdocs-glightbox \
+            pillow \
+            cairosvg
+
+      # ── 4. Build the site ────────────────────────────────────
+      - name: Build MkDocs site
+        run: mkdocs build --strict --verbose
+        env:
+          SITE_URL: https://manish-surya-r.github.io/the-entanglement-project
+
+      # ── 5. Deploy to GitHub Pages ────────────────────────────
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --clean --verbose
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
