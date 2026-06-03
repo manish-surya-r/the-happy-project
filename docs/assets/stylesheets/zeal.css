@@ -1,0 +1,492 @@
+/* ═══════════════════════════════════════════════════════════════
+   ZEAL CORE — Custom Stylesheet
+   Font: DM Sans (body) + JetBrains Mono (code)
+   Aesthetic: Dark-ink editorial · amber accents · crisp geometry
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ─── Colour Tokens ─────────────────────────────────────────── */
+:root {
+  --zeal-amber:      #f5a623;
+  --zeal-amber-dim:  #c47f10;
+  --zeal-teal:       #0ecfc8;
+  --zeal-ink:        #0d0f12;
+  --zeal-surface:    #14171c;
+  --zeal-muted:      #8a9bb0;
+  --zeal-border:     rgba(255,255,255,0.07);
+
+  /* Material overrides — light */
+  --md-primary-fg-color:        #0d0f12;
+  --md-primary-fg-color--light: #14171c;
+  --md-primary-fg-color--dark:  #000000;
+  --md-primary-bg-color:        #ffffff;
+  --md-accent-fg-color:         #f5a623;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #0d0f12;
+  --md-primary-bg-color:        #f0f4ff;
+  --md-accent-fg-color:         #f5a623;
+  --md-default-bg-color:        #0d0f12;
+  --md-default-fg-color:        #e2e8f4;
+  --md-default-fg-color--light: #8a9bb0;
+  --md-code-bg-color:           #1a1e26;
+  --md-code-fg-color:           #e2e8f4;
+}
+
+/* ─── Global Typography ─────────────────────────────────────── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.2rem; line-height: 1.2; }
+h2 { font-size: 1.55rem; }
+h3 { font-size: 1.2rem; }
+
+code, pre, kbd {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ─── Header ────────────────────────────────────────────────── */
+.md-header {
+  background: var(--zeal-ink) !important;
+  border-bottom: 1px solid var(--zeal-border);
+  box-shadow: 0 1px 24px rgba(0,0,0,0.5);
+}
+
+.md-header__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+/* Site name — bold amber accent on first word */
+.md-header__title::before {
+  content: 'Z';
+  color: var(--zeal-amber);
+  font-weight: 700;
+}
+
+.md-tabs {
+  background: rgba(13,15,18,0.96) !important;
+  border-bottom: 1px solid var(--zeal-border);
+}
+
+.md-tabs__item--active .md-tabs__link,
+.md-tabs__link:hover {
+  color: var(--zeal-amber) !important;
+}
+
+.md-tabs__link {
+  color: #c8d6e8 !important;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.md-tabs__indicator {
+  background: var(--zeal-amber) !important;
+  height: 2px;
+}
+
+/* ─── Left Sidebar ──────────────────────────────────────────── */
+.md-sidebar--primary .md-nav {
+  padding-top: 0.5rem;
+}
+
+/* Section headers */
+.md-nav__title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--zeal-muted) !important;
+  padding: 1rem 0.75rem 0.3rem;
+}
+
+/* Nav items */
+.md-nav__item .md-nav__link {
+  font-size: 0.85rem;
+  color: #9aafc8;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+  padding: 0.28rem 0.75rem;
+}
+
+.md-nav__item .md-nav__link:hover {
+  background: rgba(245,166,35,0.08);
+  color: var(--zeal-amber) !important;
+  padding-left: 1rem;
+}
+
+/* Active link */
+.md-nav__item .md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--zeal-amber) !important;
+  background: rgba(245,166,35,0.1);
+  font-weight: 600;
+  border-left: 2px solid var(--zeal-amber);
+}
+
+/* Nested nav (subtopics — visible on left sidebar via toc.integrate) */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.78rem;
+  color: #6b7f98;
+}
+
+.md-nav--secondary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link--active {
+  color: var(--zeal-teal) !important;
+}
+
+/* ─── Main Content Area ─────────────────────────────────────── */
+.md-content__inner {
+  max-width: 820px;
+  padding-top: 2rem;
+}
+
+/* ─── Inline Code ───────────────────────────────────────────── */
+code:not(pre code) {
+  background: rgba(245,166,35,0.1);
+  color: var(--zeal-amber);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.87em;
+}
+
+/* ─── Code Blocks ───────────────────────────────────────────── */
+pre > code {
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.md-typeset pre {
+  border-radius: 10px;
+  border: 1px solid var(--zeal-border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+/* ─── Admonitions ───────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  border-width: 0 0 0 3px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--zeal-amber);
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--zeal-teal);
+}
+
+/* ─── Tables ────────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--zeal-border);
+  font-size: 0.88rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--zeal-surface);
+  color: var(--zeal-amber);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background: rgba(245,166,35,0.04);
+}
+
+/* ─── Search ────────────────────────────────────────────────── */
+.md-search__form {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid var(--zeal-border);
+  border-radius: 8px;
+}
+
+.md-search__input::placeholder {
+  color: var(--zeal-muted);
+}
+
+/* ─── Footer ────────────────────────────────────────────────── */
+.md-footer {
+  background: var(--zeal-ink) !important;
+  border-top: 1px solid var(--zeal-border);
+}
+
+.md-footer-meta {
+  background: #08090b !important;
+}
+
+/* ─── Back-to-top button ────────────────────────────────────── */
+.md-top {
+  background: var(--zeal-amber) !important;
+  color: var(--zeal-ink) !important;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* ─── Tag chips ─────────────────────────────────────────────── */
+.md-tag {
+  background: rgba(14,207,200,0.12);
+  color: var(--zeal-teal);
+  border: 1px solid rgba(14,207,200,0.25);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Page fade-in */
+@keyframes zeal-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.md-content__inner {
+  animation: zeal-fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Sidebar fade-in */
+@keyframes zeal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.md-sidebar {
+  animation: zeal-fade-in 0.5s ease 0.1s both;
+}
+
+/* Header slide-down */
+@keyframes zeal-header-in {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.md-header {
+  animation: zeal-header-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Admonition slide-in */
+@keyframes zeal-admonition-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  animation: zeal-admonition-in 0.3s ease both;
+}
+
+/* Code block hover glow */
+.md-typeset pre:hover {
+  border-color: rgba(245,166,35,0.3);
+  box-shadow: 0 4px 32px rgba(245,166,35,0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Nav link smooth left-shift */
+.md-nav__item .md-nav__link {
+  transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease, border-left 0.18s ease;
+}
+
+/* Anchor headings pulse */
+.md-typeset h2,
+.md-typeset h3 {
+  scroll-margin-top: 4rem;
+  transition: color 0.2s ease;
+}
+
+.md-typeset h2:target,
+.md-typeset h3:target {
+  color: var(--zeal-amber);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HOME PAGE — Hero Section
+   Used in docs/overrides/home.html or docs/index.md with
+   template: home.html
+   ═══════════════════════════════════════════════════════════════ */
+
+.zeal-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  gap: 1.5rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,166,35,0.08) 0%, transparent 70%),
+    var(--md-default-bg-color);
+}
+
+.zeal-hero__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--zeal-amber);
+  border: 1px solid rgba(245,166,35,0.3);
+  padding: 0.3em 0.9em;
+  border-radius: 100px;
+  animation: zeal-fade-up 0.4s ease both;
+}
+
+.zeal-hero__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--md-default-fg-color);
+  animation: zeal-fade-up 0.5s ease 0.08s both;
+}
+
+.zeal-hero__title span {
+  color: var(--zeal-amber);
+}
+
+.zeal-hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--zeal-muted);
+  max-width: 540px;
+  line-height: 1.7;
+  animation: zeal-fade-up 0.5s ease 0.16s both;
+}
+
+.zeal-hero__cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: zeal-fade-up 0.5s ease 0.24s both;
+}
+
+.zeal-btn {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.zeal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245,166,35,0.3);
+}
+
+.zeal-btn--primary {
+  background: var(--zeal-amber);
+  color: var(--zeal-ink) !important;
+}
+
+.zeal-btn--ghost {
+  border: 1px solid var(--zeal-border);
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Course card grid */
+.zeal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.zeal-card {
+  background: var(--md-code-bg-color, rgba(255,255,255,0.03));
+  border: 1px solid var(--zeal-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.zeal-card:hover {
+  border-color: rgba(245,166,35,0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(245,166,35,0.1);
+}
+
+.zeal-card__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.zeal-card__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--md-default-fg-color);
+  margin: 0;
+}
+
+.zeal-card__desc {
+  font-size: 0.84rem;
+  color: var(--zeal-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.zeal-card--upcoming {
+  border-style: dashed;
+  opacity: 0.75;
+}
+
+.zeal-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  background: rgba(14,207,200,0.12);
+  color: var(--zeal-teal);
+  border: 1px solid rgba(14,207,200,0.25);
+  width: fit-content;
+}
+
+.zeal-badge--live {
+  background: rgba(52,211,153,0.12);
+  color: #34d399;
+  border-color: rgba(52,211,153,0.25);
+}
+
+.zeal-badge--soon {
+  background: rgba(245,166,35,0.1);
+  color: var(--zeal-amber);
+  border-color: rgba(245,166,35,0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .zeal-hero { padding: 3rem 1rem 2rem; }
+  .zeal-hero__title { font-size: 2rem; }
+}
