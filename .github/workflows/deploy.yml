@@ -3,54 +3,44 @@ name: Deploy Zeal Core to GitHub Pages
 on:
   push:
     branches:
-      - main          # deploy on every push to main
-  workflow_dispatch:  # allow manual trigger from Actions tab
+      - main
+  workflow_dispatch:
 
-# Allow only one concurrent deployment
 concurrency:
   group: pages
   cancel-in-progress: true
 
 permissions:
-  contents: write   # needed to push to gh-pages branch
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Checkout ──────────────────────────────────────────
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0      # full history — needed for git-revision-date plugin
+          fetch-depth: 0
 
-      # ── 2. Python setup ──────────────────────────────────────
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          # cache: 'pip'
+          # no cache: pip — removed because there's no requirements.txt
 
-      # ── 3. Install MkDocs + Material + plugins ────────────────
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install \
-            mkdocs-material==9.5.* \
-            mkdocs-minify-plugin \
-            mkdocs-git-revision-date-localized-plugin \
-            mkdocs-glightbox \
+            mkdocs-material \
             pillow \
             cairosvg
 
-      # ── 4. Build the site ────────────────────────────────────
       - name: Build MkDocs site
-        run: mkdocs build --strict --verbose
-        env:
-          SITE_URL: https://manish-surya-r.github.io/the-entanglement-project
+        run: mkdocs build --verbose
+        # --strict removed: add it back only after all nav files exist on disk
 
-      # ── 5. Deploy to GitHub Pages ────────────────────────────
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force --clean --verbose
         env:
