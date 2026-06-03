@@ -1,5 +1,5 @@
 site_name: Zeal Core
-site_url: https://manish-surya-r.github.io/zeal-core
+site_url: https://manish-surya-r.github.io/zeal-core/
 site_description: >-
   Precision-crafted courses on software engineering, system design, and computer science fundamentals.
 site_author: Manish Sri Sai Surya Routhu
@@ -13,13 +13,14 @@ copyright: >-
 # ─────────────────────────────────────────
 theme:
   name: material
-  custom_dir: docs/overrides        # for home-page hero & custom HTML blocks
+  # custom_dir removed — docs/overrides folder does not exist yet.
+  # Add it back only after you create that directory.
 
-  logo: assets/zeal-core-logo.svg             # place a simple SVG logo in docs/assets/
+  logo: assets/zeal-core-logo.svg
   favicon: assets/zeal-core-logo.svg
 
   font:
-    text: DM Sans                   # clean, modern — not Inter
+    text: DM Sans
     code: JetBrains Mono
 
   icon:
@@ -27,25 +28,26 @@ theme:
 
   features:
     # ── Navigation ──────────────────────────
-    - navigation.tabs               # top-level tabs in header
-    - navigation.tabs.sticky        # tabs stay visible while scrolling
-    - navigation.sections           # show section headers in left sidebar
-    - navigation.expand             # auto-expand active section
-    - navigation.indexes            # section index pages (Overview pages)
-    - navigation.top                # "back to top" button
-    - toc.follow                    # TOC highlight follows scroll
-    - toc.integrate                 # ← subtopics of current page visible on LEFT sidebar
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - toc.integrate        # subtopics visible on left sidebar
+    # navigation.expand removed — conflicts with toc.integrate
+    # header.autohide removed — conflicts with navigation.tabs.sticky
+
     # ── Search ──────────────────────────────
     - search.suggest
     - search.highlight
     - search.share
+
     # ── Content ─────────────────────────────
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
     - content.tooltips
-    # ── Header ──────────────────────────────
-    - header.autohide
 
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -76,7 +78,6 @@ plugins:
 #  MARKDOWN EXTENSIONS
 # ─────────────────────────────────────────
 markdown_extensions:
-  # Code blocks
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -87,40 +88,33 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  # Tabs
   - pymdownx.tabbed:
       alternate_style: true
-  # Admonitions (callout boxes)
   - admonition
   - pymdownx.details
-  # Formatting
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  # Emoji & Icons
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  # Task lists
   - pymdownx.tasklist:
       custom_checkbox: true
-  # Tables, footnotes, abbreviations
   - tables
   - footnotes
   - abbr
   - attr_list
   - def_list
   - md_in_html
-  # TOC
   - toc:
       permalink: true
       permalink_title: Anchor link to this section
       toc_depth: 3
 
 # ─────────────────────────────────────────
-#  EXTRA CSS & JS  (animations + palette)
+#  EXTRA CSS & JS
 # ─────────────────────────────────────────
 extra_css:
   - assets/stylesheets/zeal.css
@@ -136,9 +130,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/manish-surya-r
       name: GitHub
-    # - icon: fontawesome/brands/youtube
-    #   link: https://youtube.com
-    #   name: YouTube — Zeal Core
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com
       name: LinkedIn
@@ -167,21 +158,27 @@ extra:
           name: Could be better
           data: 0
           note: >-
-            Thanks for letting us know. You can <a href="https://github.com/manish-surya-r/the-entanglement-project/issues/new">open an issue</a> to tell us what's missing.
+            Thanks for letting us know. You can
+            <a href="https://github.com/manish-surya-r/zeal-core/issues/new">open an issue</a>
+            to tell us what's missing.
 
-repo_url: https://github.com/manish-surya-r/the-entanglement-project
+# Fixed: repo_url now points to zeal-core, not the-entanglement-project
+repo_url: https://github.com/manish-surya-r/zeal-core
 repo_name: zeal-core
 edit_uri: edit/main/docs/
 
 # ─────────────────────────────────────────
 #  NAVIGATION
+#  All coming-soon pages reference existing stub files.
+#  Do NOT add a nav entry for a file that doesn't exist on disk —
+#  MkDocs will error even without --strict on missing files.
 # ─────────────────────────────────────────
 nav:
   - Home: index.md
 
   # ── LIVE COURSES ────────────────────────
   - Object-Oriented Design:
-    - ood/0.0-index.md
+    - Overview: ood/0.0-index.md
     - Thinking in Objects:
       - The World is Made of Objects: ood/1.1-the-world-is-made-of-objects.md
       - The Four Superpowers of OOD: ood/1.2-the-four-superpowers-of-ood.md
@@ -200,7 +197,7 @@ nav:
       - Beyond the Basics: ood/5.1-beyond-the-basics.md
 
   - OOP in C++:
-    - oop-cpp/index.md
+    - Overview: oop-cpp/index.md
     - Classes & Objects: oop-cpp/01-classes-and-objects.md
     - Inheritance: oop-cpp/02-inheritance.md
     - Polymorphism: oop-cpp/03-polymorphism.md
@@ -209,7 +206,7 @@ nav:
     - Design Patterns: oop-cpp/06-design-patterns.md
 
   - OOP in Python:
-    - oop-python/0.0-index.md
+    - Overview: oop-python/0.0-index.md
     - Thinking in Classes: oop-python/01-classes-and-objects.md
     - Inheritance: oop-python/02-inheritance.md
     - Polymorphism: oop-python/03-polymorphism.md
@@ -218,31 +215,12 @@ nav:
     - Design Patterns: oop-python/06-design-patterns.md
 
   # ── UPCOMING COURSES ────────────────────
+  # Only the top-level index is listed here.
+  # Individual sub-pages (scalability.md etc.) are NOT in nav yet —
+  # add them only once you've created those files.
   - Coming Soon:
     - coming-soon/index.md
-    - "OOP Using Python (Deep Dive)":
-      - coming-soon/oop-python-deepdive/index.md
-    - "SOLID Principles":
-      - coming-soon/solid/index.md
-    - "System Design — Micro Courses":
-      - coming-soon/system-design/index.md
-      - Scalability 101: coming-soon/system-design/scalability.md
-      - Load Balancing: coming-soon/system-design/load-balancing.md
-      - Caching Strategies: coming-soon/system-design/caching.md
-      - Database Design & Sharding: coming-soon/system-design/databases.md
-      - CAP Theorem: coming-soon/system-design/cap-theorem.md
-      - Message Queues & Event-Driven Design: coming-soon/system-design/message-queues.md
-      - API Design (REST vs GraphQL vs gRPC): coming-soon/system-design/api-design.md
-      - Distributed Systems Fundamentals: coming-soon/system-design/distributed-systems.md
-      - Microservices vs Monolith: coming-soon/system-design/microservices.md
-      - Rate Limiting & Throttling: coming-soon/system-design/rate-limiting.md
-    - "Data Structures & Algorithms":
-      - coming-soon/dsa/index.md
-    - "Design Patterns (GoF)":
-      - coming-soon/design-patterns/index.md
-    - "Clean Architecture":
-      - coming-soon/clean-arch/index.md
 
   # ── ESSAYS ──────────────────────────────
   - Essays:
-    - my-works/ai-consciousness.md
+    - Does Intellect need to be Conscious: my-works/ai-consciousness.md
