@@ -1,59 +1,187 @@
-site_name: The Entanglement Project (In development Phase)
-site_url: https://yourdomain.com
-site_description: Computer Science Educational Platform
+site_name: Zeal Core
+site_url: https://manish-surya-r.github.io/zeal-core
+site_description: >-
+  Precision-crafted courses on software engineering, system design, and computer science fundamentals.
+site_author: Manish Sri Sai Surya Routhu
 
+copyright: >-
+  © 2025 Zeal Core &nbsp;·&nbsp;
+  <a href="#__consent">Manage cookies</a>
+
+# ─────────────────────────────────────────
+#  THEME
+# ─────────────────────────────────────────
 theme:
   name: material
+  custom_dir: docs/overrides        # for home-page hero & custom HTML blocks
 
-  features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - search.suggest
+  logo: assets/logo.svg             # place a simple SVG logo in docs/assets/
+  favicon: assets/logo.svg
 
   font:
-    text: Inter
+    text: DM Sans                   # clean, modern — not Inter
     code: JetBrains Mono
 
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    # ── Navigation ──────────────────────────
+    - navigation.tabs               # top-level tabs in header
+    - navigation.tabs.sticky        # tabs stay visible while scrolling
+    - navigation.sections           # show section headers in left sidebar
+    - navigation.expand             # auto-expand active section
+    - navigation.indexes            # section index pages (Overview pages)
+    - navigation.top                # "back to top" button
+    - toc.follow                    # TOC highlight follows scroll
+    - toc.integrate                 # ← subtopics of current page visible on LEFT sidebar
+    # ── Search ──────────────────────────────
+    - search.suggest
+    - search.highlight
+    - search.share
+    # ── Content ─────────────────────────────
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    # ── Header ──────────────────────────────
+    - header.autohide
+
   palette:
-    # Light mode – TutorialsPoint style
     - media: "(prefers-color-scheme: light)"
-      scheme: tutorialspoint
+      scheme: default
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
 
-    # Dark mode – W3Schools style
     - media: "(prefers-color-scheme: dark)"
-      scheme: w3schools
+      scheme: slate
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
 
+# ─────────────────────────────────────────
+#  PLUGINS
+# ─────────────────────────────────────────
+plugins:
+  - search:
+      lang: en
+  - tags
+
+# ─────────────────────────────────────────
+#  MARKDOWN EXTENSIONS
+# ─────────────────────────────────────────
 markdown_extensions:
-  - pymdownx.superfences
+  # Code blocks
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  # Tabs
   - pymdownx.tabbed:
       alternate_style: true
+  # Admonitions (callout boxes)
+  - admonition
+  - pymdownx.details
+  # Formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Emoji & Icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # Task lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Tables, footnotes, abbreviations
+  - tables
+  - footnotes
+  - abbr
+  - attr_list
+  - def_list
+  - md_in_html
+  # TOC
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      toc_depth: 3
 
+# ─────────────────────────────────────────
+#  EXTRA CSS & JS  (animations + palette)
+# ─────────────────────────────────────────
 extra_css:
-  - assets/stylesheets/extra.css
+  - assets/stylesheets/zeal.css
 
+extra_javascript:
+  - assets/javascripts/zeal.js
+
+# ─────────────────────────────────────────
+#  EXTRA CONFIG
+# ─────────────────────────────────────────
 extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/manish-surya-r
+      name: GitHub
+    # - icon: fontawesome/brands/youtube
+    #   link: https://youtube.com
+    #   name: YouTube — Zeal Core
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com
+      name: LinkedIn
+
   consent:
     title: Cookie consent
-    description: >- 
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+    description: >-
+      We use cookies to recognise your repeated visits and preferences, and to
+      measure how visitors find content. With your consent you help us improve.
     actions:
       - accept
       - manage
       - reject
+
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX       # replace with your GA4 property ID
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Yes!
+          data: 1
+          note: Thanks for the feedback!
+        - icon: material/emoticon-sad-outline
+          name: Could be better
+          data: 0
+          note: >-
+            Thanks for letting us know. You can <a href="https://github.com/manish-surya-r/the-entanglement-project/issues/new">open an issue</a> to tell us what's missing.
+
+repo_url: https://github.com/manish-surya-r/the-entanglement-project
+repo_name: zeal-core
+edit_uri: edit/main/docs/
+
+# ─────────────────────────────────────────
+#  NAVIGATION
+# ─────────────────────────────────────────
 nav:
   - Home: index.md
 
+  # ── LIVE COURSES ────────────────────────
   - Object-Oriented Design:
-    - Overview: ood/0.0-index.md
+    - ood/0.0-index.md
     - Thinking in Objects:
       - The World is Made of Objects: ood/1.1-the-world-is-made-of-objects.md
       - The Four Superpowers of OOD: ood/1.2-the-four-superpowers-of-ood.md
@@ -66,32 +194,55 @@ nav:
       - Interfaces: ood/3.1-interfaces.md
       - Abstract Classes: ood/3.2-abstract-classes.md
       - Key Design Principles: ood/3.3-key-design-principles.md
-
     - From Design to Patterns:
       - Design Patterns: ood/4.1-design-patterns.md
-
     - Special Topics:
       - Beyond the Basics: ood/5.1-beyond-the-basics.md
 
-  
+  - OOP in C++:
+    - oop-cpp/index.md
+    - Classes & Objects: oop-cpp/01-classes-and-objects.md
+    - Inheritance: oop-cpp/02-inheritance.md
+    - Polymorphism: oop-cpp/03-polymorphism.md
+    - Encapsulation: oop-cpp/04-encapsulation.md
+    - Abstraction: oop-cpp/05-abstraction.md
+    - Design Patterns: oop-cpp/06-design-patterns.md
 
-  - Object-Oriented Design in C++:
-      - Overview: oop-cpp/index.md
-      - Classes & Objects: oop-cpp/01-classes-and-objects.md
-      - Inheritance: oop-cpp/02-inheritance.md
-      - Polymorphism: oop-cpp/03-polymorphism.md
-      - Encapsulation: oop-cpp/04-encapsulation.md
-      - Abstraction: oop-cpp/05-abstraction.md
-      - Design Patterns: oop-cpp/06-design-patterns.md
-  
-  - Object-Oriented Design in Python:
-      - Overview: oop-python/0.0-index.md
-      - Thinking: oop-python/01-classes-and-objects.md
-      - Inheritance: oop-python/02-inheritance.md
-      - Polymorphism: oop-python/03-polymorphism.md
-      - Encapsulation: oop-python/04-encapsulation.md
-      - Abstraction: oop-python/05-abstraction.md
-      - Design Patterns: oop-python/06-design-patterns.md
+  - OOP in Python:
+    - oop-python/0.0-index.md
+    - Thinking in Classes: oop-python/01-classes-and-objects.md
+    - Inheritance: oop-python/02-inheritance.md
+    - Polymorphism: oop-python/03-polymorphism.md
+    - Encapsulation: oop-python/04-encapsulation.md
+    - Abstraction: oop-python/05-abstraction.md
+    - Design Patterns: oop-python/06-design-patterns.md
 
-  - My Works:
-      - Does Intellect need to be Conscious: my-works/ai-consciousness.md
+  # ── UPCOMING COURSES ────────────────────
+  - Coming Soon:
+    - coming-soon/index.md
+    - "OOP Using Python (Deep Dive)":
+      - coming-soon/oop-python-deepdive/index.md
+    - "SOLID Principles":
+      - coming-soon/solid/index.md
+    - "System Design — Micro Courses":
+      - coming-soon/system-design/index.md
+      - Scalability 101: coming-soon/system-design/scalability.md
+      - Load Balancing: coming-soon/system-design/load-balancing.md
+      - Caching Strategies: coming-soon/system-design/caching.md
+      - Database Design & Sharding: coming-soon/system-design/databases.md
+      - CAP Theorem: coming-soon/system-design/cap-theorem.md
+      - Message Queues & Event-Driven Design: coming-soon/system-design/message-queues.md
+      - API Design (REST vs GraphQL vs gRPC): coming-soon/system-design/api-design.md
+      - Distributed Systems Fundamentals: coming-soon/system-design/distributed-systems.md
+      - Microservices vs Monolith: coming-soon/system-design/microservices.md
+      - Rate Limiting & Throttling: coming-soon/system-design/rate-limiting.md
+    - "Data Structures & Algorithms":
+      - coming-soon/dsa/index.md
+    - "Design Patterns (GoF)":
+      - coming-soon/design-patterns/index.md
+    - "Clean Architecture":
+      - coming-soon/clean-arch/index.md
+
+  # ── ESSAYS ──────────────────────────────
+  - Essays:
+    - my-works/ai-consciousness.md
