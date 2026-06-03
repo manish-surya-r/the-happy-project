@@ -1,0 +1,174 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION — Parallax layers + headline
+       ═══════════════════════════════════════════════ -->
+  <section class="zc-hero">
+
+    <!-- Parallax layer stack -->
+    <div class="zc-hero__layers" id="zc-layers">
+      <div class="zc-layer zc-layer--sky"></div>
+      <div class="zc-layer zc-layer--glow"></div>
+      <div class="zc-layer zc-layer--grid"></div>
+      <div class="zc-layer zc-layer--mountains"></div>
+      <div class="zc-layer zc-layer--hills"></div>
+      <div class="zc-layer zc-layer--nodes"></div>
+      <div class="zc-layer zc-layer--trees"></div>
+      <div class="zc-layer zc-layer--fog"></div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="zc-hero__content">
+      <div class="zc-hero__eyebrow">Software Engineering · System Design · CS Fundamentals</div>
+
+      <h1 class="zc-hero__title">
+        Build things that<br>
+        <span class="zc-hero__title--accent">actually scale.</span>
+      </h1>
+
+      <p class="zc-hero__subtitle">
+        Precision-crafted courses on OOP, system design, design patterns,
+        and clean architecture — built for engineers who want <em>depth</em>, not just syntax.
+      </p>
+
+      <div class="zc-hero__cta">
+        <a href="{{ 'ood/0.0-index/' | url }}" class="zc-btn zc-btn--primary">
+          Start Learning
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#courses" class="zc-btn zc-btn--ghost">
+          View Courses
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="zc-hero__scroll">
+      <span>Scroll</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       COURSES SECTION
+       ═══════════════════════════════════════════════ -->
+  <section class="zc-section" id="courses">
+    <div class="zc-container">
+
+      <div class="zc-section__header">
+        <span class="zc-label">Live Now</span>
+        <h2 class="zc-section__title">Start Learning Today</h2>
+        <p class="zc-section__desc">Structured, in-depth courses designed to take you from concept to mastery.</p>
+      </div>
+
+      <div class="zc-cards">
+
+        <a class="zc-card" href="{{ 'ood/0.0-index/' | url }}">
+          <div class="zc-card__icon">🧩</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--live">Live</span>
+            <h3 class="zc-card__title">Object-Oriented Design</h3>
+            <p class="zc-card__desc">From objects and classes to design principles and patterns — a ground-up mental model for OOD.</p>
+          </div>
+          <div class="zc-card__arrow">→</div>
+        </a>
+
+        <a class="zc-card" href="{{ 'oop-cpp/index/' | url }}">
+          <div class="zc-card__icon">⚙️</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--live">Live</span>
+            <h3 class="zc-card__title">OOP in C++</h3>
+            <p class="zc-card__desc">Classes, inheritance, polymorphism, encapsulation, and design patterns — in modern C++.</p>
+          </div>
+          <div class="zc-card__arrow">→</div>
+        </a>
+
+        <a class="zc-card" href="{{ 'oop-python/0.0-index/' | url }}">
+          <div class="zc-card__icon">🐍</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--live">Live</span>
+            <h3 class="zc-card__title">OOP in Python</h3>
+            <p class="zc-card__desc">Pythonic OOP: dunder methods, dataclasses, ABCs, mixins, and real-world design patterns.</p>
+          </div>
+          <div class="zc-card__arrow">→</div>
+        </a>
+
+      </div>
+
+      <!-- Upcoming -->
+      <div class="zc-section__header zc-section__header--spaced">
+        <span class="zc-label">Coming Soon</span>
+        <h2 class="zc-section__title">Upcoming Courses</h2>
+        <p class="zc-section__desc">Bite-sized and deep-dive modules currently in production.</p>
+      </div>
+
+      <div class="zc-cards zc-cards--upcoming">
+
+        <div class="zc-card zc-card--dim">
+          <div class="zc-card__icon">🧱</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--soon">Soon</span>
+            <h3 class="zc-card__title">SOLID Principles</h3>
+            <p class="zc-card__desc">All 5 principles with visual diagrams, bad-to-good refactors, and a capstone project.</p>
+          </div>
+        </div>
+
+        <div class="zc-card zc-card--dim">
+          <div class="zc-card__icon">🎨</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--soon">Soon</span>
+            <h3 class="zc-card__title">Design Patterns (GoF)</h3>
+            <p class="zc-card__desc">Creational, structural, and behavioural patterns with diagrams and real-world use cases.</p>
+          </div>
+        </div>
+
+        <div class="zc-card zc-card--dim">
+          <div class="zc-card__icon">📈</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--soon">Soon</span>
+            <h3 class="zc-card__title">System Design Micro-Courses</h3>
+            <p class="zc-card__desc">Scalability, caching, load balancing, CAP theorem, message queues, and more.</p>
+          </div>
+        </div>
+
+        <div class="zc-card zc-card--dim">
+          <div class="zc-card__icon">🏛️</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--soon">Soon</span>
+            <h3 class="zc-card__title">Clean Architecture</h3>
+            <p class="zc-card__desc">Hexagonal architecture, ports & adapters, dependency inversion at the system level.</p>
+          </div>
+        </div>
+
+        <div class="zc-card zc-card--dim">
+          <div class="zc-card__icon">📊</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--soon">Soon</span>
+            <h3 class="zc-card__title">Data Structures & Algorithms</h3>
+            <p class="zc-card__desc">Arrays to graphs, sorting to dynamic programming — built with intuition-first explanations.</p>
+          </div>
+        </div>
+
+        <div class="zc-card zc-card--dim">
+          <div class="zc-card__icon">🐍</div>
+          <div class="zc-card__body">
+            <span class="zc-tag zc-tag--soon">Soon</span>
+            <h3 class="zc-card__title">OOP in Python — Deep Dive</h3>
+            <p class="zc-card__desc">Metaclasses, descriptors, protocols, and advanced class patterns in Python.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block footer %}
+  {{ super() }}
+{% endblock %}
