@@ -15,8 +15,8 @@ theme:
   name: material
   custom_dir: docs/overrides        # for home-page hero & custom HTML blocks
 
-  logo: assets/logo.svg             # place a simple SVG logo in docs/assets/
-  favicon: assets/logo.svg
+  logo: assets/zeal-core-logo.svg             # place a simple SVG logo in docs/assets/
+  favicon: assets/zeal-core-logo.svg
 
   font:
     text: DM Sans                   # clean, modern — not Inter
