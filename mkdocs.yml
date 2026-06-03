@@ -13,37 +13,29 @@ copyright: >-
 # ─────────────────────────────────────────
 theme:
   name: material
-  # custom_dir removed — docs/overrides folder does not exist yet.
-  # Add it back only after you create that directory.
+  custom_dir: docs/overrides          # home.html lives here
 
   logo: assets/zeal-core-logo.svg
   favicon: assets/zeal-core-logo.svg
 
   font:
-    text: DM Sans
+    text: Inter
     code: JetBrains Mono
 
   icon:
     repo: fontawesome/brands/github
 
   features:
-    # ── Navigation ──────────────────────────
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
     - navigation.top
     - toc.follow
-    - toc.integrate        # subtopics visible on left sidebar
-    # navigation.expand removed — conflicts with toc.integrate
-    # header.autohide removed — conflicts with navigation.tabs.sticky
-
-    # ── Search ──────────────────────────────
+    - toc.integrate
     - search.suggest
     - search.highlight
     - search.share
-
-    # ── Content ─────────────────────────────
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
@@ -51,20 +43,20 @@ theme:
 
   palette:
     - media: "(prefers-color-scheme: light)"
-      scheme: default
+      scheme: slate               # force dark — matches the hero
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
+        icon: material/weather-sunny
+        name: Switch to light mode
 
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+        icon: material/weather-night
+        name: Switch to dark mode
 
 # ─────────────────────────────────────────
 #  PLUGINS
@@ -146,7 +138,7 @@ extra:
 
   analytics:
     provider: google
-    property: G-XXXXXXXXXX       # replace with your GA4 property ID
+    property: G-XXXXXXXXXX
     feedback:
       title: Was this page helpful?
       ratings:
@@ -162,21 +154,16 @@ extra:
             <a href="https://github.com/manish-surya-r/zeal-core/issues/new">open an issue</a>
             to tell us what's missing.
 
-# Fixed: repo_url now points to zeal-core, not the-entanglement-project
 repo_url: https://github.com/manish-surya-r/zeal-core
 repo_name: zeal-core
 edit_uri: edit/main/docs/
 
 # ─────────────────────────────────────────
 #  NAVIGATION
-#  All coming-soon pages reference existing stub files.
-#  Do NOT add a nav entry for a file that doesn't exist on disk —
-#  MkDocs will error even without --strict on missing files.
 # ─────────────────────────────────────────
 nav:
   - Home: index.md
 
-  # ── LIVE COURSES ────────────────────────
   - Object-Oriented Design:
     - Overview: ood/0.0-index.md
     - Thinking in Objects:
@@ -214,13 +201,8 @@ nav:
     - Abstraction: oop-python/05-abstraction.md
     - Design Patterns: oop-python/06-design-patterns.md
 
-  # ── UPCOMING COURSES ────────────────────
-  # Only the top-level index is listed here.
-  # Individual sub-pages (scalability.md etc.) are NOT in nav yet —
-  # add them only once you've created those files.
   - Coming Soon:
     - coming-soon/index.md
 
-  # ── ESSAYS ──────────────────────────────
   - Essays:
     - Does Intellect need to be Conscious: my-works/ai-consciousness.md
