@@ -32,8 +32,6 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow
-    # toc.integrate REMOVED — this was pushing TOC into left sidebar.
-    # Without it, TOC appears correctly on the RIGHT side.
     - search.suggest
     - search.highlight
     - search.share
@@ -43,23 +41,22 @@ theme:
     - content.tooltips
 
   palette:
-    # Fix 2: Start with dark, toggle goes to light correctly
-    # MkDocs Material reads palettes top-to-bottom.
-    # First entry = default on first visit.
-    # The toggle on palette[0] switches TO palette[1], and vice versa.
-    - scheme: slate           # dark — shown first / default
+    # ── Fix 1: Dark is the default. palette[0] = first shown.
+    # No `media:` queries — those hand control to the OS and
+    # break manual toggling entirely. Remove them completely.
+    - scheme: slate           # DARK — shown on first visit
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode   # clicking this goes to light
+        name: Switch to light mode
 
-    - scheme: default         # light — toggled into
+    - scheme: default         # LIGHT — reached by toggling
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-night
-        name: Switch to dark mode    # clicking this goes back to dark
+        name: Switch to dark mode
 
 # ─────────────────────────────────────────
 #  PLUGINS
